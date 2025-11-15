@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-M">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>kaelyshp - Skincare & Body Care Terkurasi</title>
+    <meta name="description" content="Temukan produk skincare & body care viral terkurasi di kaelyshp. 100% Original, Aman (BPOM), dan terpercaya. Checkout mudah via Shopee.">
+    <meta name="keywords" content="skincare, body care, kaelyshp, toko online skincare, skincare viral, body lotion, serum, bpom">
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "kaelyshp",
+      "url": "https://kaely.online", // Ganti dengan domain Anda saat sudah live
+      "logo": "https://placehold.co/200x200/FBCFE8/9D174D?text=K",
+      "description": "Toko online terkurasi untuk produk skincare dan body care.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "kontak@kaely.online", // Ganti dengan email Anda
+        "contactType": "Customer Service"
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https://kaely.online", // Ganti dengan domain Anda
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://kaely.online/#produk?q={search_term_string}", // Simulasikan pencarian
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+    
+    <link rel="icon" href="https://placehold.co/32x32/FBCFE8/9D174D?text=K" type="image/png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'pink': {
+                            50: '#FFF7F9',
+                            100: '#FDF2F8',
+                            200: '#FCE7F3',
+                            300: '#FBCFE8',
+                            400: '#F9A8D4',
+                            500: '#F472B6',
+                            600: '#EC4899',
+                            700: '#DB2777',
+                            800: '#BE185D',
+                            900: '#9D174D',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Mengatur agar scroll halus saat klik anchor link */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Mengatur accordion FAQ */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+        }
+        .accordion-button.active .arrow {
+            transform: rotate(180deg);
+        }
+        .arrow {
+            transition: transform 0.3s ease;
+        }
+
+        /* ===== KARTU PRODUK (FOKUS MOBILE & CSS HOVER) ===== */
+        .product-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .product-card-image-wrapper {
+            transition: transform 0.3s ease;
+        }
+        .group:hover .product-card-image-wrapper {
+            transform: scale(1.05);
+        }
+
+        /* ===== SLIDER TESTIMONI (BARU) ===== */
+        .slider-track {
+            transition: transform 0.4s ease-in-out;
+        }
+        .slider-slide {
+            flex-shrink: 0;
+            width: 100%;
+        }
+
+        /* ===== ANIMASI FADE-IN (BARU) ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+            opacity: 0; /* Mulai dari transparan */
+        }
+        /* Penundaan animasi untuk efek stagger */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+
+    </style>
+</head>
+<body class="bg-pink-50 text-gray-700">
+
+    <div class="bg-pink-600 text-white text-center py-2 px-6 text-sm font-semibold">
+        ✨ Diskon Spesial Bulan Ini! Gratis Ongkir untuk Pesanan di atas Rp 200.000 ✨
+    </div>
+
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-pink-600">kaelyshp</a>
+            <div class="space-x-6 hidden md:block">
+                <a href="#produk" class="text-gray-600 hover:text-pink-600">Produk</a>
+                <a href="#fitur" class="text-gray-600 hover:text-pink-600">Keunggulan</a>
+                <a href="#testimoni" class="text-gray-600 hover:text-pink-600">Testimoni</a>
+                <a href="#faq" class="text-gray-600 hover:text-pink-600">FAQ</a>
+                <a href="#tentang" class="text-gray-600 hover:text-pink-600">Tentang</a>
+            </div>
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700 z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100">
+            <a href="#produk" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Produk</a>
+            <a href="#fitur" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Keunggulan</a>
+            <a href="#testimoni" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Testimoni</a>
+            <a href="#faq" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">FAQ</a>
+            <a href="#tentang" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Tentang</a>
+        </div>
+    </nav>
+
+    <header class="bg-pink-50">
+        <div class="container mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="text-center md:text-left fade-in">
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
+                    Your Trusted <span class="text-pink-600">Skincare</span> Bestie
+                </h1>
+                <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                    Kami mengkurasi produk skincare & body care viral terbaik. 100% Original, BPOM, dan aman terpercaya.
+                </p>
+                <a href="#produk" class="bg-pink-600 text-white py-3 px-8 rounded-lg font-semibold text-lg transition-colors hover:bg-pink-700">
+                    Mulai Belanja
+                </a>
+            </div>
+            <div class="fade-in delay-200">
+                <img src="https://placehold.co/600x600/FBCFE8/9D174D?text=Foto+Model+Skincare" alt="Model Skincare Kaelyshp" class="w-full h-full object-cover rounded-lg shadow-xl">
+            </div>
+        </div>
+    </header>
+
+    <section id="jaminan" class="bg-white py-12">
+        <div class="container mx-auto px-6 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
+            <div class="fade-in delay-100">
+                <div class="flex items-center justify-center mb-3">
+                    <svg class="w-10 h-10 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800">100% Original & BPOM</h3>
+                <p class="text-gray-600 text-sm">Produk terjamin keasliannya.</p>
+            </div>
+            <div class="fade-in delay-200">
+                <div class="flex items-center justify-center mb-3">
+                    <svg class="w-10 h-10 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H7a3 3 0 00-3 3v8a3 3 0 003 3z"></path></svg>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800">Pembayaran Aman</h3>
+                <p class="text-gray-600 text-sm">Checkout aman via Shopee.</p>
+            </div>
+            <div class="fade-in delay-300">
+                <div class="flex items-center justify-center mb-3">
+                    <svg class="w-10 h-10 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                </div>
+                <h3 class="text-lg font-semibold text-gray-800">Admin Fast Response</h3>
+                <p class="text-gray-600 text-sm">Siap membantu pertanyaan Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <main id="produk" class="container mx-auto px-6 py-16">
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-10 fade-in">Produk Pilihan Kami</h2>
+        
+        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            </div>
+    </main>
+
+    <section id="fitur" class="bg-pink-600 text-white py-16">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-3xl font-bold text-center mb-10 fade-in">Kenapa Beli di kaelyshp?</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="bg-pink-700 p-6 rounded-lg shadow-lg fade-in delay-200">
+                    <svg class="w-12 h-12 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16v4m-2-2h4m6 16v4m-2-2h4M12 3v18"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2">Koleksi Terkurasi</h3>
+                    <p class="text-pink-100">Kami hanya memilih produk yang terbukti bagus, viral, dan berkualitas.</p>
+                </div>
+                <div class="bg-pink-700 p-6 rounded-lg shadow-lg fade-in delay-300">
+                    <svg class="w-12 h-12 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2">100% Aman</h3>
+                    <p class="text-pink-100">Semua produk dijamin Ori, terdaftar BPOM, dan dikirim dengan aman.</p>
+                </div>
+                <div class="bg-pink-700 p-6 rounded-lg shadow-lg fade-in delay-400">
+                    <svg class="w-12 h-12 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+                    <h3 class="text-xl font-semibold mb-2">Checkout Mudah</h3>
+                    <p class="text-pink-100">Lihat di sini, checkout aman dan gampang langsung di Shopee kami.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimoni" class="bg-white py-16">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10 fade-in">Apa Kata Pelanggan Kami</h2>
+            
+            <div class="relative overflow-hidden bg-pink-50 p-6 sm:p-10 rounded-lg shadow-lg fade-in delay-200">
+                <div id="slider-track" class="flex slider-track">
+                    <div class="slider-slide p-4 text-center">
+                        <div class="flex justify-center text-yellow-400 mb-4">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                        </div>
+                        <p class="text-gray-600 italic text-lg mb-4">"Pelayanannya ramah banget dan produknya 100% ori. Nyesel baru nemu kaelyshp sekarang!"</p>
+                        <p class="font-semibold text-gray-800">- Marsha A.</p>
+                    </div>
+                    <div class="slider-slide p-4 text-center">
+                        <div class="flex justify-center text-yellow-400 mb-4">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                        </div>
+                        <p class="text-gray-600 italic text-lg mb-4">"Kurasinya bener-bener a-class. Gak pusing lagi cari skincare viral yang bagus, semua udah ada di sini."</p>
+                        <p class="font-semibold text-gray-800">- Bunga C.</p>
+                    </div>
+                    <div class="slider-slide p-4 text-center">
+                        <div class="flex justify-center text-yellow-400 mb-4">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                        </div>
+                        <p class="text-gray-600 italic text-lg mb-4">"Checkout-nya gampang karena langsung ke Shopee. Aman dan terpercaya. Bakal jadi langganan!"</p>
+                        <p class="font-semibold text-gray-800">- Rina S.</p>
+                    </div>
+                    <div class="slider-slide p-4 text-center">
+                        <div class="flex justify-center text-yellow-400 mb-4">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                        </div>
+                        <p class="text-gray-600 italic text-lg mb-4">"Body lotion-nya sampai dengan selamat. Sesuai deskripsi, wangi dan ori. Makasih Kaelyshp!"</p>
+                        <p class="font-semibold text-gray-800">- Dewi K.</p>
+                    </div>
+                    <div class="slider-slide p-4 text-center">
+                        <div class="flex justify-center text-yellow-400 mb-4">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>
+                        </div>
+                        <p class="text-gray-600 italic text-lg mb-4">"Serumnya ngaruh banget di muka. Jadi hemat waktu gak perlu riset, tinggal checkout di sini."</p>
+                        <p class="font-semibold text-gray-800">- Siti N.</p>
+                    </div>
+                </div>
+
+                <button id="prev-btn" class="absolute top-1/2 left-0 -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-100 rounded-full p-2 text-pink-600 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+                    </svg>
+                </button>
+                <button id="next-btn" class="absolute top-1/2 right-0 -translate-y-1/2 bg-white bg-opacity-50 hover:bg-opacity-100 rounded-full p-2 text-pink-600 transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="bg-gray-50 py-16">
+        <div class="container mx-auto px-6 max-w-3xl">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10 fade-in">Yang Sering Ditanyakan (FAQ)</h2>
+            <div class="space-y-4 fade-in delay-200">
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                    <button class="accordion-button w-full flex justify-between items-center text-left">
+                        <span class="text-lg font-semibold text-gray-800">Apakah produknya 100% Original?</span>
+                        <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content mt-2">
+                        <p class="text-gray-600">
+                            Tentu! Kami menjamin 100% keaslian semua produk. Kami mengambil langsung dari distributor resmi dan setiap produk sudah terdaftar BPOM.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                    <button class="accordion-button w-full flex justify-between items-center text-left">
+                        <span class="text-lg font-semibold text-gray-800">Bagaimana cara memesannya?</span>
+                        <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content mt-2">
+                        <p class="text-gray-600">
+                            Sangat mudah! Cukup klik "Lihat Detail" pada produk yang Anda suka, lalu klik "Beli di Shopee". Anda akan langsung diarahkan ke halaman Shopee kami untuk checkout yang aman dan mudah.
+                        </p>
+                    </div>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                    <button class="accordion-button w-full flex justify-between items-center text-left">
+                        <span class="text-lg font-semibold text-gray-800">Berapa lama proses pengirimannya?</span>
+                        <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="accordion-content mt-2">
+                        <p class="text-gray-600">
+                            Semua proses pengiriman mengikuti standar Shopee. Kami memproses pesanan di hari yang sama (untuk pembayaran sebelum jam 15.00) dan sisanya mengikuti estimasi dari jasa kirim yang Anda pilih di Shopee.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="tentang" class="bg-white py-20">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="fade-in delay-100">
+                <img src="https://placehold.co/600x700/FBCFE8/9D174D?text=Foto+Founder+atau+Tim" alt="Tim Kaelyshp" class="w-full h-full object-cover rounded-lg shadow-2xl">
+            </div>
+            <div class="fade-in delay-200">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Cerita di Balik Kaelyshp</h2>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                    Kaelyshp lahir dari kecintaan kami pada dunia skincare. Kami tahu betapa susahnya mencari produk yang tepat di tengah lautan produk viral.
+                </p>
+                <p class="text-gray-600 leading-relaxed mb-6">
+                    Misi kami sederhana: menjadi 'sahabat' terpercaya Anda dalam menemukan produk skincare & body care terbaik. Setiap produk di sini telah kami kurasi dengan hati, memastikan orisinalitas, kualitas, dan ulasan yang terbukti.
+                </p>
+                <a href="#produk" class="bg-pink-600 text-white py-2 px-6 rounded-lg font-semibold transition-colors hover:bg-pink-700">
+                    Lihat Produk Pilihan Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="cta" class="bg-pink-50 py-16">
+        <div class="container mx-auto px-6 text-center max-w-2xl">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4 fade-in">Jadi yang Pertama Tahu!</h2>
+            <p class="text-gray-600 leading-relaxed mb-8 fade-in delay-100">
+                Dapatkan info produk terbaru, tips & trik skincare, dan promo spesial langsung ke inbox Anda.
+            </p>
+            <form class="flex flex-col sm:flex-row gap-4 max-w-lg mx-auto fade-in delay-200" onsubmit="event.preventDefault(); alert('Terima kasih telah mendaftar!');">
+                <input type="email" placeholder="Masukkan email Anda..." class="flex-grow p-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400" required>
+                <button type="submit" class="bg-pink-600 text-white py-3 px-6 rounded-lg font-semibold transition-colors hover:bg-pink-700">
+                    Daftar Sekarang
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-white pt-16 pb-8">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <h4 class="text-2xl font-bold text-white mb-4">kaelyshp</h4>
+                <p class="text-gray-400 leading-relaxed">
+                    Toko kurasi skincare & body care terpercaya Anda. 100% Original, Aman, dan BPOM.
+                </p>
+            </div>
+            
+            <div>
+                <h5 class="text-lg font-semibold text-white mb-4">Navigasi</h5>
+                <ul class="space-y-2">
+                    <li><a href="#produk" class="text-gray-400 hover:text-white">Produk</a></li>
+                    <li><a href="#fitur" class="text-gray-400 hover:text-white">Keunggulan</a></li>
+                    <li><a href="#testimoni" class="text-gray-400 hover:text-white">Testimoni</a></li>
+                    <li><a href="#faq" class="text-gray-400 hover:text-white">FAQ</a></li>
+                    <li><a href="#tentang" class="text-gray-400 hover:text-white">Tentang Kami</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h5 class="text-lg font-semibold text-white mb-4">Ikuti Kami</h5>
+                <div class="flex space-x-4">
+                    <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.227-1.667 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.227 1.667-4.771 4.919-4.919 1.266-.057 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.28-.059-1.689-.073-4.947-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="TikTok" class="text-gray-400 hover:text-white">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.98-2.06-2.65-2.87-5.97-2.31-9.1s1.85-5.94 4.35-7.85c2.14-1.63 4.79-2.28 7.37-2.14.49.04 1 .08 1.48.14v4.03c-.88-.27-1.76-.53-2.65-.75-1.03-.25-2.14-.36-3.23-.39-1.45-.04-2.89.36-4.14 1.05-2.03 1.13-3.4 3.09-3.76 5.34-.4 2.4 1.04 4.64 3.03 5.53.86.38 1.8.57 2.75.57.98 0 1.95-.2 2.85-.61.9-.4 1.7-1 2.36-1.78.67-.8 1.14-1.78 1.38-2.82.04-.17.06-.33.09-.51v-5.1c-.2.01-.4.02-.6.02-.35 0-.7-.01-1.04-.01-1.3-.01-2.6-.02-3.9-.02s-2.61.01-3.91.02c.02-1.53-.63-3.09-1.75-4.17C7.11 2.74 5.54 2.23 4 2.06V.03c1.44.05 2.89.35 4.2.97.57.26 1.1.59 1.62.93.01-2.92-.01-5.84.02-8.75z"></path></svg>
+                    </a>
+                    <a href="#" aria-label="Shopee" class="text-gray-400 hover:text-white">
+                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 48 48"><path d="M26.21 24.32a3.5 3.5 0 1 1-4.95 0 3.5 3.5 0 0 1 4.95 0zm11.7-3.21c-1.12-1.12-2.4-1.93-3.83-2.41a10.95 10.95 0 0 0-7.38-1.75c-2.73.07-5.4.74-7.82 1.9-4.9 2.35-8.5 7.1-9.43 12.3-.7 3.93.1 7.9.67 11.7.07.48.45.83.94.83h31.8c.45 0 .83-.3.9-.74.55-3.6.9-7.1.6-10.5-.4-4.5-2.7-8.6-6.4-11.33zm-20-4.04c.8-.8 1.7-1.5 2.7-2.1c2.2-1.3 4.6-2 7.1-2.1a9 9 0 0 1 8 3.8c2.4 3 3.6 6.6 3.5 10.2-.1 2.7-.8 5.4-2.1 7.8-1.3 2.5-3.2 4.6-5.4 6.3-1.1.8-2.3 1.5-3.5 2.1-2.2 1-4.5 1.6-6.8 1.6-2.6-.1-5.2-.8-7.5-2-4-2.1-6.8-5.6-7.8-9.8-.7-2.9-.8-5.8-.4-8.7.6-4.6 2.8-8.7 6.4-11.5a13.8 13.8 0 0 1 5-2.6zM13.2 19a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3.5 1.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3.5 1.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3.5 1.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3.5 1.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3.5 1.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3.5 1.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3.5 1.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12 pt-8 border-t border-gray-700 text-center">
+            <p class="text-gray-400 text-sm">
+                &copy; 2025 kaelyshp. Didesain dengan ❤️.
+            </p>
+        </div>
+    </footer>
+
+    <div id="product-modal" class="fixed inset-0 bg-black bg-opacity-70 z-[60] flex items-center justify-center p-4 hidden">
+        <div class="bg-white w-full max-w-3xl rounded-lg shadow-2xl max-h-[90vh] overflow-y-auto">
+            <div class="p-6 md:p-8">
+                <button id="modal-close-btn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <img id="modal-img" src="https://placehold.co/600x600" alt="Detail Produk" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    
+                    <div class="flex flex-col">
+                        <h2 id="modal-title" class="text-2xl font-bold text-gray-800 mb-2">Nama Produk</h2>
+                        
+                        <div class="flex items-center space-x-2 mb-3">
+                            <div id="modal-stars" class="flex text-yellow-400">
+                                </div>
+                            <span id="modal-rating-text" class="text-sm text-gray-600">4.9 (720 ulasan)</span>
+                        </div>
+                        
+                        <p id="modal-price" class="text-3xl font-bold text-pink-600 mb-4">Rp 125.000</p>
+                        
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-800 mb-1">Deskripsi</h4>
+                            <p id="modal-desc" class="text-gray-600 text-sm whitespace-pre-line">Deskripsi produk di sini...</p>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-800 mb-1">Spesifikasi</h4>
+                            <p id="modal-specs" class="text-gray-600 text-sm whitespace-pre-line">Spesifikasi produk di sini...</p>
+                        </div>
+                        
+                        <div class="mb-6 bg-pink-50 p-3 rounded-lg border border-pink-100">
+                            <h4 class="font-semibold text-gray-800 mb-1">Ulasan Unggulan</h4>
+                            <p id="modal-review" class="text-gray-600 text-sm italic">"Ulasan pelanggan di sini..."</p>
+                        </div>
+                        
+                        <div class="mt-auto">
+                            <a id="modal-shopee-link" href="#" target="_blank" rel="noopener noreferrer" class="w-full bg-pink-600 text-white py-3 px-6 rounded-lg font-semibold text-center transition-colors hover:bg-pink-700 flex items-center justify-center">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 48 48"><path d="M26.21 24.32a3.5 3.5 0 1 1-4.95 0 3.5 3.5 0 0 1 4.95 0zm11.7-3.21c-1.12-1.12-2.4-1.93-3.83-2.41a10.95 10.95 0 0 0-7.38-1.75c-2.73.07-5.4.74-7.82 1.9-4.9 2.35-8.5 7.1-9.43 12.3-.7 3.93.1 7.9.67 11.7.07.48.45.83.94.83h31.8c.45 0 .83-.3.9-.74.55-3.6.9-7.1.6-10.5-.4-4.5-2.7-8.6-6.4-11.33zm-20-4.04c.8-.8 1.7-1.5 2.7-2.1c2.2-1.3 4.6-2 7.1-2.1a9 9 0 0 1 8 3.8c2.4 3 3.6 6.6 3.5 10.2-.1 2.7-.8 5.4-2.1 7.8-1.3 2.5-3.2 4.6-5.4 6.3-1.1.8-2.3 1.5-3.5 2.1-2.2 1-4.5 1.6-6.8 1.6-2.6-.1-5.2-.8-7.5-2-4-2.1-6.8-5.6-7.8-9.8-.7-2.9-.8-5.8-.4-8.7.6-4.6 2.8-8.7 6.4-11.5a13.8 13.8 0 0 1 5-2.6zM13.2 19a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3.5 1.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3.5 1.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3.5 1.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3.5 1.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3.5 1.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3.5 1.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3.5 1.4a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"/></svg>
+                                Beli Aman di Shopee
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // // // const products = [
+                {
+                    id: 1,
+                    name: "Brightening Body Lotion",
+                    price: "Rp 125.000",
+                    imageUrl: "https://placehold.co/600x600/FBEAEE/9D174D?text=Body+Lotion",
+                    shopeeUrl: "https://shopee.co.id/",
+                    description: "Body lotion dengan Niacinamide dan Vitamin C untuk mencerahkan kulit tubuh.\nTekstur ringan dan tidak lengket.",
+                    specs: "- Kandungan: Niacinamide, Vitamin C, Shea Butter\n- Ukuran: 250ml\n- Aroma: Vanilla",
+                    review: "'Suka banget sama wanginya! Kulitku jadi lebih cerah dan lembab.' - Amanda",
+                    rating: 4.9,
+                    reviewCount: 720
+                },
+                {
+                    id: 2,
+                    name: "Exfoliating Body Scrub",
+                    price: "Rp 85.000",
+                    imageUrl: "https://placehold.co/600x600/FCE7F3/9D174D?text=Body+Scrub",
+                    shopeeUrl: "https://shopee.co.id/",
+                    description: "Scrub tubuh dengan butiran halus untuk mengangkat sel kulit mati tanpa iritasi.",
+                    specs: "- Kandungan: Apricot Seed, Coffee Extract\n- Ukuran: 150g",
+                    review: "'Butiran scrubnya pas, gak kasar. Setelah pakai kulit jadi halus banget!' - Bunga",
+                    rating: 5.0,
+                    reviewCount: 432
+                },
+                {
+                    id: 3,
+                    name: "Hydrating Face Serum",
+                    price: "Rp 150.000",
+                    imageUrl: "https://placehold.co/600x600/FDF2F8/9D174D?text=Face+Serum",
+                    shopeeUrl: "https://shopee.co.id/",
+                    description: "Serum wajah dengan Hyaluronic Acid untuk melembabkan kulit secara mendalam.",
+                    specs: "- Kandungan: Hyaluronic Acid, Centella Asiatica\n- Ukuran: 30ml\n- Cocok untuk: Semua jenis kulit",
+                    review: "'Bikin kulit kenyal! Cepet meresap dan gak bikin breakout.' - Citra",
+                    rating: 4.9,
+                    reviewCount: 1102
+                },
+                {
+                    id: 4,
+                    name: "Calming Body Wash",
+                    price: "Rp 95.000",
+                    imageUrl: "https://placehold.co/600x600/FFF7F9/9D174D?text=Body+Wash",
+                    shopeeUrl: "https://shopee.co.id/",
+                    description: "Sabun mandi dengan aroma lavender yang menenangkan dan melembutkan kulit.",
+                    specs: "- Kandungan: Lavender Oil, Aloe Vera\n- Ukuran: 300ml",
+                    review: "'Wanginya relaxing banget, cocok buat mandi sebelum tidur.' - Dini",
+                    rating: 4.8,
+                    reviewCount: 680
+                },
+                {
+                    id: 5,
+                    name: "UV Protect Sunscreen",
+                    price: "Rp 110.000",
+                    imageUrl: "https://placehold.co/600x600/FEF3C7/9D174D?text=Sunscreen",
+                    shopeeUrl: "https://shopee.co.id/",
+                    description: "Sunscreen SPF 50 PA++++ dengan tekstur ringan, tanpa whitecast, dan cepat meresap.",
+                    specs: "- Tipe: Chemical Sunscreen\n- SPF: 50 PA++++\n- Ukuran: 50ml",
+                    review: "'Sunscreen teringan yang pernah kucoba! Gak peeling di bawah makeup.' - Eka",
+                    rating: 4.9,
+                    reviewCount: 915
+                },
+                {
+                    id: 6,
+                    name: "Hydrating Micellar Water",
+                    price: "Rp 75.000",
+                    imageUrl: "https://placehold.co/600x600/E0F2FE/9D174D?text=Micellar+Water",
+                    shopeeUrl: "https://shopee.co.id/",
+                    description: "Pembersih makeup 3-in-1 yang membersihkan, melembabkan, dan menyegarkan kulit.",
+                    specs: "- Kandungan: Rose Water, Glycerin\n- Ukuran: 200ml",
+                    review: "'Makeup waterproof langsung luntur. Gak bikin kulit kering ketarik.' - Fara",
+                    rating: 4.8,
+                    reviewCount: 550
+                },
+                {
+                    id: 7,
+                    name: "AHA/BHA Exfoliating Toner",
+                    price: "Rp 135.000",
+                    imageUrl: "https://placehold.co/600x600/F3E8FF/9D174D?text=Toner",
+                    shopeeUrl: "https://shopee.co.id/",
+                    description: "Toner eksfoliasi untuk mengangkat sel kulit mati, membersihkan pori, dan mencerahkan.",
+                    specs: "- Kandungan: AHA 3%, BHA 1%, Cica\n- Ukuran: 100ml",
+                    review: "'Best toner exfo! Pelan-pelan bruntusanku hilang. Ajaib.' - Gita",
+                    rating: 5.0,
+                    reviewCount: 810
+                },
+                {
+                    id: 8,
+                    name: "Moisture Lip Mask",
+                    price: "Rp 65.000",
+                    imageUrl: "https://placehold.co/600x600/FBCFE8/9D174D?text=Lip+Mask",
+                    shopeeUrl: "https://shopee.co.id/",
+                    description: "Masker bibir untuk dipakai tidur, membuat bibir lembab dan cerah keesokan harinya.",
+                    specs: "- Kandungan: Shea Butter, Jojoba Oil\n- Aroma: Berry\n- Ukuran: 20g",
+                    review: "'Bibir pecah-pecah langsung sembuh. Wanginya enak, pagi-pagi bibir jadi plumpy!' - Hana",
+                    rating: 4.9,
+                    reviewCount: 1204
+                }
+            ];
+
+            // // // const productGrid = document.getElementById('product-grid');
+            const modal = document.getElementById('product-modal');
+            const modalCloseBtn = document.getElementById('modal-close-btn');
+
+            let productDelay = 200; // Untuk animasi fade-in
+
+            // Fungsi untuk membuat HTML bintang
+            function renderStars(rating) {
+                let starsHTML = '';
+                const fullStars = Math.floor(rating);
+                const halfStar = rating % 1 >= 0.5 ? 1 : 0;
+                const emptyStars = 5 - fullStars - halfStar;
+
+                for (let i = 0; i < fullStars; i++) {
+                    starsHTML += '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>';
+                }
+                if (halfStar) {
+                    starsHTML += '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545zM10 12.63l-4.14 2.176 0.79-4.6-3.34-3.256 4.62-.67L10 2.5l2.07 4.28 4.62.67-3.34 3.256 0.79 4.6z"></path></svg>';
+                }
+                for (let i = 0; i < emptyStars; i++) {
+                    starsHTML += '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>';
+                }
+                return starsHTML;
+            }
+
+            // 1. Membuat kartu produk di halaman utama
+            products.forEach(product => {
+                const card = document.createElement('div');
+                // Terapkan class baru yang lebih ringan & fokus mobile
+                card.className = `group product-card rounded-lg overflow-hidden fade-in`;
+                card.style.animationDelay = `${productDelay}ms`;
+                productDelay += 100; // Tambah delay untuk kartu berikutnya
+
+                card.innerHTML = `
+                    <div class="w-full aspect-square overflow-hidden rounded-t-lg">
+                        <img src="${product.imageUrl}" alt="Foto produk ${product.name}" 
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x600/eeeeee/999999?text=Gagal+Muat';"
+                             class="w-full h-full object-cover product-card-image-wrapper">
+                    </div>
+                    <div class="p-5 bg-white">
+                        <h3 class="text-lg font-semibold text-gray-800 truncate" title="${product.name}">${product.name}</h3>
+                        <div class="flex items-center mt-1">
+                            ${renderStars(product.rating)}
+                            <span class="text-xs text-gray-500 ml-2">(${product.reviewCount})</span>
+                        </div>
+                        <p class="text-xl text-pink-600 font-bold mt-2">${product.price}</p>
+                    </div>
+                `;
+                
+                // Saat kartu di-klik, tampilkan modal
+                card.addEventListener('click', () => showProductModal(product));
+                productGrid.appendChild(card);
+            });
+
+            // 2. Fungsi untuk menampilkan modal
+            function showProductModal(product) {
+                document.getElementById('modal-img').src = product.imageUrl;
+                document.getElementById('modal-img').alt = `Foto detail produk ${product.name}`; // SEO
+                document.getElementById('modal-title').textContent = product.name;
+                document.getElementById('modal-stars').innerHTML = renderStars(product.rating);
+                document.getElementById('modal-rating-text').textContent = `${product.rating} (${product.reviewCount} ulasan)`;
+                document.getElementById('modal-price').textContent = product.price;
+                document.getElementById('modal-desc').textContent = product.description;
+                document.getElementById('modal-specs').textContent = product.specs;
+                document.getElementById('modal-review').textContent = product.review;
+                document.getElementById('modal-shopee-link').href = product.shopeeUrl;
+                
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden'; // Mencegah scroll di background
+            }
+
+            // 3. Fungsi untuk menutup modal
+            function closeModal() {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto'; // Mengembalikan scroll
+            }
+
+            modalCloseBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                // Tutup modal jika klik di area luar (background gelap)
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // ===== LOGIKA FAQ ACCORDION =====
+            document.querySelectorAll('.accordion-button').forEach(button => {
+                button.addEventListener('click', () => {
+                    const content = button.nextElementSibling;
+                    button.classList.toggle('active');
+
+                    if (button.classList.contains('active')) {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                    } else {
+                        content.style.maxHeight = '0';
+                    }
+                });
+            });
+
+            // ===== LOGIKA MENU MOBILE (BARU) =====
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            mobileMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Mencegah event klik menyebar
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Menutup menu jika klik di luar area menu
+            document.addEventListener('click', (e) => {
+                if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // Menutup menu saat link di-klik (untuk navigasi anchor)
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // ===== LOGIKA SLIDER TESTIMONI (BARU) =====
+            const track = document.getElementById('slider-track');
+            if (track) {
+                const slides = Array.from(track.children);
+                const nextBtn = document.getElementById('next-btn');
+                const prevBtn = document.getElementById('prev-btn');
+                let slideIndex = 0;
+                const totalSlides = slides.length;
+
+                const updateSliderPosition = () => {
+                    track.style.transform = `translateX(-${slideIndex * 100}%)`;
+                };
+
+                nextBtn.addEventListener('click', () => {
+                    slideIndex = (slideIndex + 1) % totalSlides;
+                    updateSliderPosition();
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    slideIndex = (slideIndex - 1 + totalSlides) % totalSlides;
+                    updateSliderPosition();
+                });
+
+                // Inisialisasi posisi slider
+                updateSliderPosition();
+            }
+        });
+    </script>
+
+</body>
+</html>
+```eof
