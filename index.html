@@ -71,7 +71,7 @@
             -moz-osx-font-smoothing: grayscale;
             background-color: #FFF7F9; 
             color: #374151;
-            line-height: 1.7; /* [FIX] Menambah jarak antar baris untuk kenyamanan membaca */
+            line-height: 1.7;
         }
         html { scroll-behavior: smooth; }
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
@@ -229,10 +229,10 @@
     <main id="produk" class="container mx-auto px-6 py-16">
         
         <!-- ===== NAVIGASI KATEGORI ===== -->
-        <div class_name="mb-10 fade-in delay-100">
+        <div class="mb-10 fade-in delay-100">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Jelajahi Kategori</h2>
             <!-- Container Tab Kategori yang bisa di-scroll di mobile -->
-            <div id="category-tabs" class="flex space-x-2 overflow-x-auto pb-4 category-scrollbar">
+            <div id="category-tabs" class="flex space-x-2 overflow-x-auto pb-4 category-scrollbar justify-center">
                 <button class="category-btn whitespace-nowrap bg-pink-600 text-white py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="all">✔️ Semua</button>
                 <button class="category-btn whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="skincare">Skincare</button>
                 <button class="category-btn whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="bodylotion">Body Lotion</button>
@@ -315,18 +315,6 @@
                         </p>
                     </div>
                 </div>
-                <!-- FAQ 6 [BARU] -->
-                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
-                    <button class="accordion-button w-full flex justify-between items-center text-left">
-                        <span class="text-lg font-semibold text-gray-800">Apakah produk fashion-nya juga berkualitas?</span>
-                        <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="accordion-content mt-2">
-                        <p class="text-gray-600">
-                            Tentu saja. Sama seperti produk kecantikan, produk fashion kami (baju, hijab, dll) juga dikurasi dari *supplier* terpercaya yang mengutamakan kualitas bahan, jahitan rapi, dan desain yang modern.
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
@@ -386,7 +374,7 @@
                 <div class="flex space-x-4">
                     <!-- Ganti '#' dengan link media sosial Anda -->
                     <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white">
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.227-1.667 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.227 1.667-4.771 4.919-4.919 1.266-.057 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.28-.059-1.689-.073-4.947-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"></path></svg>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.227-1.667 4.771-4.919 4.919-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.227 1.667-4.771 4.919-4.919 1.266-.057 1.646-.07 4.85-.07zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948s.014 3.667.072 4.947c.2 4.358 2.618 6.78 6.98 6.98 1.281.059 1.689.073 4.948.073s3.667-.014 4.947-.072c4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.947s-.014-3.667-.072-4.947c-.196-4.354-2.617-6.78-6.979-6.98-1.28-.059-1.689-.073-4.947-.073zM12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.441 1.441 1.441 1.441-.645 1.441-1.441-.645-1.44-1.441-1.44z"></path></svg>
                     </a>
                     <a href="#" aria-label="TikTok" class="text-gray-400 hover:text-white">
                         <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.98-2.06-2.65-2.87-5.97-2.31-9.1s1.85-5.94 4.35-7.85c2.14-1.63 4.79-2.28 7.37-2.14.49.04 1 .08 1.48.14v4.03c-.88-.27-1.76-.53-2.65-.75-1.03-.25-2.14-.36-3.23-.39-1.45-.04-2.89.36-4.14 1.05-2.03 1.13-3.4 3.09-3.76 5.34-.4 2.4 1.04 4.64 3.03 5.53.86.38 1.8.57 2.75.57.98 0 1.95-.2 2.85-.61.9-.4 1.7-1 2.36-1.78.67-.8 1.14-1.78 1.38-2.82.04-.17.06-.33.09-.51v-5.1c-.2.01-.4.02-.6.02-.35 0-.7-.01-1.04-.01-1.3-.01-2.6-.02-3.9-.02s-2.61.01-3.91.02c.02-1.53-.63-3.09-1.75-4.17C7.11 2.74 5.54 2.23 4 2.06V.03c1.44.05 2.89.35 4.2.97.57.26 1.1.59 1.62.93.01-2.92-.01-5.84.02-8.75z"></path></svg>
@@ -473,209 +461,237 @@
         document.addEventListener('DOMContentLoaded', () => {
             
             // <!-- =================================================================== -->
-            // <!-- = DATA PRODUK                                                 = -->
+            // <!-- = DATA PRODUK (DIUPDATE AGAR LEBIH DETAIL DAN PROFESIONAL)      = -->
             // <!-- =================================================================== -->
             
             const masterProductList = [
-                // ===== PRODUK 1 - PHERINI (BODY CARE) =====
+                // ===== PRODUK 1 - PHERINI (BODY CARE) - REFINED =====
                 {
                     id: 1,
                     category: "bodylotion", 
-                    name: "PHERINI Underarm Armpit Brightening Cream Pemutih Ketiak",
-                    price: "Rp 80.000",
-                    imageUrl: "https://placehold.co/600x600/FCE7F3/9D174D?text=Body+Care+1",
+                    name: "PHERINI Armpit Brightening Cream Pemutih Lipatan (BPOM)",
+                    price: "Rp 78.800",
+                    imageUrl: "pherini.webp",
                     shopeeUrl: "https://s.shopee.co.id/6VG8EKd6uO",
-                    description: "Rawat dan cerahkan area lipatan yang gelap seperti ketiak, siku, dan selangkangan dengan PHERINI. Diformulasikan khusus untuk kulit sensitif, krim ini membantu menghaluskan tekstur kulit sekaligus mengurangi bau badan.",
-                    specs: "- Brand: PHERINI\n- Sertifikasi: BPOM RI (Aman)\n- Isi Bersih: 30g\n- Area Penggunaan: Ketiak, Siku, Selangkangan, Lutut\n- Manfaat Utama: Mencerahkan, Menghaluskan, Mengurangi Bau",
-                    review: "'Produknya viral dan beneran sebagus itu! Baru 2 minggu pakai, ketiak jadi lebih cerah dan jauh lebih halus. Teksturnya gak lengket sama sekali. 10RB+ Terjual emang gak bohong!' - Rina A.",
+                    description: "Krim spesialis perawatan tubuh yang diformulasikan untuk mencerahkan dan merawat area lipatan gelap seperti ketiak, siku, selangkangan, dan lutut. Krim ini efektif membuat lipatan menjadi putih merata, bersih, dan sehat. Didesain untuk mengatasi peradangan dan iritasi akibat gesekan kulit.",
+                    specs: "- Brand: PHERINI\n- Volume: 30ml\n- Sertifikasi: BPOM (NA18211902388)\n- Komposisi Utama: Niacinamide (pencerah kuat), Olea Europa Oil (anti-inflamasi & pelembap), Centella Asiatica Extract (menjaga elastisitas kulit)\n- Manfaat: Memutihkan kulit ketiak & lipatan, melembapkan, melembutkan, serta mencegah bakteri penyebab bau tak sedap.",
+                    review: "'Produk viral dengan hasil yang efektif. Setelah dua minggu pemakaian konsisten, kulit lipatan menjadi lebih cerah dan halus. Teksturnya ringan dan cepat meresap. Sangat direkomendasikan.'",
                     rating: 4.8,
-                    reviewCount: 10000
+                    reviewCount: 36400 
                 },
-                // ===== PRODUK 2 - Lavojoy (BODY CARE) =====
+                // ===== PRODUK 2 - HIZA (BAJU) - REFINED =====
                 {
                     id: 2,
-                    category: "bodylotion", 
-                    name: "[Tone Up 00 - 01 - 02] Lavojoy Daily Shine Body Serum SPF 50",
-                    price: "Rp 67.000",
-                    imageUrl: "https://placehold.co/600x600/FCE7F3/9D174D?text=Body+Care+2",
+                    category: "baju",
+                    name: "HIZA - Keyko Tunic | Blouse Wanita Etnik Premium",
+                    price: "Rp 139.000",
+                    imageUrl: "hiza.webp",
                     shopeeUrl: "https://s.shopee.co.id/6psyfYgjFt",
-                    description: "Dapatkan kulit cerah instan (instant tone up) sekaligus perlindungan matahari maksimal dengan Lavojoy. Body serum ini dilengkapi SPF 50 PA++ untuk melindungi dari sinar UVA/UVB. Tersedia dalam 3 shades yang sesuai kulitmu.",
-                    specs: "- Brand: Lavojoy\n- Perlindungan: SPF 50 PA++\n- Varian: 00 (Natural), 01 (Ivory), 02 (Petal)\n- Tipe: Body Serum (Tidak Lengket)\n- Fitur: Instant Tone Up",
-                    review: "'Wanginya MEWAH banget, tahan lama! Efek tone up-nya natural, gak bikin abu-abu. Cepat meresap dan ada SPF 50, jadi gak perlu pakai sunblock lagi. Praktis!' - Siska D.",
-                    rating: 4.9,
-                    reviewCount: 5000
+                    description: "Tunic premium yang menampilkan desain etnik modern dan timeless. Dibuat dari bahan **Borneo Premium** bertekstur yang memberikan kenyamanan maksimal dan kesan 'jatuh' yang elegan saat dikenakan. Cocok untuk acara formal maupun busana kerja.",
+                    specs: "- Brand: HIZA\n- Bahan: Borneo Premium Bertekstur (Adem & Nyaman)\n- Model: Keyko Tunic (Etnik)\n- Dimensi All Size: Lingkar Dada 110-115 cm, Panjang Baju 102 cm, Panjang Tangan 55 cm\n- Stok: Tersedia",
+                    review: "'Model tunic yang sangat cantik. Material Borneo terasa adem, nyaman, dan motif etniknya eksklusif. Jahitan rapi dan pengiriman cepat. Pembelian yang memuaskan.'",
+                    rating: 4.8,
+                    reviewCount: 1800 
                 },
-                // ===== PRODUK 3 - Purbasari White Glow (BODY CARE) =====
+                // ===== PRODUK 3 - Floral Id (BAJU) - REFINED =====
                 {
                     id: 3,
-                    category: "bodylotion",
-                    name: "Purbasari White Glow Body Serum / Body Serum Viral",
-                    price: "Rp 27.400",
-                    imageUrl: "https://placehold.co/600x600/FCE7F3/9D174D?text=Body+Care+3",
+                    category: "baju", 
+                    name: "Floral Id - Sonya Blouse Poplin Polos Kancing Gold",
+                    price: "Rp 165.500",
+                    imageUrl: "floralwebp.webp",
                     shopeeUrl: "https://s.shopee.co.id/70COsDFsps",
-                    description: "Body serum viral yang jadi andalan banyak orang. Purbasari White Glow diformulasikan untuk menutrisi dan mencerahkan kulit. Teksturnya ringan seperti air, cepat meresap, dan tidak lengket di kulit.",
-                    specs: "- Brand: Purbasari\n- Tipe: Body Serum\n- Varian: White Glow\n- Keunggulan: Tekstur ringan, Cepat meresap\n- Sertifikasi: BPOM, Halal",
-                    review: "'Harga 20 ribuan tapi kualitasnya juara. Beneran bikin kulit lebih cerah dan lembab. Wanginya juga soft, enak. Udah repurchase botol kelima!' - Mega W.",
+                    description: "Blouse atasan wanita Sonya dengan desain kerah Sanghai dan detail kancing gold yang memberikan sentuhan mewah dan elegan. Terbuat dari **Cotton Premium Poplin** yang menciptakan siluet rapi dan terasa nyaman. Pilihan ideal untuk penampilan kantor atau kasual chic.",
+                    specs: "- Brand: Floral Id\n- Bahan: Cotton Premium Poplin\n- Gaya: Basic, Minimalis, Cocok untuk Kasual dan Formal\n- Detail: Kancing Gold, Lengan Panjang\n- Ukuran All Size: Lingkar Dada 114 cm, Panjang Atasan 70 cm (Note: Disarankan menggunakan inner untuk varian warna terang)",
+                    review: "'Blouse dengan desain simpel namun terlihat mahal karena kancing emasnya. Bahan poplin premiumnya tidak menerawang dan sangat rapi. Akan membeli warna lainnya segera.'",
                     rating: 4.8,
-                    reviewCount: 10000
+                    reviewCount: 1800 
                 },
-                // ===== PRODUK 4 - MOOI (BODY CARE) =====
+                // ===== PRODUK 4 - Lavojoy (BODY CARE) - REFINED =====
                 {
                     id: 4,
-                    category: "bodylotion",
-                    name: "MOOI Brightening Tone Up Booster Body Lotion",
-                    price: "Rp 49.900",
-                    imageUrl: "https://placehold.co/600x600/FCE7F3/9D174D?text=Body+Care+4",
+                    category: "bodylotion", 
+                    name: "Lavojoy Daily Shine Body Serum SPF 50 PA++++ Tone Up",
+                    price: "Rp 67.000",
+                    imageUrl: "lavojoy.webp",
                     shopeeUrl: "https://s.shopee.co.id/9pWaG7Zdw7",
-                    description: "Ingin kulit cerah seketika? MOOI Tone Up Booster adalah jawabannya. Lotion ini memberikan efek cerah (tone up) yang natural dan tahan lama. Formulanya juga membantu mencerahkan kulit secara permanen dengan pemakaian rutin.",
-                    specs: "- Brand: MOOI\n- Tipe: Body Lotion\n- Fitur: Tone Up Booster (Mencerahkan Instan)\n- Netto: 100ml\n- Keunggulan: Wangi, Tahan lama",
-                    review: "'Suka banget sama efek tone up-nya, gak dempul! Wanginya juga enak, nempel seharian. Bikin kulit kelihatan sehat dan cerah.' - Putri K.",
-                    rating: 4.9,
-                    reviewCount: 3000
+                    description: "Body Serum yang menawarkan perlindungan ganda: efek **Instant Tone-up** untuk mencerahkan seketika dan proteksi superior **SPF 50 PA++++** dari sinar UVA/UVB. Diperkaya Ceramide dan 6X Hyaluronic Acid untuk menjaga kelembapan dan memperkuat *skin barrier*.",
+                    specs: "- Brand: Lavojoy\n- Perlindungan UV: SPF 50 PA++++ (Proteksi Harian)\n- Kandungan Aktif: 3% Niacinamide, Australian Super VC (Kakadu Plum), Ceramide, 6X Hyaluronic Acid\n- Volume: 180ml\n- Tekstur: Light Lotion (Tidak Lengket)\n- Shade Tersedia: 00 Silk White, 01 Cream Beige, 02 Warm Sand",
+                    review: "'Aroma Delicate Rose-nya sangat mewah dan bertahan lama. Efek tone up yang instan dan natural, tidak meninggalkan kesan abu-abu. Sangat praktis karena sudah mengandung SPF 50.'",
+                    rating: 4.8,
+                    reviewCount: 72500 
                 },
-                // ===== PRODUK 5 - Grace and Glow (BODY CARE) =====
+                // ===== PRODUK 5 - Purbasari White Glow (BODY CARE) - REFINED =====
                 {
                     id: 5,
                     category: "bodylotion",
-                    name: "Grace and Glow Brightening Sun Body Serum SPF 30",
-                    price: "Rp 38.000",
-                    imageUrl: "https://placehold.co/600x600/FCE7F3/9D174D?text=Body+Care+5",
+                    name: "Purbasari White Glow Body Serum 3X Active Whitening",
+                    price: "Rp 27.400",
+                    imageUrl: "purbasari.webp",
                     shopeeUrl: "https://s.shopee.co.id/3LJ6WKlPaS",
-                    description: "Body serum multifungsi dari Grace and Glow. Tidak hanya mencerahkan, tapi juga melindungi kulit dari paparan sinar matahari dengan SPF 30 PA+++. Hadir dengan wangi mewah yang terinspirasi dari parfum high-end.",
-                    specs: "- Brand: Grace and Glow\n- Perlindungan: SPF 30 PA+++\n- Tipe: Sun Body Serum\n- Manfaat: Mencerahkan + Melindungi\n- Keunggulan: Wangi seperti parfum mahal",
-                    review: "'Ini body serum apa parfum? Wanginya nempel banget! Teksturnya ringan, ada SPF 30 lagi. Lengkap banget. Udah pasti beli lagi.' - Vina L.",
-                    rating: 4.9,
-                    reviewCount: 8000
+                    description: "Body serum harian dengan aroma floral segar yang memberikan efek **Instant White dan Glow** tanpa rasa lengket. Formula 3X Active Whitening membantu mencerahkan kulit kusam secara bertahap dan dilengkapi UV Protection untuk perlindungan kulit.",
+                    specs: "- Brand: Purbasari\n- Tipe: Body Serum (Instant White Glow)\n- Volume: 180ml\n- Kandungan Aktif: 2% Niacinamide, Ekstrak Radiant White, Ekstrak Bengkoang, UV Protection\n- Keunggulan: Tekstur ringan, cepat meresap, dan halal (BPOM NA18220109846)",
+                    review: "'Kualitas setara produk premium dengan harga sangat terjangkau. Efektif melembapkan dan membuat kulit terlihat lebih cerah. Sudah melakukan *repurchase* berkali-kali karena sangat cocok.'",
+                    rating: 4.8,
+                    reviewCount: 15400 
                 },
-                // ===== PRODUK 6 - NIVEA (BODY CARE) =====
+                // ===== PRODUK 6 - Jumuna (HIJAB) - REFINED =====
                 {
                     id: 6,
-                    category: "bodylotion",
-                    name: "NIVEA Body Lotion Extra White Brightening 190ML",
-                    price: "Rp 27.500",
-                    imageUrl: "https://placehold.co/600x600/FCE7F3/9D174D?text=Body+Care+6",
+                    category: "hijab", // HIJAB (Mukena)
+                    name: "Jumuna - Mukena Dewasa Premium Satin Silk Lasercut",
+                    price: "Rp 99.900",
+                    imageUrl: "jumuna.webp",
                     shopeeUrl: "https://s.shopee.co.id/8zxTGqJ12a",
-                    description: "Produk legendaris yang tidak pernah gagal. NIVEA Extra White terbukti klinis mencerahkan kulit dalam pemakaian rutin. Diperkaya dengan Vitamin C dan UV Filter untuk melindungi kulit dari kusam.",
-                    specs: "- Brand: NIVEA\n- Ukuran: 190ML\n- Varian: Extra White Brightening\n- Kandungan: Vitamin C, UV Filter\n- Keunggulan: Melembabkan, Mencerahkan",
-                    review: "'Dari dulu gak pernah ganti. Nivea ini paling pas buat kulit keringku. Lembabnya dapet, cerahnya juga dapet. Wanginya khas, bikin kangen.' - Ibu Wati",
+                    description: "Mukena dewasa premium Beatrix yang dirancang untuk kenyamanan dan keanggunan. Terbuat dari bahan **Satin Silk** berkualitas tinggi yang 'jatuh', adem, serta tidak menerawang. Diperindah dengan detail Lasercut Beatrix yang mewah di sekeliling tepi mukena.",
+                    specs: "- Brand: Jumuna\n- Bahan: Satin Silk (Adem, Tidak Menerawang)\n- Detail: Lasercut Beatrix\n- Ukuran: Dewasa Jumbo (Panjang Depan Atasan 120 cm, Panjang Belakang 130 cm)\n- Kelengkapan: Atasan, Bawahan, dan Tas Mukena Cantik",
+                    review: "'Mukena yang luar biasa cantik. Bahan silk-nya sangat adem dan nyaman untuk sholat. Detail lasercut-nya sangat rapi. Cocok sebagai hadiah maupun perlengkapan sholat harian.'",
                     rating: 4.9,
-                    reviewCount: 10000
+                    reviewCount: 1200 
                 },
-                // ===== PRODUK 7 - Purbasari Bundle (BODY CARE) =====
+                // ===== PRODUK 7 - MOOI (BODY CARE) - REFINED =====
                 {
                     id: 7,
                     category: "bodylotion",
-                    name: "[BUNDLE SUPER ISI 2] Purbasari Body Serum Gluta Hya + White Glow",
-                    price: "Rp 47.500",
-                    imageUrl: "https://placehold.co/600x600/FCE7F3/9D174D?text=Body+Care+7",
-                    shopeeUrl: "https://s.shopee.co.id/12eYR1j7z8",
-                    description: "Super hemat! Dapatkan 2 varian body serum Purbasari terlaris: Gluta Hya (untuk hidrasi intensif) dan White Glow (untuk mencerahkan). Solusi lengkap untuk kulit cerah dan lembab dengan harga terbaik.",
-                    specs: "- Brand: Purbasari\n- Isi Paket: 1 Pcs Gluta Hya + 1 Pcs White Glow\n- Tipe: Body Serum\n- Keunggulan: Harga Jauh Lebih Hemat\n- Total: 2 Botol",
-                    review: "'Jatuhnya murah banget beli bundle gini. Bisa ganti-ganti pakai. Yang satu buat pagi, satu buat malam. Suka dua-duanya!' - Diah P.",
-                    rating: 4.9,
-                    reviewCount: 2000
+                    name: "MOOI Brightening Tone Up Booster Body Lotion SPF 30",
+                    price: "Rp 49.900",
+                    imageUrl: "moi.webp",
+                    shopeeUrl: "https://s.shopee.co.id/12eYR1j7z",
+                    description: "Body Lotion Tone Up dengan formula baru **10X lebih efektif mencerahkan**. Memberikan efek *tone up* natural yang tahan lama dan melindungi kulit dari paparan matahari dengan **UV Filter setara SPF 30**. Efektif untuk mengatasi kulit kering dan warna kulit tidak merata.",
+                    specs: "- Brand: MOOI Pure Glow\n- Perlindungan: UV Filter (Setara SPF 30)\n- Kandungan Aktif: Glutathio, Niacinamide, Licorice Extract, Allantoin\n- Keunggulan: 10X Effective Brightening, Instant Whitening, Fragrance White Floral Tahan Lama\n- Volume: 100ml (BPOM NA18240111449)",
+                    review: "'Sangat menyukai efek tone up yang natural dan tidak terkesan dempul. Wangi body lotionnya tahan sepanjang hari. Kulit terlihat lebih sehat dan terlindungi. Sangat direkomendasikan.'",
+                    rating: 4.8,
+                    reviewCount: 27800 
                 },
-                // ===== PRODUK 8 - Lavojoy Share (BODY CARE) =====
+                // ===== PRODUK 8 - LADYCOLLECTION (BAJU) - REFINED =====
                 {
                     id: 8,
-                    category: "bodylotion",
-                    name: "[Share in Jar] Instan Tone Up Body Serum Lavojoy",
-                    price: "Rp 14.899",
-                    imageUrl: "https://placehold.co/600x600/FCE7F3/9D174D?text=Body+Care+8",
-                    shopeeUrl: "https://s.shopee.co.id/30gG849TdY",
-                    description: "Penasaran dengan Lavojoy Tone Up Serum tapi takut tidak cocok? Coba dulu kemasan share in jar. Dijamin 100% original, ditakar higienis. Solusi hemat untuk mencoba produk viral.",
-                    specs: "- Tipe: Share in Jar (Kemasan Ulang)\n- Produk: Lavojoy Daily Shine Body Serum\n- Ukuran: 10ml / 30ml (Pilih Varian)\n- Jaminan: 100% Original, Higienis",
-                    review: "'Pas banget buat yang mau coba-coba. Sellernya amanah, isinya original. Ternyata cocok, next mau beli full size di sini.' - Ayu S.",
-                    rating: 4.8,
-                    reviewCount: 1000
-                },
-                // ===== PRODUK 9 - Mukena (FASHION) =====
-                {
-                    id: 9,
-                    category: "baju", // FASHION -> Baju (Mukena masuk sini)
-                    name: "Jumuna - Mukena Dewasa Premium Silk Lasercut Beatrix",
-                    price: "Rp 99.900",
-                    imageUrl: "https://placehold.co/600x600/FDF2F8/9D174D?text=Fashion+1",
-                    shopeeUrl: "https://s.shopee.co.id/3qFN7hYGaJ",
-                    description: "Sholat lebih khusyuk dengan mukena premium dari Jumuna. Terbuat dari bahan premium silk yang 'jatuh', adem, dan tidak nerawang. Dipercantik dengan detail lasercut presisi yang mewah di bagian tepi.",
-                    specs: "- Brand: Jumuna\n- Bahan: Premium Silk (Adem, Tidak Menerawang)\n- Fitur: Detail Lasercut Mewah\n- Paket: Atasan + Bawahan + Tas Mukena Cantik\n- Ukuran: Dewasa (Jumbo)",
-                    review: "'Masya Allah, mukenanya cantik banget! Bahan silk-nya adem, gak bikin gerah. Detail lasercut-nya rapi. Dapet tas juga. Harga segini worth it parah!' - Fitri N.",
-                    rating: 4.9,
-                    reviewCount: 4000
-                },
-                // ===== PRODUK 10 - Sweater (FASHION) =====
-                {
-                    id: 10,
                     category: "baju",
-                    name: "Sweater Rajut wanita bordir olop kerah bulat lengan panjang",
+                    name: "LADYCOLLECTION - Sweater Rajut Bordir Olop Kerah Bulat",
                     price: "Rp 158.000",
-                    imageUrl: "https://placehold.co/600x600/FDF2F8/9D174D?text=Fashion+2",
-                    shopeeUrl: "https://s.shopee.co.id/4AsDWQdFCt",
-                    description: "Tampil stylish dan hangat dengan sweater rajut premium. Dibuat dari benang rajut tebal namun tetap 'breathable'. Detail bordir 'Olop' di bagian dada memberikan sentuhan unik. Cocok untuk OOTD.",
+                    imageUrl: "sweater.webp",
+                    shopeeUrl: "https://s.shopee.co.id/30gG849TdY",
+                    description: "Sweater rajut premium dengan desain lengan panjang dan kerah bulat. Dibuat dari benang rajut yang tebal namun tetap *breathable* dan tidak menyebabkan gatal. Dipercantik dengan detail bordir 'Olop' yang memberikan sentuhan *stylish* dan unik untuk OOTD harian.",
                     specs: "- Tipe: Sweater Rajut\n- Bahan: Rajut Premium (Tebal, Tidak Gatal)\n- Fitur: Bordir 'Olop' (Rapi)\n- Leher: Kerah Bulat (O-Neck)\n- Ukuran: All Size fit to L",
-                    review: "'Rajutnya tebal, tapi gak bikin gatel. Bordirnya juga rapi banget. Dipakai pas OOTD ke Puncak, hangat tapi tetap stylish.' - Bunga C.",
+                    review: "'Kualitas rajutan sangat tebal dan tidak membuat gatal. Detail bordir di dada terlihat sangat rapi. Sangat nyaman dan stylish untuk dipakai di cuaca dingin.'",
                     rating: 4.8,
                     reviewCount: 500
                 },
-                // ===== PRODUK 11 - Kaos Crop (FASHION) =====
+                // ===== PRODUK 9 - Grace and Glow (BODY CARE) - REFINED =====
                 {
-                    id: 11,
-                    category: "baju",
-                    name: "Kaos wanita Crop Top Korea cotton strech",
-                    price: "Rp 25.472",
-                    imageUrl: "https://placehold.co/600x600/FDF2F8/9D174D?text=Fashion+3",
-                    shopeeUrl: "https://s.shopee.co.id/3VcWjJm67t",
-                    description: "Basic item yang wajib punya! Kaos crop top ala Korea ini terbuat dari bahan cotton stretch yang super nyaman, adem, dan mengikuti bentuk badan. Cocok dipadukan dengan high-waist jeans atau rok.",
-                    specs: "- Bahan: Cotton Stretch (Melar, Adem)\n- Model: Crop Top\n- Style: Korean Basic\n- Ukuran: All Size (Melar s/d L)\n- Keunggulan: Harga Terjangkau, Banyak Warna",
-                    review: "'Gila, harga 25 ribu dapet kaos sebagus ini. Bahannya adem, nge-pas di badan. Udah borong 3 warna. Wajib punya!' - Lisa P.",
-                    rating: 4.8,
-                    reviewCount: 10000
-                },
-                // ===== PRODUK 12 - Arika Blouse (FASHION) =====
-                {
-                    id: 12,
-                    category: "baju",
-                    name: "Arika Blouse Stripe Atasan Peplum Wanita Lengan Puff",
-                    price: "Rp 58.999",
-                    imageUrl: "https://placehold.co/600x600/FDF2F8/9D174D?text=Fashion+4",
-                    shopeeUrl: "https://s.shopee.co.id/50RKWBYbt3",
-                    description: "Tampil feminin dan chic dengan Arika Blouse. Model peplum di bagian pinggang memberikan ilusi ramping. Dipercantik dengan motif stripe vertikal dan lengan puff yang manis. Cocok untuk kerja atau hangout.",
-                    specs: "- Model: Peplum Blouse\n- Detail: Lengan Puff, Motif Stripe\n- Bahan: Katun Rayon (Adem, Jatuh)\n- Ukuran: All Size fit to L\n- Kancing: Belakang",
-                    review: "'Blouse-nya cantik banget! Bahannya adem, gak gampang kusut. Model peplum-nya bikin kelihatan lebih langsing. Suka!' - Dewi R.",
-                    rating: 4.8,
-                    reviewCount: 2000
-                },
-                // ===== PRODUK 13 - Marina (BODY CARE) =====
-                {
-                    id: 13,
+                    id: 9,
                     category: "bodylotion",
-                    name: "Marina Hand Body Lotion UV White Extra SPF30 185ml [2pcs]",
-                    price: "Rp 35.640",
-                    imageUrl: "https://placehold.co/600x600/FCE7F3/9D174D?text=Body+Care+9",
-                    shopeeUrl: "https://s.shopee.co.id/70COu0JEgq",
-                    description: "Stok lotion harian Anda. Paket hemat 2 pcs Marina UV White dengan SPF 30. Melindungi kulit dari paparan sinar UV sekaligus mencerahkan dan melembabkan. Lotion andalan keluarga Indonesia.",
-                    specs: "- Brand: Marina\n- Isi Paket: 2 pcs @ 185ml\n- Perlindungan: Extra SPF 30\n- Varian: UV White\n- Keunggulan: Harga Bundle Hemat",
-                    review: "'Selalu stok Marina di rumah. Pas banget ada promo beli 2 lebih murah. Wanginya segar, cepat meresap, dan ada SPF 30.' - Siti A.",
+                    name: "Grace and Glow Brightening Sun Body Serum SPF 30 PA+++",
+                    price: "Rp 36.900",
+                    imageUrl: "grace.webp",
+                    shopeeUrl: "https://s.shopee.co.id/3qFN7hYGaJ",
+                    description: "Body Serum yang berfungsi ganda sebagai pencerah dan pelindung matahari harian dengan **SPF 30 PA+++**. Diformulasikan dengan **Alpha Arbutin** dan **Bearberry Extract** untuk mencerahkan, serta memberikan keharuman mewah yang terinspirasi dari parfum *high-end*.",
+                    specs: "- Brand: Grace and Glow\n- Perlindungan UV: SPF 30 PA+++\n- Kandungan Aktif: Alpha Arbutin, Bearberry Extract (Arctostaphylos Uva-Ursi Extract), UV Filter\n- Tipe: Sun Body Serum (Mencerahkan + Melindungi)\n- Volume: 100ml (BPOM NA18220104829)",
+                    review: "'Aromanya sangat memikat, seperti menggunakan parfum mahal dan tahan lama. Teksturnya ringan, tidak lengket, dan memberikan perlindungan yang memadai untuk aktivitas harian.'",
+                    rating: 4.9,
+                    reviewCount: 215900 
+                },
+                // ===== PRODUK 10 - NIVEA (BODY CARE) - REFINED =====
+                {
+                    id: 10,
+                    category: "bodylotion",
+                    name: "NIVEA Body Lotion Extra White Brightening 190ML",
+                    price: "Rp 27.500",
+                    imageUrl: "nivea.webp",
+                    shopeeUrl: "https://s.shopee.co.id/4AsDWQdFCt",
+                    description: "Body Lotion klasik yang teruji klinis mencerahkan dan melembapkan kulit secara intensif. Diperkaya dengan konsentrasi **Vitamin C** dan **UV Filter** untuk melindungi kulit dari kusam akibat paparan sinar UV harian. Tekstur cepat meresap, ideal untuk kulit normal hingga kering.",
+                    specs: "- Brand: NIVEA\n- Varian: Extra White Brightening\n- Volume: 190ML\n- Kandungan Utama: Vitamin C, UV Filter\n- Keunggulan: Mencerahkan klinis, Melembapkan jangka panjang, Formula Non-Sticky",
+                    review: "'Lotion andalan yang selalu digunakan. Sangat efektif untuk mengatasi kulit kering dan memberikan kelembapan yang optimal. Aromanya khas dan lembut. Produk yang konsisten kualitasnya.'",
                     rating: 4.9,
                     reviewCount: 10000
                 },
-                // ===== PRODUK 14 - CILILY (FASHION) =====
+                // ===== PRODUK 11 - Purbasari Bundle (BODY CARE) - REFINED =====
+                {
+                    id: 11,
+                    category: "bodylotion",
+                    name: "[BUNDLE SUPER ISI 2] Purbasari Body Serum Gluta Hya + White Glow",
+                    price: "Rp 47.500",
+                    imageUrl: "glutanya.webp",
+                    shopeeUrl: "https://s.shopee.co.id/3VcWjJm67t",
+                    description: "Paket hemat yang mengkombinasikan dua varian Body Serum Purbasari untuk hasil kulit cerah dan lembap maksimal: White Glow (Instant White, Niacinamide) dan Gluta Hya/Cybright (lebih powerful, meremajakan kulit, dan anti-UV).",
+                    specs: "- Brand: Purbasari\n- Isi Paket: 2 Botol Body Serum (Gluta Hya/Cybright & White Glow)\n- Volume: 2 x 180ml\n- Manfaat Gabungan: Pencerahan superior, Instant Glow, Meremajakan kulit, Perlindungan dari UV\n- BPOM: NA18220109846, NA18240102926",
+                    review: "'Pembelian bundle yang sangat menguntungkan. Kedua serum memiliki fungsi berbeda yang saling melengkapi. Cocok untuk rutinitas perawatan kulit pagi dan malam. Kualitasnya terjamin.'",
+                    rating: 4.9,
+                    reviewCount: 2500 
+                },
+                // ===== PRODUK 12 - Lavojoy Share (BODY CARE) - REFINED =====
+                {
+                    id: 12,
+                    category: "bodylotion",
+                    name: "[Share in Jar] Lavojoy Daily Shine Body Serum (Tester)",
+                    price: "Rp 10.000",
+                    imageUrl: "rum.webp",
+                    shopeeUrl: "https://s.shopee.co.id/50RKWBYbt3",
+                    description: "Opsi hemat untuk mencoba dan menentukan kecocokan shade Lavojoy Daily Shine Body Serum sebelum membeli ukuran penuh. Produk dijamin **100% original**, dipindahkan ke wadah kecil yang **steril dan higienis**.",
+                    specs: "- Tipe: Share in Jar (Kemasan Ulang/Tester)\n- Produk: Lavojoy Daily Shine Body Serum\n- Ukuran Varian: 5ml atau 10ml\n- Jaminan: Produk Original, Proses Pemindahan Higienis, Amanah",
+                    review: "'Sangat membantu bagi yang ingin mencoba produk viral ini. Kemasan tester yang amanah dan higienis. Setelah cocok, saya akan membeli full size di toko ini.'",
+                    rating: 4.0,
+                    reviewCount: 2000 
+                },
+                // ===== PRODUK 13 - Kaos Crop (FASHION) - REFINED =====
+                {
+                    id: 13,
+                    category: "baju",
+                    name: "Kaos Wanita Crop Top Korea Cotton Stretch",
+                    price: "Rp 25.472",
+                    imageUrl: "croptop.webp",
+                    shopeeUrl: "https://s.shopee.co.id/70COu0JEgq",
+                    description: "Kaos *crop top* bergaya Korea yang merupakan *basic item* wajib. Dibuat dari material **Cotton Stretch** yang elastis, sangat adem, dan mengikuti bentuk tubuh dengan nyaman. Pilihan tepat untuk dipadukan dengan bawahan *high-waist* di cuaca panas.",
+                    specs: "- Bahan: Cotton Stretch (Melar, Adem)\n- Model: Crop Top Korean Style, Lengan Pendek\n- Garis Leher: Kerah Bulat\n- Ukuran Tersedia: S hingga XL (Lingkar Dada dapat melar hingga +/- 20 cm dari ukuran dasar)\n- Cocok untuk: Musim Panas, Kasual",
+                    review: "'Kaos dengan harga yang sangat terjangkau namun kualitas bahan Cotton Stretch-nya bagus. Nyaman dipakai dan pas di badan. Sudah borong beberapa warna berbeda.'",
+                    rating: 4.7,
+                    reviewCount: 8300 
+                },
+                // ===== PRODUK 14 - Arika Blouse (FASHION) - REFINED =====
                 {
                     id: 14,
                     category: "baju",
-                    name: "CILILY - Ellona Long Sleeve top Blouse Atasan Wanita",
+                    name: "Arika Blouse Stripe Peplum Wanita Lengan Puff (Semiwoll)",
+                    price: "Rp 40.500",
+                    imageUrl: "artika.webp",
+                    shopeeUrl: "https://s.shopee.co.id/1LY29nQpIw",
+                    description: "Blouse atasan wanita dengan model *peplum* yang memberikan ilusi ramping dan efek *body fitted* yang elegan. Desain dipermanis dengan lengan *puff* dan motif garis (*stripe*) vertikal. Terbuat dari bahan **Semiwoll** yang nyaman, cocok untuk pakaian kasual hingga formal.",
+                    specs: "- Model: Peplum Blouse (Fit Body Fitted)\n- Detail: Lengan Puff, Motif Stripe Garis-Garis\n- Bahan: Semiwoll\n- Ukuran: S/M (LD 98-100), L/XL (LD 108-110), XXL (LD 118-120)\n- Acara: Kasual dan Kantor",
+                    review: "'Model blousenya sangat menawan. Bahan semowoll adem dan tidak mudah kusut. Potongan peplumnya membuat penampilan terlihat lebih ramping. Sangat memuaskan.'",
+                    rating: 4.8,
+                    reviewCount: 5000 
+                },
+                // ===== PRODUK 15 - Marina (BODY CARE) - REFINED =====
+                {
+                    id: 15,
+                    category: "bodylotion",
+                    name: "MARINA Handbody Lotion UV White Healthy & Glow 460ml",
+                    price: "Rp 27.900",
+                    imageUrl: "https://placehold.co/600x600/FCE7F3/9D174D?text=Body+Care+9",
+                    shopeeUrl: "https://s.shopee.co.id/4AsDXH8gxx",
+                    description: "Handbody Lotion andalan dengan formula **3X Active White** yang terdiri dari Milk Protein, Pearl Nutrient, dan Niacinamide, terbukti mencerahkan kulit hingga 3 kali lebih cepat. Dilengkapi **UV Protection** untuk perlindungan optimal dari sinar matahari dan menjaga kulit tetap sehat dan glowing.",
+                    specs: "- Brand: Marina\n- Varian: UV White Healthy & Glow\n- Volume: 460ml\n- Keunggulan: 3X Active White, UV Protection\n- Komposisi: Milk Protein, Pearl Nutrient, Niacinamide, Tocopheryl Acetate\n- Tipe: Cepat meresap, Tidak berminyak (BPOM & Halal)",
+                    review: "'Lotion yang selalu tersedia di rumah karena kualitasnya terjamin. Efek melembapkannya tahan lama, cepat meresap, dan efektif mencegah kulit kusam. Sangat direkomendasikan untuk harian.'",
+                    rating: 4.9,
+                    reviewCount: 10000 
+                },
+                // ===== PRODUK 16 - CILILY (FASHION) - REFINED =====
+                {
+                    id: 16,
+                    category: "baju",
+                    name: "CILILY - Ellona Long Sleeve Top Blouse Atasan Wanita",
                     price: "Rp 76.999",
                     imageUrl: "https://placehold.co/600x600/FDF2F8/9D174D?text=Fashion+5",
-                    shopeeUrl: "https://s.shopee.co.id/1LY29nQpIw",
-                    description: "Atasan blouse lengan panjang 'Ellona' dari CILILY yang simpel namun elegan. Terbuat dari bahan berkualitas yang 'jatuh' dan adem. Desain minimalis membuatnya mudah dipadukan untuk tampilan formal (kerja) atau kasual.",
-                    specs: "- Brand: CILILY\n- Tipe: Long Sleeve Blouse\n- Nama Model: Ellona\n- Bahan: Crepe Premium (Jatuh, Adem)\n- Ukuran: All Size fit to XL",
-                    review: "'Bahannya sebagus itu! Beneran adem dan 'jatuh', kelihatan mahal. Desainnya simpel tapi elegan. Cocok buat ngantor.' - Tika S.",
+                    shopeeUrl: "https://s.shopee.co.id/AA9QgOJ65B",
+                    description: "Atasan blouse lengan panjang 'Ellona' dengan desain minimalis dan elegan. Terbuat dari bahan **Crepe Premium** yang memiliki karakteristik 'jatuh', adem, dan tidak mudah kusut. Blouse ini sangat serbaguna, mudah dipadukan untuk tampilan profesional maupun santai.",
+                    specs: "- Brand: CILILY\n- Tipe: Long Sleeve Blouse\n- Bahan: Crepe Premium (Jatuh, Adem)\n- Desain: Minimalis, Lengan Panjang\n- Ukuran: All Size fit to XL",
+                    review: "'Kualitas bahan Blouse ini melebihi ekspektasi. Beneran adem, flowy, dan terlihat sangat mewah. Modelnya klasik, cocok untuk digunakan ke kantor atau acara formal lainnya.'",
                     rating: 4.9,
                     reviewCount: 3000
                 }
             ];
             // <!-- =================================================================== -->
-            // <!-- = AKHIR BAGIAN EDIT DATA PRODUK                                    = -->
+            // <!-- = AKHIR BAGIAN EDIT DATA PRODUK                                    = -->
 
             const productGrid = document.getElementById('product-grid');
             const modal = document.getElementById('product-modal');
@@ -690,11 +706,36 @@
             function renderStars(rating) {
                 let starsHTML = '';
                 const fullStars = Math.floor(rating);
-                const emptyStars = 5 - fullStars;
+                // Tambahkan pengecekan untuk setengah bintang (jika ada)
+                const hasHalfStar = rating - fullStars >= 0.5;
+                const totalStars = 5;
+                let currentStars = 0;
+                
+                // Full stars
                 const starSvgFull = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>';
+                // Half star (Simplified to look like a fill up to half)
+                const starSvgHalf = '<svg class="w-4 h-4" viewBox="0 0 20 20"><defs><linearGradient id="half-star-fill" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="50%" style="stop-color:currentColor;stop-opacity:1"/><stop offset="50%" style="stop-color:transparent;stop-opacity:1"/></linearGradient></defs><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z" fill="url(#half-star-fill)" stroke="currentColor" stroke-width="0.5"/></svg>';
+                // Empty star
                 const starSvgEmpty = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.96 6.012h6.324c.969 0 1.371 1.243.588 1.81L17.2 15.655l1.96 6.012c.3.921-.755 1.688-1.54 1.173L12 19.387l-5.62 3.453c-.785.515-1.84-.252-1.54-1.173l1.96-6.012L2.176 10.75c-.783-.567-.38-1.81.588-1.81h6.324l1.96-6.012z"/></svg>'; 
-                for (let i = 0; i < fullStars; i++) { starsHTML += starSvgFull; }
-                for (let i = 0; i < emptyStars; i++) { starsHTML += starSvgEmpty; }
+                
+                // Append full stars
+                for (let i = 0; i < fullStars; i++) { 
+                    starsHTML += starSvgFull;
+                    currentStars++;
+                }
+
+                // Append half star
+                if (hasHalfStar && currentStars < totalStars) {
+                    starsHTML += starSvgHalf;
+                    currentStars++;
+                }
+
+                // Append empty stars
+                while (currentStars < totalStars) {
+                    starsHTML += starSvgEmpty;
+                    currentStars++;
+                }
+
                 return starsHTML;
             }
 
@@ -716,7 +757,14 @@
                     const card = document.createElement('div');
                     card.className = `group product-card overflow-hidden fade-in`;
                     card.style.animationDelay = `${productDelay}ms`;
-                    if (productDelay < 400) { productDelay += 100; }
+                    // Limit the maximum delay to prevent very slow loading on mobile grids
+                    if (productDelay < 400) { productDelay += 100; } 
+                    
+                    // Determine category label
+                    let categoryLabel = product.category.charAt(0).toUpperCase() + product.category.slice(1);
+                    if (product.category === 'bodylotion') {
+                        categoryLabel = 'Body Care';
+                    }
 
                     card.innerHTML = `
                         <div class="w-full aspect-square overflow-hidden rounded-t-2xl">
@@ -725,7 +773,7 @@
                                  class="w-full h-full object-cover product-card-image-wrapper">
                         </div>
                         <div class="p-5">
-                            <span class="text-xs font-medium text-pink-600 bg-pink-100 px-2 py-1 rounded-full capitalize">${product.category.replace('bodylotion', 'body care')}</span>
+                            <span class="text-xs font-medium text-pink-600 bg-pink-100 px-2 py-1 rounded-full">${categoryLabel}</span>
                             <h3 class="text-lg font-semibold text-gray-800 truncate mt-2" title="${product.name}">${product.name}</h3>
                             <div class="flex items-center mt-1">
                                 <div class="flex text-yellow-500 mr-1">${renderStars(product.rating)}</div>
@@ -875,8 +923,8 @@
 
                 // 4. Fungsi Reset Autoplay
                 const resetTrustInterval = () => {
-                     clearInterval(trustInterval);
-                     trustInterval = setInterval(() => {
+                      clearInterval(trustInterval);
+                      trustInterval = setInterval(() => {
                         currentTrustSlide++;
                         if (currentTrustSlide >= trustSlides.length) {
                             currentTrustSlide = 0;
