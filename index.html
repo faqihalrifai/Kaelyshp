@@ -106,6 +106,7 @@
         .delay-300 { animation-delay: 300ms; }
         .delay-400 { animation-delay: 400ms; }
         
+        /* CSS untuk tampilan slider horizontal (hanya scrollbar styling) */
         .category-scrollbar::-webkit-scrollbar { height: 4px; }
         .category-scrollbar::-webkit-scrollbar-track { background: #FDF2F8; border-radius: 10px; }
         .category-scrollbar::-webkit-scrollbar-thumb { background: #FBCFE8; border-radius: 10px; }
@@ -199,19 +200,16 @@
         </div>
     </nav>
 
-    <!-- ===== HERO SECTION (MENGGUNAKAN GAMBAR MODEL.JPG) - TEKS DESKRIPSI DIHAPUS ===== -->
+    <!-- ===== HERO SECTION (MENGGUNAKAN GAMBAR MODEL.JPG) - HANYA JUDUL UTAMA TERSISA ===== -->
     <header class="bg-pink-50">
         <!-- [FIX] Padding mobile diperkecil (py-12), desktop tetap (md:py-16) -->
         <div class="container mx-auto px-6 py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <!-- Kolom Teks -->
             <div class="text-center md:text-left fade-in">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
+                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-8">
                     Your Trusted <br><span class="text-pink-600">Beauty & Fashion</span> Curator
                 </h1>
-                <!-- TEKS DESKRIPSI LAMA DIHAPUS, MENYISAKAN JUDUL UTAMA -->
-                <!-- <p class="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
-                    Kami mengkurasi produk kecantikan dan fashion viral terbaik. Semua dijamin 100% Original, BPOM, dan aman.
-                </p> -->
+                
                 <!-- [FIX] Font mobile diperkecil (text-base), desktop tetap (md:text-lg) -->
                 <a href="#produk" class="bg-pink-600 text-white py-3 px-8 rounded-full font-semibold text-base md:text-lg transition-colors hover:bg-pink-700">
                     Mulai Belanja
@@ -278,15 +276,15 @@
     <!-- ===== BAGIAN PRODUK (DENGAN KATEGORI) ===== -->
     <main id="produk" class="container mx-auto px-6 py-16">
         
-        <!-- ===== NAVIGASI KATEGORI (KATEGORI DIKURANGI) ===== -->
+        <!-- ===== NAVIGASI KATEGORI (DIUBAH MENJADI SLIDER HORIZONTAL) ===== -->
         <div class="mb-10 fade-in delay-100">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Jelajahi Kategori</h2>
-            <!-- Container Tab Kategori: flex-wrap dan justify-center untuk mobile fix -->
-            <div id="category-tabs" class="flex flex-wrap gap-2 overflow-x-auto pb-4 category-scrollbar justify-center">
-                <button class="category-btn whitespace-nowrap bg-pink-600 text-white py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="all">✔️ Semua</button>
-                <button class="category-btn whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="skincare">Skincare</button>
-                <button class="category-btn whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="bodylotion">Body Lotion</button>
-                <button class="category-btn whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="baju">Baju</button>
+            <!-- Container Tab Kategori: overflow-x-scroll dan flex-nowrap untuk slider -->
+            <div id="category-tabs" class="flex flex-nowrap space-x-2 overflow-x-auto pb-4 category-scrollbar justify-start md:justify-center">
+                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-pink-600 text-white py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="all">✔️ Semua</button>
+                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="skincare">Skincare</button>
+                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="bodylotion">Body Lotion</button>
+                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="baju">Baju</button>
             </div>
         </div>
 
@@ -966,6 +964,8 @@
             });
 
             // 4. Event listener untuk Tab Kategori
+            // Logic ini tidak diperlukan lagi karena scroll sudah diatur di CSS,
+            // tetapi saya akan membiarkan logic aktivasi tombol tetap ada.
             categoryTabs.forEach(tab => {
                 tab.addEventListener('click', () => {
                     const category = tab.dataset.category;
