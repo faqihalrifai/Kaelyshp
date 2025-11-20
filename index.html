@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ===== [FIX] OPTIMASI SEO (LEBIH TAJAM) ===== -->
+    <!-- ===== OPTIMASI SEO (LEBIH TAJAM) ===== -->
     <title>kaelyshp - Skincare Viral, Fashion & Body Care Terkurasi | Shopee</title>
     <meta name="description" content="Temukan skincare viral (PHERINI, Lavojoy, Purbasari), fashion, & body care terkurasi di kaelyshp. 100% Original, BPOM. Belanja aman via Shopee.">
     <meta name="keywords" content="skincare viral, fashion wanita, body care, kaelyshp, pherini, lavojoy, purbasari, grace and glow, mukena premium, sweater rajut, blouse korea, pemutih ketiak, toko online shopee, bpom, original">
@@ -144,13 +144,31 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             border: 1px solid #FBCFE8;
         }
+
+        /* Style untuk section Tentang Kami yang baru */
+        .about-section-container {
+            background-color: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #FBCFE8;
+            padding: 3rem;
+            
+        }
+        .about-feature {
+            border-left: 3px solid #F472B6; /* pink-500 line indicator */
+            padding-left: 1.5rem;
+            transition: background-color 0.3s ease;
+        }
+        .about-feature:hover {
+            background-color: #FFF7F9; /* pink-50 hover */
+        }
     </style>
 </head>
 <body class="bg-pink-50 text-gray-700">
 
-    <!-- ===== BAR PROMOSI ATAS (TEMA PINK) ===== -->
+    <!-- ===== BAR PROMOSI ATAS (SLOGAN BARU) - IKON PERMATA TETAP ===== -->
     <div class="bg-pink-600 text-white text-center py-2 px-6 text-sm font-semibold">
-        <i class="fas fa-tags mr-2"></i> Diskon Spesial! Gratis Ongkir untuk Pesanan di atas Rp 200.000 <i class="fas fa-tags ml-2"></i>
+        <i class="fas fa-gem mr-2"></i> Sentuhan Indah untuk Setiap Detikmu <i class="fas fa-gem ml-2"></i>
     </div>
 
     <!-- ===== NAVIGASI / HEADER ===== -->
@@ -158,13 +176,12 @@
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-3xl font-bold text-pink-600">kaelyshp</a>
             
-            <!-- Menu Desktop -->
+            <!-- Menu Desktop (Link Tentang Kami diubah ke anchor) -->
             <div class="space-x-6 hidden md:flex items-center">
                 <a href="#produk" class="text-gray-600 hover:text-pink-600">Produk</a>
                 <a href="#jaminan" class="text-gray-600 hover:text-pink-600">Keunggulan</a>
                 <a href="#faq" class="text-gray-600 hover:text-pink-600">FAQ</a>
-                <a href="#" class="text-gray-600 hover:text-pink-600">Blog</a>
-                <a href="tentang.html" class="text-gray-600 hover:text-pink-600">Tentang Kami</a>
+                <a href="#tentang" class="text-gray-600 hover:text-pink-600">Tentang Kami</a>
             </div>
             
             <!-- Tombol Menu Mobile -->
@@ -173,28 +190,27 @@
             </button>
         </div>
         
-        <!-- ===== MENU MOBILE (FUNGSIONAL) ===== -->
+        <!-- ===== MENU MOBILE (FUNGSIONAL) (Link Tentang Kami diubah ke anchor) ===== -->
         <div id="mobile-menu" class="hidden md-hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100">
             <a href="#produk" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Produk</a>
             <a href="#jaminan" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Keunggulan</a>
             <a href="#faq" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">FAQ</a>
-            <a href="#" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Blog</a>
-            <a href="tentang.html" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Tentang Kami</a>
+            <a href="#tentang" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Tentang Kami</a>
         </div>
     </nav>
 
-    <!-- ===== [FIX] HERO SECTION (MOBILE CLEAN) ===== -->
+    <!-- ===== HERO SECTION (MENGGUNAKAN GAMBAR MODEL.JPG) ===== -->
     <header class="bg-pink-50">
         <!-- [FIX] Padding mobile diperkecil (py-12), desktop tetap (md:py-16) -->
         <div class="container mx-auto px-6 py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <!-- Kolom Teks -->
             <div class="text-center md:text-left fade-in">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-4">
-                    Your Trusted <br><span class="text-pink-600">Beauty & Fashion</span> Bestie
+                    Your Trusted <br><span class="text-pink-600">Beauty & Fashion</span> Curator
                 </h1>
-                <!-- [FIX] Font mobile diperkecil (text-base), desktop tetap (md:text-lg) -->
+                <!-- [FIX] Teks diubah menjadi ringkas dan profesional -->
                 <p class="text-base md:text-lg text-gray-600 mb-8 leading-relaxed">
-                    Kami mengkurasi produk kecantikan & fashion viral terbaik. 100% Original, BPOM, dan aman terpercaya.
+                    Kami mengkurasi produk kecantikan dan fashion viral terbaik. Semua dijamin 100% Original, BPOM, dan aman.
                 </p>
                 <!-- [FIX] Font mobile diperkecil (text-base), desktop tetap (md:text-lg) -->
                 <a href="#produk" class="bg-pink-600 text-white py-3 px-8 rounded-full font-semibold text-base md:text-lg transition-colors hover:bg-pink-700">
@@ -203,12 +219,12 @@
             </div>
             <!-- Kolom Gambar -->
             <div class="fade-in delay-200">
-                <img src="https://placehold.co/600x600/FBCFE8/9D174D?text=Skincare+&+Fashion" alt="Model Skincare dan Fashion Kaelyshp" class="w-full h-full object-cover rounded-2xl shadow-xl">
+                <img src="model.jpg" alt="Model Skincare dan Fashion Kaelyshp" class="w-full h-full object-cover rounded-2xl shadow-xl">
             </div>
         </div>
     </header>
 
-    <!-- ===== [FIX] BAGIAN JAMINAN (SLIDER OTOMATIS) - ICON UPDATED ===== -->
+    <!-- ===== BAGIAN JAMINAN (SLIDER OTOMATIS) - ICON UPDATED ===== -->
     <section id="jaminan" class="bg-white py-10 overflow-hidden">
         <div class="container mx-auto px-6">
             <!-- Slider Container -->
@@ -262,7 +278,7 @@
     <!-- ===== BAGIAN PRODUK (DENGAN KATEGORI) ===== -->
     <main id="produk" class="container mx-auto px-6 py-16">
         
-        <!-- ===== NAVIGASI KATEGORI (FIX MOBILE VIEW) ===== -->
+        <!-- ===== NAVIGASI KATEGORI (KATEGORI DIKURANGI) ===== -->
         <div class="mb-10 fade-in delay-100">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Jelajahi Kategori</h2>
             <!-- Container Tab Kategori: flex-wrap dan justify-center untuk mobile fix -->
@@ -270,9 +286,7 @@
                 <button class="category-btn whitespace-nowrap bg-pink-600 text-white py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="all">✔️ Semua</button>
                 <button class="category-btn whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="skincare">Skincare</button>
                 <button class="category-btn whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="bodylotion">Body Lotion</button>
-                <button class="category-btn whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="hijab">Hijab</button>
                 <button class="category-btn whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="baju">Baju</button>
-                <button class="category-btn whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="sepatu">Sepatu</button>
             </div>
         </div>
 
@@ -284,7 +298,7 @@
         </div>
     </main>
 
-    <!-- ===== BAGIAN FAQ (TANYA JAWAB TEMA PINK) ===== -->
+    <!-- ===== BAGIAN FAQ (PEMBESIHAN TANDA BINTANG) ===== -->
     <section id="faq" class="bg-white py-16">
         <div class="container mx-auto px-6 max-w-3xl">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-10 fade-in">Yang Sering Ditanyakan (FAQ)</h2>
@@ -333,7 +347,7 @@
                     </button>
                     <div class="accordion-content mt-2">
                         <p class="text-gray-600">
-                            Semua stok produk kami sinkron secara *real-time* dengan stok di Shopee. Selama produk bisa dimasukkan ke keranjang di Shopee, berarti produk tersebut 100% siap untuk dikirim.
+                            Semua stok produk kami sinkron secara real-time dengan stok di Shopee. Selama produk bisa dimasukkan ke keranjang di Shopee, berarti produk tersebut 100% siap untuk dikirim.
                         </p>
                     </div>
                 </div>
@@ -345,20 +359,71 @@
                     </button>
                     <div class="accordion-content mt-2">
                         <p class="text-gray-600">
-                            Kami adalah *curator*. Kami tidak menjual 'semua' produk, tapi kami menjual produk 'terbaik'. Setiap item di kaelyshp telah lolos seleksi ketat kami berdasarkan keaslian (100% Original), keamanan (BPOM), dan ulasan pelanggan yang terbukti viral & berkualitas.
+                            Kami adalah curator. Kami tidak menjual 'semua' produk, tapi kami menjual produk 'terbaik'. Setiap item di kaelyshp telah lolos seleksi ketat kami berdasarkan keaslian (100% Original), keamanan (BPOM), dan ulasan pelanggan yang terbukti viral & berkualitas.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+    
+    <!-- ===== BAGIAN TENTANG KAMI (NEW PROFESSIONAL LOOK - TEKS RINGKAS) ===== -->
+    <section id="tentang" class="bg-pink-50 py-16">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 fade-in">Prinsip Kurasi kaelyshp</h2>
+                <p class="text-gray-600 leading-relaxed fade-in delay-100">
+                    kaelyshp adalah kurator terpercaya yang menjamin produk terbaik, menghilangkan keraguan Anda.
+                </p>
+            </div>
 
-    <!-- ===== [FIX] BAGIAN CTA (NEWSLETTER) ===== -->
+            <div class="about-section-container max-w-5xl mx-auto">
+                <!-- Paragraf Utama -->
+                <p class="text-gray-800 text-lg mb-8 text-center font-medium">
+                    Kami berkomitmen hanya menyajikan item yang telah teruji kualitasnya secara cermat, didirikan dengan visi menaikkan standar belanja Beauty & Fashion Anda.
+                </p>
+
+                <!-- Daftar Prinsip (Modern List Style - TEKS RINGKAS) -->
+                <div class="space-y-6">
+                    
+                    <div class="about-feature p-4 rounded-lg">
+                        <h3 class="text-xl font-bold text-pink-700 mb-1 flex items-center">
+                            <i class="fas fa-microscope mr-3"></i> 1. Kualitas Ultra Ketat
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Kami menganalisis rating, membaca ribuan ulasan, dan memastikan efikasi terbukti. Kami adalah filter Anda di tengah banyaknya pilihan.
+                        </p>
+                    </div>
+
+                    <div class="about-feature p-4 rounded-lg">
+                        <h3 class="text-xl font-bold text-pink-700 mb-1 flex items-center">
+                            <i class="fas fa-lock mr-3"></i> 2. Jaminan Otentikasi Penuh
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Semua produk dijamin 100% Original dan bersertifikasi resmi BPOM. Kami hanya bekerja sama dengan distributor terverifikasi untuk legalitas dan keamanan.
+                        </p>
+                    </div>
+
+                    <div class="about-feature p-4 rounded-lg">
+                        <h3 class="text-xl font-bold text-pink-700 mb-1 flex items-center">
+                            <i class="fas fa-tags mr-3"></i> 3. Harga Optimal & Transaksi Aman
+                        </h3>
+                        <p class="text-gray-600 leading-relaxed">
+                            Kami memastikan harga kompetitif. Transaksi dilakukan aman dan transparan melalui platform Shopee, menjamin perlindungan konsumen.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== BAGIAN CTA (NEWSLETTER) (TEKS DIUBAH) ===== -->
     <section id="cta" class="bg-pink-100 py-16">
         <div class="container mx-auto px-6 text-center max-w-2xl">
             <h2 class="text-3xl font-bold text-gray-800 mb-4 fade-in">Jadi yang Pertama Tahu!</h2>
             <p class="text-gray-600 leading-relaxed mb-8 fade-in delay-100">
-                Dapatkan info produk terbaru, tips & trik, dan promo spesial langsung ke inbox Anda.
+                Dapatkan info produk terbaru dan promo spesial langsung ke inbox Anda.
             </p>
             
             <!-- [FIX] Form diubah untuk success message -->
@@ -379,44 +444,37 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER (TEMA PINK) ===== -->
+    <!-- ===== FOOTER (HANYA SHOPEE & LINK INTERNAL) - TEXT REVISED ===== -->
     <footer class="bg-gray-800 text-white pt-16 pb-8">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
-            <!-- Kolom 1: Tentang -->
+            <!-- Kolom 1: Tentang (TEXT REVISED) -->
             <div>
                 <h4 class="text-2xl font-bold text-white mb-4">kaelyshp</h4>
                 <p class="text-gray-400 leading-relaxed">
-                    Bestie terpercaya untuk kurasi produk viral. Temukan skincare, fashion, dan body care 100% Original, Aman, dan BPOM. <!-- [FIX] Teks dibuat lebih menarik -->
+                    Kurator terdepan yang berfokus pada kualitas. Kami menyajikan produk kecantikan dan fashion pilihan dengan jaminan 100% Original, BPOM, dan standar mutu tinggi.
                 </p>
             </div>
             
-            <!-- Kolom 2: Navigasi Cepat -->
+            <!-- Kolom 2: Navigasi Cepat (Semua link internal) -->
             <div>
                 <h5 class="text-lg font-semibold text-white mb-4">Navigasi</h5>
                 <ul class="space-y-2">
                     <li><a href="#produk" class="text-gray-400 hover:text-white">Produk</a></li>
                     <li><a href="#jaminan" class="text-gray-400 hover:text-white">Keunggulan</a></li>
                     <li><a href="#faq" class="text-gray-400 hover:text-white">FAQ</a></li>
-                    <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
-                    <li><a href="tentang.html" class="text-gray-400 hover:text-white">Tentang Kami</a> <!-- [FIX] Link diubah ke halaman baru -->
+                    <li><a href="#tentang" class="text-gray-400 hover:text-white">Tentang Kami</a>
                 </ul>
             </div>
 
-            <!-- Kolom 3: Media Sosial -->
+            <!-- Kolom 3: Toko Resmi (Hanya Shopee) -->
             <div>
-                <h5 class="text-lg font-semibold text-white mb-4">Ikuti Kami</h5>
+                <h5 class="text-lg font-semibold text-white mb-4">Kunjungi Kami</h5>
                 <div class="flex space-x-4">
-                    <!-- Ganti '#' dengan link media sosial Anda -->
-                    <a href="#" aria-label="Instagram" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-instagram w-6 h-6 text-xl"></i>
-                    </a>
-                    <a href="#" aria-label="TikTok" class="text-gray-400 hover:text-white">
-                        <i class="fab fa-tiktok w-6 h-6 text-xl"></i>
-                    </a>
                     <a href="https://s.shopee.co.id/5VNa85hUGp" target="_blank" rel="noopener noreferrer" aria-label="Shopee" class="text-gray-400 hover:text-white">
                         <i class="fas fa-store w-6 h-6 text-xl"></i>
                     </a>
                 </div>
+                <!-- Link Instagram, TikTok, dll. Dihapus -->
             </div>
         </div>
 
@@ -496,11 +554,11 @@
         document.addEventListener('DOMContentLoaded', () => {
             
             // <!-- =================================================================== -->
-            // <!-- = DATA PRODUK (DIUPDATE AGAR LEBIH DETAIL DAN PROFESIONAL)      = -->
+            // <!-- = DATA PRODUK (KATEGORI HIJAB & SEPATU DIHAPUS)                 = -->
             // <!-- =================================================================== -->
             
             const masterProductList = [
-                // ===== PRODUK 1 - PHERINI (BODY CARE) - OPTIMIZED SEO & DOTS =====
+                // ===== PRODUK 1 - PHERINI (BODY CARE) =====
                 {
                     id: 1,
                     category: "bodylotion", 
@@ -510,11 +568,11 @@
                     shopeeUrl: "https://s.shopee.co.id/6VG8EKd6uO",
                     description: "Rawat dan cerahkan area lipatan kulit yang gelap seperti ketiak, siku, selangkangan, dan lutut dengan PHERINI Armpit Brightening Cream. Krim spesialis ini diformulasikan untuk kulit sensitif, efektif membuat kulit menjadi putih merata, halus, dan sehat. Krim ini juga membantu mengurangi bau tak sedap dan mengatasi peradangan akibat gesekan kulit. Hasil optimal didapat dengan pemakaian yang konsisten.",
                     specs: "Brand: PHERINI\nVolume: 30ml\nSertifikasi: BPOM RI (NA18211902388)\nKomposisi Utama: Niacinamide (Pencerah kuat), Olea Europa Oil (Anti-inflamasi, kaya Vitamin E), Centella Asiatica Extract (Menjaga elastisitas kulit)\nManfaat: Mencerahkan lipatan, menghaluskan tekstur, mengurangi bau badan, dan melindungi dari iritasi.",
-                    review: ["Produk viral yang benar-benar memberikan hasil. Dalam 2 minggu pemakaian, area ketiak terlihat lebih cerah dan jauh lebih halus. Teksturnya non-lengket dan cepat meresap. Sangat direkomendasikan.", "Sangat membantu mengatasi masalah lipatan hitam di siku dan lutut. Wanginya lembut dan tidak menyengat. Akan *repurchase* terus!", "Krim pencerah ketiak terbaik yang pernah saya coba. Tidak ada efek samping, aman, dan sudah BPOM. Hasilnya terlihat permanen jika dipakai rutin."],
+                    review: ["Produk viral yang benar-benar memberikan hasil. Dalam 2 minggu pemakaian, area ketiak terlihat lebih cerah dan jauh lebih halus. Teksturnya non-lengket dan cepat meresap. Sangat direkomendasikan.", "Sangat membantu mengatasi masalah lipatan hitam di siku dan lutut. Wanginya lembut dan tidak menyengat. Akan repurchase terus!", "Krim pencerah ketiak terbaik yang pernah saya coba. Tidak ada efek samping, aman, dan sudah BPOM. Hasilnya terlihat permanen jika dipakai rutin."],
                     rating: 4.8,
                     reviewCount: 36400 
                 },
-                // ===== PRODUK 2 - HIZA (BAJU) - OPTIMIZED SEO & DOTS =====
+                // ===== PRODUK 2 - HIZA (BAJU) =====
                 {
                     id: 2,
                     category: "baju",
@@ -528,7 +586,7 @@
                     rating: 4.8,
                     reviewCount: 1800 
                 },
-                // ===== PRODUK 3 - Floral Id (BAJU) - OPTIMIZED SEO & DOTS =====
+                // ===== PRODUK 3 - Floral Id (BAJU) =====
                 {
                     id: 3,
                     category: "baju", 
@@ -542,7 +600,7 @@
                     rating: 4.8,
                     reviewCount: 1800 
                 },
-                // ===== PRODUK 4 - Lavojoy (BODY CARE) - OPTIMIZED SEO & DOTS =====
+                // ===== PRODUK 4 - Lavojoy (BODY CARE) =====
                 {
                     id: 4,
                     category: "bodylotion", 
@@ -556,7 +614,7 @@
                     rating: 4.8,
                     reviewCount: 72500 
                 },
-                // ===== PRODUK 5 - Purbasari White Glow (BODY CARE) - OPTIMIZED SEO & DOTS =====
+                // ===== PRODUK 5 - Purbasari White Glow (BODY CARE) =====
                 {
                     id: 5,
                     category: "bodylotion",
@@ -570,21 +628,7 @@
                     rating: 4.8,
                     reviewCount: 15400 
                 },
-                // ===== PRODUK 6 - Jumuna (HIJAB) - OPTIMIZED SEO & DOTS =====
-                {
-                    id: 6,
-                    category: "hijab", // HIJAB (Mukena)
-                    name: "Jumuna - Mukena Dewasa Premium Satin Silk Lasercut",
-                    price: "Rp 99.900",
-                    imageUrl: "jumuna.webp",
-                    shopeeUrl: "https://s.shopee.co.id/8zxTGqJ12a",
-                    description: "Mukena dewasa premium Beatrix dari Jumuna, dirancang untuk ibadah yang lebih khusyuk. Terbuat dari bahan Satin Silk berkualitas tinggi yang 'jatuh' lembut, adem, dan non-menerawang. Dipercantik dengan detail lasercut presisi yang memberikan kesan mewah. Dilengkapi tas mukena cantik.",
-                    specs: "Brand: Jumuna\nBahan: Satin Silk Premium (Adem, Tidak Menerawang)\nDetail: Lasercut Beatrix Mewah\nKelengkapan: Atasan, Bawahan, dan Tas Mukena\nUkuran: Dewasa Jumbo\nPanjang Depan Atasan: 120 cm\nPanjang Belakang: 130 cm",
-                    review: ["Masya Allah, mukenanya sangat cantik. Bahan silk-nya adem dan tidak bikin gerah. Detail lasercut-nya rapi sekali. Kualitas premium dengan harga yang sangat sebanding.", "Warna nude-nya sangat elegan dan lembut. Tas mukena juga cantik, cocok untuk dibawa bepergian. Bikin semangat sholat!", "Bahan Satin Silk-nya terasa mewah. Mukenanya tidak licin dan tidak mudah kusut. Saya sudah beli dua warna berbeda."],
-                    rating: 4.9,
-                    reviewCount: 1200 
-                },
-                // ===== PRODUK 7 - MOOI (BODY CARE) - OPTIMIZED SEO & DOTS =====
+                // ===== PRODUK 7 - MOOI (BODY CARE) =====
                 {
                     id: 7,
                     category: "bodylotion",
@@ -598,7 +642,7 @@
                     rating: 4.8,
                     reviewCount: 27800 
                 },
-                // ===== PRODUK 8 - LADYCOLLECTION (BAJU) - OPTIMIZED SEO & DOTS =====
+                // ===== PRODUK 8 - LADYCOLLECTION (BAJU) =====
                 {
                     id: 8,
                     category: "baju",
@@ -612,7 +656,7 @@
                     rating: 4.8,
                     reviewCount: 500
                 },
-                // ===== PRODUK 9 - Grace and Glow (BODY CARE) - OPTIMIZED SEO & DOTS =====
+                // ===== PRODUK 9 - Grace and Glow (BODY CARE) =====
                 {
                     id: 9,
                     category: "bodylotion",
@@ -626,7 +670,7 @@
                     rating: 4.9,
                     reviewCount: 215900 
                 },
-                // ===== PRODUK 10 - NIVEA (BODY CARE) - OPTIMIZED SEO & DOTS =====
+                // ===== PRODUK 10 - NIVEA (BODY CARE) =====
                 {
                     id: 10,
                     category: "bodylotion",
@@ -640,7 +684,7 @@
                     rating: 4.9,
                     reviewCount: 10000
                 },
-                // ===== PRODUK 11 - Purbasari Bundle (BODY CARE) - OPTIMIZED SEO & DOTS =====
+                // ===== PRODUK 11 - Purbasari Bundle (BODY CARE) =====
                 {
                     id: 11,
                     category: "bodylotion",
@@ -654,7 +698,7 @@
                     rating: 4.9,
                     reviewCount: 2500 
                 },
-                // ===== PRODUK 12 - Lavojoy Share (BODY CARE) - OPTIMIZED SEO & DOTS =====
+                // ===== PRODUK 12 - Lavojoy Share (BODY CARE) =====
                 {
                     id: 12,
                     category: "bodylotion",
@@ -668,7 +712,7 @@
                     rating: 4.0,
                     reviewCount: 2000 
                 },
-                // ===== PRODUK 13 - Kaos Crop (FASHION) - OPTIMIZED SEO & DOTS =====
+                // ===== PRODUK 13 - Kaos Crop (FASHION) =====
                 {
                     id: 13,
                     category: "baju",
@@ -682,7 +726,7 @@
                     rating: 4.7,
                     reviewCount: 8300 
                 },
-                // ===== PRODUK 14 - Arika Blouse (FASHION) - OPTIMIZED SEO & DOTS =====
+                // ===== PRODUK 14 - Arika Blouse (FASHION) =====
                 {
                     id: 14,
                     category: "baju",
@@ -696,7 +740,7 @@
                     rating: 4.8,
                     reviewCount: 5000 
                 },
-                // ===== PRODUK 15 - MARINA UV White (BODY CARE) - OPTIMIZED SEO & DOTS =====
+                // ===== PRODUK 15 - MARINA UV White (BODY CARE) =====
                 {
                     id: 15,
                     category: "bodylotion",
@@ -704,13 +748,13 @@
                     price: "Rp 13.900", 
                     imageUrl: "dropku2.webp",
                     shopeeUrl: "https://s.shopee.co.id/4AsDXH8gxx",
-                    description: "Handbody Lotion andalan MARINA dengan formula unggulan 3X Active White (Milk Protein, Pearl Nutrient, Niacinamide) yang terbukti mencerahkan kulit 3 kali lebih cepat dan meratakan warna kulit. Dilengkapi UV Protection untuk menjaga kulit tetap *glowing* dan terlindungi dari efek buruk sinar matahari. Tekstur ringan, cepat meresap, dan non-lengket, ideal untuk iklim tropis.",
+                    description: "Handbody Lotion anadalan MARINA dengan formula unggulan 3X Active White (Milk Protein, Pearl Nutrient, Niacinamide) yang terbukti mencerahkan kulit 3 kali lebih cepat dan meratakan warna kulit. Dilengkapi UV Protection untuk menjaga kulit tetap *glowing* dan terlindungi dari efek buruk sinar matahari. Tekstur ringan, cepat meresap, dan non-lengket, ideal untuk iklim tropis.",
                     specs: "Brand: Marina\nVarian: UV White Healthy & Glow\nFormula Pencerah: 3X Active White (Milk Protein, Pearl Nutrient, Niacinamide)\nPerlindungan: UV Protection\nTipe: Cepat meresap, Non-berminyak\nVarian Ukuran: 92ml, 185ml, 350ml, 460ml",
                     review: ["Lotion harian yang tidak pernah gagal. Sangat efektif melembapkan dan memberikan perlindungan UV yang memadai. Teksturnya nyaman di kulit, bahkan saat cuaca panas. Wajib stok di rumah.", "Marina selalu jadi pilihan keluarga. Harganya terjangkau dan kualitasnya terjamin BPOM. Kulit jadi lebih cerah dan lembap.", "Botol ukuran besar sangat hemat. Wanginya segar dan lembut. Sangat puas dengan efek *glowing*-nya."],
                     rating: 4.9, 
                     reviewCount: 10000 
                 },
-                // ===== PRODUK 16 - CILILY Blouse (FASHION) - OPTIMIZED SEO & DOTS =====
+                // ===== PRODUK 16 - CILILY Blouse (FASHION) =====
                 {
                     id: 16,
                     category: "baju",
@@ -724,7 +768,7 @@
                     rating: 4.8, 
                     reviewCount: 702 
                 },
-                // ===== PRODUK 17 - Purbasari Habbatussauda (BODY CARE) - OPTIMIZED SEO & DOTS =====
+                // ===== PRODUK 17 - Purbasari Habbatussauda (BODY CARE) =====
                 {
                     id: 17,
                     category: "bodylotion",
@@ -740,8 +784,7 @@
                 },
             ];
             // <!-- =================================================================== -->
-            // <!-- = AKHIR BAGIAN EDIT DATA PRODUK                                    = -->
-
+            
             const productGrid = document.getElementById('product-grid');
             const modal = document.getElementById('product-modal');
             const modalCloseBtn = document.getElementById('modal-close-btn');
@@ -839,8 +882,8 @@
                 let productDelay = 100; 
 
                 const productsToRender = category === 'all' 
-                    ? masterProductList 
-                    : masterProductList.filter(product => product.category === category);
+                    ? masterProductList.filter(p => p.category !== 'hijab' && p.category !== 'sepatu') // Filter produk
+                    : masterProductList.filter(p => p.category === category);
 
                 // Mengganti nama file gambar untuk produk yang baru diupload
                 productsToRender.forEach(p => {
