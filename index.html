@@ -153,6 +153,39 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Testimoni Styling - UPGRADED */
+        .testimonial-grid {
+            column-count: 1;
+            column-gap: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .testimonial-grid {
+                column-count: 2;
+            }
+        }
+        .testimonial-item {
+            break-inside: avoid;
+            margin-bottom: 1.5rem;
+            background-color: white;
+            /* Border and shadow updated for modern look */
+            border: none;
+            border-bottom: 4px solid #FBCFE8; /* Soft pink underline */
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        .testimonial-item:hover {
+            transform: scale(1.03); /* Slight zoom on hover */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Counter Card Styling - REMOVED */
+        .counter-plain {
+            padding: 1.5rem 2rem;
+            transition: all 0.5s ease;
+        }
     </style>
 </head>
 <body class="bg-pink-50 text-gray-700">
@@ -171,6 +204,7 @@
             <div class="space-x-6 hidden md:flex items-center">
                 <a href="#produk" class="text-gray-600 hover:text-pink-600">Produk</a>
                 <a href="#jaminan" class="text-gray-600 hover:text-pink-600">Keunggulan</a>
+                <a href="#testimoni" class="text-gray-600 hover:text-pink-600">Testimoni</a>
                 <a href="#faq" class="text-gray-600 hover:text-pink-600">FAQ</a>
                 <a href="#tentang" class="text-gray-600 hover:text-pink-600">Tentang Kami</a>
             </div>
@@ -185,6 +219,7 @@
         <div id="mobile-menu" class="hidden md-hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100">
             <a href="#produk" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Produk</a>
             <a href="#jaminan" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Keunggulan</a>
+            <a href="#testimoni" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Testimoni</a>
             <a href="#faq" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">FAQ</a>
             <a href="#tentang" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Tentang Kami</a>
         </div>
@@ -195,7 +230,7 @@
         <!-- [FIX] Padding mobile diperkecil (py-12), desktop tetap (md:py-16) -->
         <div class="container mx-auto px-6 py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <!-- Kolom Teks -->
-            <div class="text-center md:text-left animated-section" data-animate>
+            <div class="text-center md:text-left animated-section" data-animate data-delay="0">
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-8">
                     Your Trusted <br><span class="text-pink-600">Beauty & Fashion</span> Curator
                 </h1>
@@ -206,14 +241,14 @@
                 </a>
             </div>
             <!-- Kolom Gambar -->
-            <div class="animated-section delay-200" data-animate>
+            <div class="animated-section" data-animate data-delay="200">
                 <!-- Added loading="lazy" for performance -->
                 <img src="model.jpg" alt="Model Skincare dan Fashion Kaelyshp" class="w-full h-full object-cover rounded-2xl shadow-xl" loading="eager">
             </div>
         </div>
     </header>
 
-    <!-- ===== BAGIAN JAMINAN (SLIDER OTOMATIS) - ICON UPDATED ===== -->
+    <!-- ===== BAGIAN JAMINAN (SLIDER OTOMATIS) - COUNTER ANIMATION ADDED & TEXT UPDATED ===== -->
     <section id="jaminan" class="bg-white py-10 overflow-hidden animated-section" data-animate>
         <div class="container mx-auto px-6">
             <!-- Slider Container -->
@@ -250,7 +285,9 @@
                                 <i class="fas fa-star w-8 h-8 text-pink-600 text-3xl"></i>
                             </div>
                             <h3 class="text-base font-semibold text-gray-800">Produk Pilihan Terbaik</h3>
-                            <p class="text-gray-600 text-sm">Rata-rata Rating 4.8 - 4.9</p>
+                            <!-- TEXT KEMBALI KE RATING DENGAN FORMAT 4.8 - 5.0 -->
+                            <p id="review-counter-target" class="text-xl font-bold text-gray-800">4.8 - 5.0</p>
+                            <p class="text-gray-600 text-sm mt-1">Rata-rata Rating Toko</p>
                         </div>
                     </div>
 
@@ -267,6 +304,12 @@
     <!-- ===== BAGIAN PRODUK (DENGAN KATEGORI) ===== -->
     <main id="produk" class="container mx-auto px-6 py-16">
         
+        <!-- ===== COUNTER BARU: PELANGGAN PUAS (Counter Animation) - REMOVED CARD ===== -->
+        <div class="text-center mb-10 animated-section counter-plain" id="customer-counter-section" data-animate>
+            <p class="text-5xl font-extrabold text-pink-600 mb-1" id="customer-counter-target">0</p>
+            <p class="text-gray-700 font-semibold text-xl">Pelanggan Puas Terkurasi!</p>
+        </div>
+
         <!-- ===== NAVIGASI KATEGORI (DIUBAH MENJADI SLIDER HORIZONTAL) ===== -->
         <div class="mb-10 animated-section" data-animate>
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Jelajahi Kategori</h2>
@@ -286,6 +329,19 @@
             <!-- Kartu Produk akan dimasukkan oleh JavaScript di sini -->
         </div>
     </main>
+
+    <!-- ===== BAGIAN TESTIMONI (BARU, SEBELUM FAQ) - UPGRADED CARD & TEXT REMOVED ===== -->
+    <section id="testimoni" class="bg-pink-100 py-16 animated-section" data-animate>
+        <div class="container mx-auto px-6 max-w-5xl">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Apa Kata Mereka Tentang kaelyshp</h2>
+            
+            <div id="testimoni-grid" class="testimonial-grid">
+                <!-- Testimoni akan di-generate oleh JS -->
+            </div>
+            
+            <!-- Kalimat 100% ulasan nyata dihapus -->
+        </div>
+    </section>
 
     <!-- ===== BAGIAN FAQ (PEMBESIHAN TANDA BINTANG) ===== -->
     <section id="faq" class="bg-white py-16 animated-section" data-animate>
@@ -448,6 +504,7 @@
                 <ul class="space-y-2">
                     <li><a href="#produk" class="text-gray-400 hover:text-white">Produk</a></li>
                     <li><a href="#jaminan" class="text-gray-400 hover:text-white">Keunggulan</a></li>
+                    <li><a href="#testimoni" class="text-gray-400 hover:text-white">Testimoni</a>
                     <li><a href="#faq" class="text-gray-400 hover:text-white">FAQ</a></li>
                     <li><a href="#tentang" class="text-gray-400 hover:text-white">Tentang Kami</a>
                 </ul>
@@ -781,13 +838,32 @@
             const newsletterForm = document.getElementById('newsletter-form');
             const newsletterWrapper = document.getElementById('newsletter-wrapper');
             const newsletterSuccess = document.getElementById('newsletter-success');
+            const reviewCounterTarget = document.getElementById('review-counter-target');
+            const customerCounterTarget = document.getElementById('customer-counter-target');
+            const testimoniGrid = document.getElementById('testimoni-grid');
 
-            // Array nama-nama Indonesia untuk ulasan
+            // Array nama-nama Indonesia untuk ulasan (DIPERLUAS UNTUK AUTHENTICITY)
             const indonesianNames = [
                 "Rina Amelia", "Sari Murni", "Dinda Putri", "Siska Dewi", "Mega Wati", 
                 "Fitri Nur", "Putri Kirana", "Bunga Citra", "Vina Larasati", "Ibu Wati",
                 "Diah Paramita", "Ayu Sekar", "Lisa Permata", "Dewi Ratna", "Siti Aisyah",
-                "Tika Sari", "Lia Andriani", "Adi Pratama", "Maya Kusuma", "Joko Susilo"
+                "Tika Sari", "Lia Andriani", "Adi Pratama", "Maya Kusuma", "Joko Susilo",
+                "Fahri Wijaya", "Indah Sari", "Kevin Gunawan", "Nadya Azka", "Rizky Firmansyah",
+                "Andi Susanto", "Citra Dewi", "Hadi Saputra", "Nurul Hidayah", "Gilang Ramadhan" // Tambahan nama Indonesia
+            ];
+
+            // 10 General Store Testimonials
+            const storeTestimonials = [
+                "Kurasi produknya sangat cerdas, semua yang saya beli selalu berkualitas dan sesuai deskripsi. Benar-benar menghilangkan keraguan saat belanja online!",
+                "Pelayanan cepat dan ramah. Saya suka karena kaelyshp hanya menjual barang yang terbukti BPOM dan original. Sangat terpercaya.",
+                "Pilihan fashion dan body care-nya modern dan *up-to-date*. Harganya juga kompetitif. Thank you kaelyshp!",
+                "Pengiriman selalu aman dan tepat waktu. Kemasan produk sangat rapi. Kualitas kurasi toko ini patut diacungi jempol.",
+                "Akhirnya ketemu toko yang fokus pada kualitas, bukan kuantitas. Produk yang direkomendasikan selalu yang terbaik.",
+                "Saya sudah sering belanja di sini dan tidak pernah kecewa. Semua item 100% original, jaminan mutu terjamin.",
+                "Desain website-nya profesional, dan kurasi produknya pun sama. Saya merekomendasikan kaelyshp kepada teman-teman saya.",
+                "Sangat menghargai fokus pada produk rating tinggi (4.8 ke atas). Ini membuktikan kaelyshp peduli pada kepuasan pelanggan.",
+                "Beli body care viral di sini terjamin keasliannya. Sudah tidak perlu khawatir lagi produk palsu. Top!",
+                "Pilihan blouse fashion-nya unik dan elegan. Bahannya premium semua. Kualitas di atas ekspektasi harga."
             ];
             
             // Intersection Observer Setup for smooth scroll-in animation
@@ -801,6 +877,10 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
+                        // Trigger counter animation for customer count
+                        if (entry.target.id === 'customer-counter-section' && customerCounterTarget) {
+                            animateCounter(5482, customerCounterTarget); 
+                        }
                         observer.unobserve(entry.target);
                     }
                 });
@@ -809,6 +889,66 @@
             document.querySelectorAll('.animated-section').forEach(section => {
                 observer.observe(section);
             });
+
+            // Fungsi Counter Animation
+            function animateCounter(targetValue, element) {
+                const duration = 1500; // 1.5 seconds
+                const start = 0;
+                let startTime = null;
+
+                const step = (timestamp) => {
+                    if (!startTime) startTime = timestamp;
+                    const progress = timestamp - startTime;
+                    const percentage = Math.min(progress / duration, 1);
+                    const currentValue = Math.floor(percentage * targetValue);
+
+                    // Determine formatting based on the element
+                    if (element.id === 'customer-counter-target') {
+                        element.textContent = currentValue.toLocaleString('id-ID') + '+';
+                    }
+
+                    if (percentage < 1) {
+                        window.requestAnimationFrame(step);
+                    } else {
+                        // Final value formatting
+                        if (element.id === 'customer-counter-target') {
+                            element.textContent = targetValue.toLocaleString('id-ID') + '+';
+                        }
+                    }
+                };
+                // Ensure animation only runs once
+                if (!element.dataset.animated) {
+                    window.requestAnimationFrame(step);
+                    element.dataset.animated = 'true';
+                }
+            }
+            
+            // Render Testimoni
+            function renderTestimonials() {
+                let html = '';
+                // Use random names and ensure unique index cycle
+                for (let i = 0; i < storeTestimonials.length; i++) {
+                    // Ensure the name index doesn't exceed the array length
+                    const nameIndex = i % indonesianNames.length;
+                    const reviewerName = indonesianNames[nameIndex]; 
+                    const review = storeTestimonials[i];
+
+                    html += `
+                        <div class="testimonial-item animated-section" data-animate data-delay="${100 + i * 50}">
+                            <div class="flex text-yellow-500 mb-2">${renderStars(5)}</div>
+                            <p class="text-gray-700 italic leading-relaxed text-base">"${review}"</p>
+                            <p class="text-sm font-semibold text-pink-700 mt-3">- ${reviewerName}</p>
+                        </div>
+                    `;
+                }
+
+                testimoniGrid.innerHTML = html;
+                 document.querySelectorAll('#testimoni-grid .animated-section').forEach(item => {
+                    observer.observe(item);
+                });
+            }
+
+
             
             // Fungsi untuk membuat HTML bintang
             function renderStars(rating) {
@@ -846,7 +986,10 @@
                 const reviewsToDisplay = reviewsArray.slice(0, 3); 
                 
                 reviewsToDisplay.forEach((review, index) => {
-                    const reviewerName = indonesianNames[Math.floor(Math.random() * indonesianNames.length)];
+                    // Gunakan nama acak dari array yang sudah diperluas
+                    const randomIndex = Math.floor(Math.random() * indonesianNames.length);
+                    const reviewerName = indonesianNames[randomIndex]; 
+                    
                     reviewsHTML += `
                         <div class="review-card">
                             <p class="text-xs italic text-gray-700 leading-snug">"${review.replace(/\*/g, '')}"</p>
@@ -999,6 +1142,7 @@
 
             // 5. Render produk "Semua" saat halaman pertama kali dimuat
             renderProducts('all');
+            renderTestimonials(); // Render testimonials on load
 
             // 6. Logika untuk Newsletter
             if(newsletterForm) { 
