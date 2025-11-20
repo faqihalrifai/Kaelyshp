@@ -145,24 +145,6 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             border: 1px solid #FBCFE8;
         }
-
-        /* Style untuk section Tentang Kami yang baru */
-        .about-section-container {
-            background-color: white;
-            border-radius: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid #FBCFE8;
-            padding: 3rem;
-            
-        }
-        .about-feature {
-            border-left: 3px solid #F472B6; /* pink-500 line indicator */
-            padding-left: 1.5rem;
-            transition: background-color 0.3s ease;
-        }
-        .about-feature:hover {
-            background-color: #FFF7F9; /* pink-50 hover */
-        }
     </style>
 </head>
 <body class="bg-pink-50 text-gray-700">
@@ -365,53 +347,51 @@
         </div>
     </section>
     
-    <!-- ===== BAGIAN TENTANG KAMI (NEW PROFESSIONAL LOOK - TEKS RINGKAS) ===== -->
-    <section id="tentang" class="bg-pink-50 py-16">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-800 mb-4 fade-in">Prinsip Kurasi kaelyshp</h2>
-                <p class="text-gray-600 leading-relaxed fade-in delay-100">
-                    kaelyshp adalah kurator terpercaya yang menjamin produk terbaik, menghilangkan keraguan Anda.
+    <!-- ===== BAGIAN TENTANG KAMI (RINGKAS, PROFESIONAL, NON-BOX) - FINAL UPGRADE ===== -->
+    <section id="tentang" class="bg-white py-16 border-t border-pink-200">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-10 fade-in">
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Prinsip Kurasi kaelyshp</h2>
+                <p class="text-gray-600 leading-relaxed max-w-3xl mx-auto text-lg font-medium">
+                    Didirikan dengan visi menaikkan standar belanja Beauty & Fashion Anda.
                 </p>
             </div>
+            
+            <!-- Narasi Pembuka -->
+            <p class="text-gray-800 text-lg mb-12 text-center max-w-4xl mx-auto fade-in delay-100">
+                kaelyshp adalah kurator terpercaya yang menjamin produk terbaik, menghilangkan keraguan Anda. Kami berkomitmen hanya menyajikan item yang telah teruji kualitasnya secara cermat.
+            </p>
 
-            <div class="about-section-container max-w-5xl mx-auto">
-                <!-- Paragraf Utama -->
-                <p class="text-gray-800 text-lg mb-8 text-center font-medium">
-                    Kami berkomitmen hanya menyajikan item yang telah teruji kualitasnya secara cermat, didirikan dengan visi menaikkan standar belanja Beauty & Fashion Anda.
-                </p>
-
-                <!-- Daftar Prinsip (Modern List Style - TEKS RINGKAS) -->
-                <div class="space-y-6">
-                    
-                    <div class="about-feature p-4 rounded-lg">
-                        <h3 class="text-xl font-bold text-pink-700 mb-1 flex items-center">
-                            <i class="fas fa-microscope mr-3"></i> 1. Kualitas Ultra Ketat
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            Kami menganalisis rating, membaca ribuan ulasan, dan memastikan efikasi terbukti. Kami adalah filter Anda di tengah banyaknya pilihan.
-                        </p>
-                    </div>
-
-                    <div class="about-feature p-4 rounded-lg">
-                        <h3 class="text-xl font-bold text-pink-700 mb-1 flex items-center">
-                            <i class="fas fa-lock mr-3"></i> 2. Jaminan Otentikasi Penuh
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            Semua produk dijamin 100% Original dan bersertifikasi resmi BPOM. Kami hanya bekerja sama dengan distributor terverifikasi untuk legalitas dan keamanan.
-                        </p>
-                    </div>
-
-                    <div class="about-feature p-4 rounded-lg">
-                        <h3 class="text-xl font-bold text-pink-700 mb-1 flex items-center">
-                            <i class="fas fa-tags mr-3"></i> 3. Harga Optimal & Transaksi Aman
-                        </h3>
-                        <p class="text-gray-600 leading-relaxed">
-                            Kami memastikan harga kompetitif. Transaksi dilakukan aman dan transparan melalui platform Shopee, menjamin perlindungan konsumen.
-                        </p>
-                    </div>
-
+            <!-- Grid Poin Utama (Simple, Clean, Icons - NO NUMBERING) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mt-8">
+                
+                <!-- Poin 1: Kualitas Ultra Ketat -->
+                <div class="text-center fade-in delay-200 space-y-3">
+                    <i class="fas fa-microscope text-5xl text-pink-600"></i>
+                    <h3 class="text-xl font-bold text-gray-800">Kualitas Ultra Ketat</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        Kami menganalisis rating, membaca ribuan ulasan, dan memastikan efikasi terbukti. Kami adalah filter Anda di tengah banyaknya pilihan.
+                    </p>
                 </div>
+
+                <!-- Poin 2: Jaminan Otentikasi Penuh -->
+                <div class="text-center fade-in delay-300 space-y-3">
+                    <i class="fas fa-lock text-5xl text-pink-600"></i>
+                    <h3 class="text-xl font-bold text-gray-800">Jaminan Otentikasi Penuh</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        Semua produk dijamin 100% Original dan bersertifikasi resmi BPOM. Kami hanya bekerja sama dengan distributor terverifikasi.
+                    </p>
+                </div>
+
+                <!-- Poin 3: Harga Optimal & Transaksi Aman -->
+                <div class="text-center fade-in delay-400 space-y-3">
+                    <i class="fas fa-tags text-5xl text-pink-600"></i>
+                    <h3 class="text-xl font-bold text-gray-800">Harga Optimal & Aman</h3>
+                    <p class="text-gray-600 text-base leading-relaxed">
+                        Kami memastikan harga kompetitif. Transaksi aman dan transparan melalui platform Shopee, menjamin perlindungan konsumen.
+                    </p>
+                </div>
+
             </div>
         </div>
     </section>
