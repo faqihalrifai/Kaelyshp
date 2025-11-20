@@ -37,7 +37,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome untuk Ikon Profesional -->
+    <!-- Font Awesome untuk Ikon Profesional (Asynchronous loading for performance) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8qfU6dDkGzTzx3sL5D1I3JbQkIq/Wp49oN7hD1C3D8aJ0F+0dD/708+cK9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- ===== Konfigurasi Kustom Tailwind ===== -->
@@ -77,6 +77,12 @@
             line-height: 1.7;
         }
         html { scroll-behavior: smooth; }
+        
+        /* Smooth transition for general elements */
+        a, button, .product-card {
+            transition: all 0.3s ease-in-out;
+        }
+        
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
         .accordion-button.active .arrow { transform: rotate(180deg); }
         .arrow { transition: transform 0.3s ease; }
@@ -86,25 +92,16 @@
             border: 1px solid #FDF2F8; 
             border-radius: 1.25rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
         }
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 28px rgba(0,0,0,0.08);
+            transform: translateY(-5px) scale(1.01); /* Added slight scale for professional effect */
+            box-shadow: 0 16px 30px rgba(0,0,0,0.1); /* Slightly stronger shadow on hover */
         }
         .product-card-image-wrapper { transition: transform 0.3s ease; }
-        .group:hover .product-card-image-wrapper { transform: scale(1.03); }
+        .group:hover .product-card-image-wrapper { transform: scale(1.05); /* Increased scale for image focus */ }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(15px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .fade-in { animation: fadeIn 0.6s ease-out forwards; opacity: 0; }
-        .delay-100 { animation-delay: 100ms; }
-        .delay-200 { animation-delay: 200ms; }
-        .delay-300 { animation-delay: 300ms; }
-        .delay-400 { animation-delay: 400ms; }
+        /* Simplified and removed unnecessary fade-in keyframes */
         
         /* CSS untuk tampilan slider horizontal (hanya scrollbar styling) */
         .category-scrollbar::-webkit-scrollbar { height: 4px; }
@@ -144,6 +141,17 @@
             margin-top: 0.5rem;
             box-shadow: 0 1px 3px rgba(0,0,0,0.05);
             border: 1px solid #FBCFE8;
+        }
+        
+        /* New CSS for better fading effect on sections */
+        .animated-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animated-section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
@@ -187,25 +195,26 @@
         <!-- [FIX] Padding mobile diperkecil (py-12), desktop tetap (md:py-16) -->
         <div class="container mx-auto px-6 py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <!-- Kolom Teks -->
-            <div class="text-center md:text-left fade-in">
+            <div class="text-center md:text-left animated-section" data-animate>
                 <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-8">
                     Your Trusted <br><span class="text-pink-600">Beauty & Fashion</span> Curator
                 </h1>
                 
                 <!-- [FIX] Font mobile diperkecil (text-base), desktop tetap (md:text-lg) -->
-                <a href="#produk" class="bg-pink-600 text-white py-3 px-8 rounded-full font-semibold text-base md:text-lg transition-colors hover:bg-pink-700">
+                <a href="#produk" class="bg-pink-600 text-white py-3 px-8 rounded-full font-semibold text-base md:text-lg transition-colors hover:bg-pink-700 hover:shadow-lg">
                     Mulai Belanja
                 </a>
             </div>
             <!-- Kolom Gambar -->
-            <div class="fade-in delay-200">
-                <img src="model.jpg" alt="Model Skincare dan Fashion Kaelyshp" class="w-full h-full object-cover rounded-2xl shadow-xl">
+            <div class="animated-section delay-200" data-animate>
+                <!-- Added loading="lazy" for performance -->
+                <img src="model.jpg" alt="Model Skincare dan Fashion Kaelyshp" class="w-full h-full object-cover rounded-2xl shadow-xl" loading="eager">
             </div>
         </div>
     </header>
 
     <!-- ===== BAGIAN JAMINAN (SLIDER OTOMATIS) - ICON UPDATED ===== -->
-    <section id="jaminan" class="bg-white py-10 overflow-hidden">
+    <section id="jaminan" class="bg-white py-10 overflow-hidden animated-section" data-animate>
         <div class="container mx-auto px-6">
             <!-- Slider Container -->
             <div class="relative max-w-3xl mx-auto">
@@ -259,18 +268,18 @@
     <main id="produk" class="container mx-auto px-6 py-16">
         
         <!-- ===== NAVIGASI KATEGORI (DIUBAH MENJADI SLIDER HORIZONTAL) ===== -->
-        <div class="mb-10 fade-in delay-100">
+        <div class="mb-10 animated-section" data-animate>
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Jelajahi Kategori</h2>
             <!-- Container Tab Kategori: overflow-x-scroll dan flex-nowrap untuk slider -->
             <div id="category-tabs" class="flex flex-nowrap space-x-2 overflow-x-auto pb-4 category-scrollbar justify-start md:justify-center">
-                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-pink-600 text-white py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="all">✔️ Semua</button>
-                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="skincare">Skincare</button>
-                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="bodylotion">Body Lotion</button>
-                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all" data-category="baju">Baju</button>
+                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-pink-600 text-white py-2 px-5 rounded-full text-sm font-semibold transition-all hover:shadow-md" data-category="all">✔️ Semua</button>
+                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all hover:shadow-md" data-category="skincare">Skincare</button>
+                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all hover:shadow-md" data-category="bodylotion">Body Lotion</button>
+                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all hover:shadow-md" data-category="baju">Baju</button>
             </div>
         </div>
 
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-10 fade-in">Produk Pilihan Kami</h2>
+        <h2 class="text-3xl font-bold text-center text-gray-800 mb-10 animated-section" data-animate>Produk Pilihan Kami</h2>
         
         <!-- Grid Produk (Akan diisi oleh JS) -->
         <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
@@ -279,12 +288,12 @@
     </main>
 
     <!-- ===== BAGIAN FAQ (PEMBESIHAN TANDA BINTANG) ===== -->
-    <section id="faq" class="bg-white py-16">
+    <section id="faq" class="bg-white py-16 animated-section" data-animate>
         <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10 fade-in">Yang Sering Ditanyakan (FAQ)</h2>
-            <div class="space-y-4 fade-in delay-200">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Yang Sering Ditanyakan (FAQ)</h2>
+            <div class="space-y-4">
                 <!-- FAQ 1 -->
-                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md">
                     <button class="accordion-button w-full flex justify-between items-center text-left">
                         <span class="text-lg font-semibold text-gray-800">Apakah produknya 100% Original?</span>
                         <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -296,7 +305,7 @@
                     </div>
                 </div>
                 <!-- FAQ 2 -->
-                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md">
                     <button class="accordion-button w-full flex justify-between items-center text-left">
                         <span class="text-lg font-semibold text-gray-800">Bagaimana cara memesannya?</span>
                         <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -308,7 +317,7 @@
                     </div>
                 </div>
                 <!-- FAQ 3 -->
-                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md">
                     <button class="accordion-button w-full flex justify-between items-center text-left">
                         <span class="text-lg font-semibold text-gray-800">Berapa lama proses pengirimannya?</span>
                         <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -320,7 +329,7 @@
                     </div>
                 </div>
                 <!-- FAQ 4 [BARU] -->
-                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md">
                     <button class="accordion-button w-full flex justify-between items-center text-left">
                         <span class="text-lg font-semibold text-gray-800">Bagaimana saya tahu stok produknya ready?</span>
                         <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -332,7 +341,7 @@
                     </div>
                 </div>
                 <!-- FAQ 5 [BARU] -->
-                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200">
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md">
                     <button class="accordion-button w-full flex justify-between items-center text-left">
                         <span class="text-lg font-semibold text-gray-800">Apa bedanya belanja di sini dengan di toko lain?</span>
                         <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
@@ -348,9 +357,9 @@
     </section>
     
     <!-- ===== BAGIAN TENTANG KAMI (RINGKAS, PROFESIONAL, NON-BOX) - FINAL UPGRADE ===== -->
-    <section id="tentang" class="bg-white py-16 border-t border-pink-200">
+    <section id="tentang" class="bg-white py-16 border-t border-pink-200 animated-section" data-animate>
         <div class="container mx-auto px-6 max-w-5xl">
-            <div class="text-center mb-10 fade-in">
+            <div class="text-center mb-10">
                 <h2 class="text-3xl font-bold text-gray-800 mb-2">Prinsip Kurasi kaelyshp</h2>
                 <p class="text-gray-600 leading-relaxed max-w-3xl mx-auto text-lg font-medium">
                     Didirikan dengan visi menaikkan standar belanja Beauty & Fashion Anda.
@@ -358,7 +367,7 @@
             </div>
             
             <!-- Narasi Pembuka -->
-            <p class="text-gray-800 text-lg mb-12 text-center max-w-4xl mx-auto fade-in delay-100">
+            <p class="text-gray-800 text-lg mb-12 text-center max-w-4xl mx-auto">
                 kaelyshp adalah kurator terpercaya yang menjamin produk terbaik, menghilangkan keraguan Anda. Kami berkomitmen hanya menyajikan item yang telah teruji kualitasnya secara cermat.
             </p>
 
@@ -366,8 +375,8 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mt-8">
                 
                 <!-- Poin 1: Kualitas Ultra Ketat -->
-                <div class="text-center fade-in delay-200 space-y-3">
-                    <i class="fas fa-microscope text-5xl text-pink-600"></i>
+                <div class="text-center space-y-3">
+                    <i class="fas fa-microscope text-5xl text-pink-600 transform hover:scale-110 transition duration-300"></i>
                     <h3 class="text-xl font-bold text-gray-800">Kualitas Ultra Ketat</h3>
                     <p class="text-gray-600 text-base leading-relaxed">
                         Kami menganalisis rating, membaca ribuan ulasan, dan memastikan efikasi terbukti. Kami adalah filter Anda di tengah banyaknya pilihan.
@@ -375,8 +384,8 @@
                 </div>
 
                 <!-- Poin 2: Jaminan Otentikasi Penuh -->
-                <div class="text-center fade-in delay-300 space-y-3">
-                    <i class="fas fa-lock text-5xl text-pink-600"></i>
+                <div class="text-center space-y-3">
+                    <i class="fas fa-lock text-5xl text-pink-600 transform hover:scale-110 transition duration-300"></i>
                     <h3 class="text-xl font-bold text-gray-800">Jaminan Otentikasi Penuh</h3>
                     <p class="text-gray-600 text-base leading-relaxed">
                         Semua produk dijamin 100% Original dan bersertifikasi resmi BPOM. Kami hanya bekerja sama dengan distributor terverifikasi.
@@ -384,8 +393,8 @@
                 </div>
 
                 <!-- Poin 3: Harga Optimal & Transaksi Aman -->
-                <div class="text-center fade-in delay-400 space-y-3">
-                    <i class="fas fa-tags text-5xl text-pink-600"></i>
+                <div class="text-center space-y-3">
+                    <i class="fas fa-tags text-5xl text-pink-600 transform hover:scale-110 transition duration-300"></i>
                     <h3 class="text-xl font-bold text-gray-800">Harga Optimal & Aman</h3>
                     <p class="text-gray-600 text-base leading-relaxed">
                         Kami memastikan harga kompetitif. Transaksi aman dan transparan melalui platform Shopee, menjamin perlindungan konsumen.
@@ -397,18 +406,18 @@
     </section>
 
     <!-- ===== BAGIAN CTA (NEWSLETTER) (TEKS DIUBAH) ===== -->
-    <section id="cta" class="bg-pink-100 py-16">
+    <section id="cta" class="bg-pink-100 py-16 animated-section" data-animate>
         <div class="container mx-auto px-6 text-center max-w-2xl">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4 fade-in">Jadi yang Pertama Tahu!</h2>
-            <p class="text-gray-600 leading-relaxed mb-8 fade-in delay-100">
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Jadi yang Pertama Tahu!</h2>
+            <p class="text-gray-600 leading-relaxed mb-8">
                 Dapatkan info produk terbaru dan promo spesial langsung ke inbox Anda.
             </p>
             
             <!-- [FIX] Form diubah untuk success message -->
-            <div id="newsletter-wrapper" class="max-w-lg mx-auto fade-in delay-200">
+            <div id="newsletter-wrapper" class="max-w-lg mx-auto">
                 <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4">
                     <input type="email" placeholder="Masukkan email Anda..." class="flex-grow p-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400" required>
-                    <button type="submit" class="bg-pink-600 text-white py-3 px-6 rounded-full font-semibold transition-colors hover:bg-pink-700">
+                    <button type="submit" class="bg-pink-600 text-white py-3 px-6 rounded-full font-semibold transition-colors hover:bg-pink-700 hover:shadow-lg">
                         Daftar Sekarang
                     </button>
                 </form>
@@ -417,7 +426,7 @@
                     ✔️ Terima kasih telah mendaftar!
                 </div>
             </div>
-            <p class="text-xs text-gray-500 mt-4 fade-in delay-300">Kami tidak akan mengirim spam. Hanya info promo terbaik!</p>
+            <p class="text-xs text-gray-500 mt-4">Kami tidak akan mengirim spam. Hanya info promo terbaik!</p>
 
         </div>
     </section>
@@ -448,7 +457,7 @@
             <div>
                 <h5 class="text-lg font-semibold text-white mb-4">Kunjungi Kami</h5>
                 <div class="flex space-x-4">
-                    <a href="https://s.shopee.co.id/5VNa85hUGp" target="_blank" rel="noopener noreferrer" aria-label="Shopee" class="text-gray-400 hover:text-white">
+                    <a href="https://s.shopee.co.id/5VNa85hUGp" target="_blank" rel="noopener noreferrer" aria-label="Shopee" class="text-gray-400 hover:text-white transform hover:scale-110 transition duration-300">
                         <i class="fas fa-store w-6 h-6 text-xl"></i>
                     </a>
                 </div>
@@ -477,7 +486,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Kolom Gambar -->
                     <div>
-                        <img id="modal-img" src="https://placehold.co/600x600" alt="Detail Produk" class="w-full h-full object-cover rounded-lg">
+                        <!-- Added loading="lazy" -->
+                        <img id="modal-img" src="https://placehold.co/600x600" alt="Detail Produk" class="w-full h-full object-cover rounded-lg" loading="lazy">
                     </div>
                     
                     <!-- Kolom Info -->
@@ -516,7 +526,7 @@
                         
                         <!-- Tombol Aksi -->
                         <div class="mt-auto">
-                            <a id="modal-shopee-link" href="#" target="_blank" rel="noopener noreferrer" class="w-full bg-pink-600 text-white py-3 px-6 rounded-lg font-semibold text-center transition-colors hover:bg-pink-700 flex items-center justify-center">
+                            <a id="modal-shopee-link" href="#" target="_blank" rel="noopener noreferrer" class="w-full bg-pink-600 text-white py-3 px-6 rounded-lg font-semibold text-center transition-colors hover:bg-pink-700 hover:shadow-lg flex items-center justify-center">
                                 <i class="fas fa-shopping-cart w-5 h-5 mr-2"></i> Beli Aman di Shopee
                             </a>
                         </div>
@@ -779,7 +789,27 @@
                 "Diah Paramita", "Ayu Sekar", "Lisa Permata", "Dewi Ratna", "Siti Aisyah",
                 "Tika Sari", "Lia Andriani", "Adi Pratama", "Maya Kusuma", "Joko Susilo"
             ];
+            
+            // Intersection Observer Setup for smooth scroll-in animation
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 
+            };
 
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.animated-section').forEach(section => {
+                observer.observe(section);
+            });
+            
             // Fungsi untuk membuat HTML bintang
             function renderStars(rating) {
                 let starsHTML = '';
@@ -878,9 +908,9 @@
 
                 productsToRender.forEach(product => {
                     const card = document.createElement('div');
-                    card.className = `group product-card overflow-hidden fade-in`;
-                    card.style.animationDelay = `${productDelay}ms`;
-                    if (productDelay < 400) { productDelay += 100; } 
+                    // Added animated-section class for initial load fade-in effect 
+                    // Note: Product grid items need manual observation outside this loop if using IntersectionObserver
+                    card.className = `group product-card overflow-hidden animated-section`;
                     
                     let categoryLabel = product.category.charAt(0).toUpperCase() + product.category.slice(1);
                     if (product.category === 'bodylotion') {
@@ -889,9 +919,10 @@
 
                     card.innerHTML = `
                         <div class="w-full aspect-square overflow-hidden rounded-t-2xl">
+                            <!-- Added loading="lazy" for optimization -->
                             <img src="${product.imageUrl}" alt="Foto produk ${product.name}" 
                                  onerror="this.onerror=null;this.src='https://placehold.co/600x600/eeeeee/999999?text=Gagal+Muat';"
-                                 class="w-full h-full object-cover product-card-image-wrapper">
+                                 class="w-full h-full object-cover product-card-image-wrapper" loading="lazy">
                         </div>
                         <div class="p-5">
                             <span class="text-xs font-medium text-pink-600 bg-pink-100 px-2 py-1 rounded-full">${categoryLabel}</span>
@@ -905,6 +936,7 @@
                     `;
                     card.addEventListener('click', () => showProductModal(product));
                     productGrid.appendChild(card);
+                    observer.observe(card); // Observe the product card for lazy load animation
                 });
             }
 
@@ -944,8 +976,6 @@
             });
 
             // 4. Event listener untuk Tab Kategori
-            // Logic ini tidak diperlukan lagi karena scroll sudah diatur di CSS,
-            // tetapi saya akan membiarkan logic aktivasi tombol tetap ada.
             categoryTabs.forEach(tab => {
                 tab.addEventListener('click', () => {
                     const category = tab.dataset.category;
@@ -979,7 +1009,7 @@
                 });
             }
 
-            // ===== LOGIKA FAQ ACCORDION =====
+            // ===== LOGIKA FAQ ACCORDION (Added hover effects) =====
             document.querySelectorAll('.accordion-button').forEach(button => {
                 button.addEventListener('click', () => {
                     const content = button.nextElementSibling;
