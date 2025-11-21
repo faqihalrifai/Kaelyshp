@@ -224,6 +224,18 @@
             transition: all 0.5s ease;
         }
     </style>
+
+    <!-- KODE GLOBAL SITE TAG (G-Tag) GOOGLE ANALYTICS 4 -->
+    <!-- Measurement ID Anda: G-XEP8BFJK7Q -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XEP8BFJK7Q"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XEP8BFJK7Q');
+    </script>
+    <!-- AKHIR KODE GOOGLE ANALYTICS -->
 </head>
 <body class="bg-pink-50 text-gray-700">
 
@@ -1120,7 +1132,8 @@
             function getAboutSlidesPerView() {
                 const width = window.innerWidth;
                 if (width < 768) return 1; // Mobile: 1 item
-                return 3; // Tablet/Desktop: 3 items (matching layout design)
+                if (width < 1024) return 2; // Tablet: 2 items
+                return 3; // Desktop: 3 items (matching layout design)
             }
             let aboutSlidesPerView = getAboutSlidesPerView();
 
