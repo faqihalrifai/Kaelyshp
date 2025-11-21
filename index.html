@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- ===== OPTIMASI SEO (LEBIH TAJAM) ===== -->
-    <title>kaelyshp - Skincare Viral, Fashion & Body Care Terkurasi | Shopee</title>
-    <meta name="description" content="Temukan skincare viral (PHERINI, Lavojoy, Purbasari), fashion, & body care terkurasi di kaelyshp. 100% Original, BPOM. Belanja aman via Shopee.">
-    <meta name="keywords" content="skincare viral, fashion wanita, body care, kaelyshp, pherini, lavojoy, purbasari, grace and glow, mukena premium, sweater rajut, blouse korea, pemutih ketiak, toko online shopee, bpom, original">
+    <title>kaelyshp - Kurator Skincare Viral & Fashion Premium | Original & BPOM</title>
+    <meta name="description" content="Temukan koleksi kurasi terbaik skincare viral (PHERINI, Lavojoy) dan fashion wanita premium (Blouse, Tunic, Sweater) di kaelyshp. Jaminan 100% Original, BPOM, dan aman. Raih peringkat pertama di Google dengan produk teruji!">
+    <meta name="keywords" content="skincare viral, body care, pemutih ketiak permanen, Lavojoy tone up, PHERINI cream, fashion wanita premium, blouse kantor, sweater rajut korea, kaelyshp, toko online original BPOM">
     
     <!-- Schema JSON-LD untuk SEO -->
     <script type="application/ld+json">
@@ -154,34 +154,71 @@
             transform: translateY(0);
         }
 
-        /* Testimoni Styling - UPGRADED */
-        .testimonial-grid {
-            column-count: 1;
-            column-gap: 1.5rem;
+        /* Testimoni Styling - UPGRADED TO SLIDER */
+        .testimonial-slider-wrapper {
+            overflow: hidden;
+            width: 100%;
+            touch-action: pan-y; /* Optimize for touch scrolling */
         }
-        @media (min-width: 768px) {
-            .testimonial-grid {
-                column-count: 2;
-            }
+        .testimonial-slider {
+            display: flex;
+            /* Using ease-out for a snappier transition when moving multiple slides */
+            transition: transform 0.5s ease-out; 
+            will-change: transform; /* Performance hint */
         }
+        .testimonial-slide-item {
+            flex-shrink: 0;
+            padding: 0 0.5rem; /* Space between cards */
+            box-sizing: border-box;
+            /* Width calculation is now purely controlled by JS for responsiveness */
+        }
+        
         .testimonial-item {
-            break-inside: avoid;
-            margin-bottom: 1.5rem;
             background-color: white;
-            /* Border and shadow updated for modern look */
             border: none;
             border-bottom: 4px solid #FBCFE8; /* Soft pink underline */
             border-radius: 1rem;
             padding: 1.5rem;
             box-shadow: 0 6px 16px rgba(0,0,0,0.05);
+            min-height: 14rem; /* Ensure consistent height */
+            display: flex;
+            flex-direction: column;
             transition: all 0.3s ease;
         }
         .testimonial-item:hover {
-            transform: scale(1.03); /* Slight zoom on hover */
+            transform: scale(1.01); /* Slight zoom on hover */
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
+        
+        /* About Slider Item */
+        .about-slide-item {
+             flex-shrink: 0;
+            padding: 0 0.75rem;
+            box-sizing: border-box;
+        }
+        .about-feature-item {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            min-height: 15rem; 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .about-slider-wrapper {
+             overflow: hidden;
+            width: 100%;
+            touch-action: pan-y;
+        }
+        .about-slider {
+            display: flex;
+            transition: transform 0.5s ease-out;
+            will-change: transform;
+        }
 
-        /* Counter Card Styling - REMOVED */
+
+        /* Counter Card Styling - REMOVED (counter-plain retained for spacing) */
         .counter-plain {
             padding: 1.5rem 2rem;
             transition: all 0.5s ease;
@@ -195,12 +232,12 @@
         <i class="fas fa-gem mr-2"></i> Sentuhan Indah untuk Setiap Detikmu <i class="fas fa-gem ml-2"></i>
     </div>
 
-    <!-- ===== NAVIGASI / HEADER ===== -->
+    <!-- ===== NAVIGASI / HEADER (FLASH SALE LINK DIHAPUS) ===== -->
     <nav class="bg-white sticky top-0 z-50 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-3xl font-bold text-pink-600">kaelyshp</a>
             
-            <!-- Menu Desktop (Link Tentang Kami diubah ke anchor) -->
+            <!-- Menu Desktop (Link Flash Sale Dihapus) -->
             <div class="space-x-6 hidden md:flex items-center">
                 <a href="#produk" class="text-gray-600 hover:text-pink-600">Produk</a>
                 <a href="#jaminan" class="text-gray-600 hover:text-pink-600">Keunggulan</a>
@@ -215,7 +252,7 @@
             </button>
         </div>
         
-        <!-- ===== MENU MOBILE (FUNGSIONAL) (Link Tentang Kami diubah ke anchor) ===== -->
+        <!-- ===== MENU MOBILE (FUNGSIONAL) (Link Flash Sale Dihapus) ===== -->
         <div id="mobile-menu" class="hidden md-hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100">
             <a href="#produk" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Produk</a>
             <a href="#jaminan" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Keunggulan</a>
@@ -248,7 +285,7 @@
         </div>
     </header>
 
-    <!-- ===== BAGIAN JAMINAN (SLIDER OTOMATIS) - COUNTER ANIMATION ADDED & TEXT UPDATED ===== -->
+    <!-- ===== BAGIAN JAMINAN (SLIDER OTOMATIS) - RATING KEMBALI KE 4.8 - 5.0 ===== -->
     <section id="jaminan" class="bg-white py-10 overflow-hidden animated-section" data-animate>
         <div class="container mx-auto px-6">
             <!-- Slider Container -->
@@ -330,16 +367,23 @@
         </div>
     </main>
 
-    <!-- ===== BAGIAN TESTIMONI (BARU, SEBELUM FAQ) - UPGRADED CARD & TEXT REMOVED ===== -->
+    <!-- ===== BAGIAN TESTIMONI (SLIDER BARU & MODERN) - FULY RESPONSIVE ===== -->
     <section id="testimoni" class="bg-pink-100 py-16 animated-section" data-animate>
-        <div class="container mx-auto px-6 max-w-5xl">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Apa Kata Mereka Tentang kaelyshp</h2>
+        <div class="container mx-auto px-6 max-w-6xl">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Apa Kata Mereka Tentang kaelyshp</h2>
             
-            <div id="testimoni-grid" class="testimonial-grid">
-                <!-- Testimoni akan di-generate oleh JS -->
+            <div class="relative testimonial-slider-wrapper">
+                <!-- Slider Track Container -->
+                <div id="testimoni-slider-track" class="testimonial-slider">
+                    <!-- Testimoni akan di-generate oleh JS -->
+                </div>
+            </div>
+                
+            <!-- Testimoni Dots -->
+            <div id="testimoni-dots" class="flex justify-center space-x-2 mt-8">
+                <!-- Dots akan di-generate oleh JS -->
             </div>
             
-            <!-- Kalimat 100% ulasan nyata dihapus -->
         </div>
     </section>
 
@@ -412,11 +456,11 @@
         </div>
     </section>
     
-    <!-- ===== BAGIAN TENTANG KAMI (RINGKAS, PROFESIONAL, NON-BOX) - FINAL UPGRADE ===== -->
+    <!-- ===== BAGIAN TENTANG KAMI (SLIDER HORIZONTAL BARU) ===== -->
     <section id="tentang" class="bg-white py-16 border-t border-pink-200 animated-section" data-animate>
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-gray-800 mb-2">Prinsip Kurasi kaelyshp</h2>
+                <h2 class="text-3xl font-bold text-gray-800 mb-2">Tentang Kami</h2>
                 <p class="text-gray-600 leading-relaxed max-w-3xl mx-auto text-lg font-medium">
                     Didirikan dengan visi menaikkan standar belanja Beauty & Fashion Anda.
                 </p>
@@ -427,36 +471,48 @@
                 kaelyshp adalah kurator terpercaya yang menjamin produk terbaik, menghilangkan keraguan Anda. Kami berkomitmen hanya menyajikan item yang telah teruji kualitasnya secara cermat.
             </p>
 
-            <!-- Grid Poin Utama (Simple, Clean, Icons - NO NUMBERING) -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mt-8">
-                
-                <!-- Poin 1: Kualitas Ultra Ketat -->
-                <div class="text-center space-y-3">
-                    <i class="fas fa-microscope text-5xl text-pink-600 transform hover:scale-110 transition duration-300"></i>
-                    <h3 class="text-xl font-bold text-gray-800">Kualitas Ultra Ketat</h3>
-                    <p class="text-gray-600 text-base leading-relaxed">
-                        Kami menganalisis rating, membaca ribuan ulasan, dan memastikan efikasi terbukti. Kami adalah filter Anda di tengah banyaknya pilihan.
-                    </p>
-                </div>
+            <!-- Slider Poin Utama (Simple, Clean, Icons - NO NUMBERING) -->
+            <div class="relative about-slider-wrapper">
+                <div id="about-slider-track" class="about-slider">
+                    
+                    <!-- Poin 1: Kualitas Ultra Ketat -->
+                    <div class="about-slide-item" data-id="1">
+                        <div class="about-feature-item text-center space-y-3">
+                            <i class="fas fa-microscope text-5xl text-pink-600"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Kualitas Ultra Ketat</h3>
+                            <p class="text-gray-600 text-base leading-relaxed">
+                                Kami menganalisis rating, membaca ribuan ulasan, dan memastikan efikasi terbukti. Kami adalah filter Anda di tengah banyaknya pilihan.
+                            </p>
+                        </div>
+                    </div>
 
-                <!-- Poin 2: Jaminan Otentikasi Penuh -->
-                <div class="text-center space-y-3">
-                    <i class="fas fa-lock text-5xl text-pink-600 transform hover:scale-110 transition duration-300"></i>
-                    <h3 class="text-xl font-bold text-gray-800">Jaminan Otentikasi Penuh</h3>
-                    <p class="text-gray-600 text-base leading-relaxed">
-                        Semua produk dijamin 100% Original dan bersertifikasi resmi BPOM. Kami hanya bekerja sama dengan distributor terverifikasi.
-                    </p>
-                </div>
+                    <!-- Poin 2: Jaminan Otentikasi Penuh -->
+                    <div class="about-slide-item" data-id="2">
+                        <div class="about-feature-item text-center space-y-3">
+                            <i class="fas fa-lock text-5xl text-pink-600"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Jaminan Otentikasi Penuh</h3>
+                            <p class="text-gray-600 text-base leading-relaxed">
+                                Semua produk dijamin 100% Original dan bersertifikasi resmi BPOM. Kami hanya bekerja sama dengan distributor terverifikasi.
+                            </p>
+                        </div>
+                    </div>
 
-                <!-- Poin 3: Harga Optimal & Transaksi Aman -->
-                <div class="text-center space-y-3">
-                    <i class="fas fa-tags text-5xl text-pink-600 transform hover:scale-110 transition duration-300"></i>
-                    <h3 class="text-xl font-bold text-gray-800">Harga Optimal & Aman</h3>
-                    <p class="text-gray-600 text-base leading-relaxed">
-                        Kami memastikan harga kompetitif. Transaksi aman dan transparan melalui platform Shopee, menjamin perlindungan konsumen.
-                    </p>
-                </div>
+                    <!-- Poin 3: Harga Optimal & Transaksi Aman -->
+                    <div class="about-slide-item" data-id="3">
+                        <div class="about-feature-item text-center space-y-3">
+                            <i class="fas fa-tags text-5xl text-pink-600"></i>
+                            <h3 class="text-xl font-bold text-gray-800">Harga Optimal & Aman</h3>
+                            <p class="text-gray-600 text-base leading-relaxed">
+                                Kami memastikan harga kompetitif. Transaksi aman dan transparan melalui platform Shopee, menjamin perlindungan konsumen.
+                            </p>
+                        </div>
+                    </div>
 
+                </div>
+            </div>
+             <!-- About Dots -->
+            <div id="about-dots" class="flex justify-center space-x-2 mt-6">
+                <!-- Dots akan di-generate oleh JS -->
             </div>
         </div>
     </section>
@@ -599,7 +655,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             
             // <!-- =================================================================== -->
-            // <!-- = DATA PRODUK (KATEGORI HIJAB & SEPATU DIHAPUS)                 = -->
+            // <!-- = DATA PRODUK (OPTIMASI SEO)                 = -->
             // <!-- =================================================================== -->
             
             const masterProductList = [
@@ -607,12 +663,12 @@
                 {
                     id: 1,
                     category: "bodylotion", 
-                    name: "PHERINI Armpit Brightening Cream Pemutih Lipatan (BPOM)",
+                    name: "PHERINI | Armpit Brightening Cream | Serum Pemutih Ketiak Permanen BPOM",
                     price: "Rp 78.800",
                     imageUrl: "pherini.webp",
                     shopeeUrl: "https://s.shopee.co.id/6VG8EKd6uO",
-                    description: "Rawat dan cerahkan area lipatan kulit yang gelap seperti ketiak, siku, selangkangan, dan lutut dengan PHERINI Armpit Brightening Cream. Krim spesialis ini diformulasikan untuk kulit sensitif, efektif membuat kulit menjadi putih merata, halus, dan sehat. Krim ini juga membantu mengurangi bau tak sedap dan mengatasi peradangan akibat gesekan kulit. Hasil optimal didapat dengan pemakaian yang konsisten.",
-                    specs: "Brand: PHERINI\nVolume: 30ml\nSertifikasi: BPOM RI (NA18211902388)\nKomposisi Utama: Niacinamide (Pencerah kuat), Olea Europa Oil (Anti-inflamasi, kaya Vitamin E), Centella Asiatica Extract (Menjaga elastisitas kulit)\nManfaat: Mencerahkan lipatan, menghaluskan tekstur, mengurangi bau badan, dan melindungi dari iritasi.",
+                    description: "Krim spesialis viral untuk mencerahkan area lipatan kulit yang gelap seperti ketiak, siku, selangkangan, dan lutut. Diformulasikan khusus dengan Niacinamide, Centella, dan Olive Oil untuk kulit sensitif. Efektif membuat kulit menjadi putih merata, halus, serta mengurangi bau tak sedap dan peradangan. Jaminan hasil optimal dan permanen dengan pemakaian rutin dan konsisten.",
+                    specs: "Brand: PHERINI\nVolume: 30ml\nSertifikasi: BPOM RI (NA18211902388)\nManfaat Utama: Serum Pemutih Ketiak Permanen, Mencerahkan lipatan, menghaluskan tekstur, mengurangi bau badan\nKomposisi Aktif: Niacinamide (Pencerah kuat), Olea Europa Oil (Anti-inflamasi), Centella Asiatica Extract (Elastisitas kulit)",
                     review: ["Produk viral yang benar-benar memberikan hasil. Dalam 2 minggu pemakaian, area ketiak terlihat lebih cerah dan jauh lebih halus. Teksturnya non-lengket dan cepat meresap. Sangat direkomendasikan.", "Sangat membantu mengatasi masalah lipatan hitam di siku dan lutut. Wanginya lembut dan tidak menyengat. Akan repurchase terus!", "Krim pencerah ketiak terbaik yang pernah saya coba. Tidak ada efek samping, aman, dan sudah BPOM. Hasilnya terlihat permanen jika dipakai rutin."],
                     rating: 4.8,
                     reviewCount: 36400 
@@ -621,12 +677,12 @@
                 {
                     id: 2,
                     category: "baju",
-                    name: "HIZA - Keyko Tunic | Blouse Wanita Etnik Premium",
+                    name: "HIZA | Keyko Tunic Blouse Wanita Etnik Premium | Fashion Muslim Kantor",
                     price: "Rp 139.000",
                     imageUrl: "hiza.webp",
                     shopeeUrl: "https://s.shopee.co.id/6psyfYgjFt",
-                    description: "Tunic premium dari HIZA dengan motif etnik modern yang elegan dan abadi. Dibuat dari bahan Borneo Premium yang memiliki tekstur halus, adem, dan sangat nyaman dipakai seharian. Potongan Keyko Tunic yang anggun sangat ideal untuk busana kerja, acara formal, atau tampilan kasual yang berkelas.",
-                    specs: "Brand: HIZA\nModel: Keyko Tunic (Etnik Modern)\nBahan: Borneo Premium Bertekstur (Adem & Nyaman)\nUkuran All Size: Lingkar Dada (LD) 110-115 cm, Panjang Baju (PB) 102 cm, Panjang Tangan 55 cm\nGaya: Formal & Semi-Formal",
+                    description: "Tunic premium HIZA dengan motif etnik modern yang elegan dan abadi. Dibuat dari bahan Borneo Premium yang memiliki tekstur halus, adem, dan sangat nyaman dipakai seharian. Potongan anggun Keyko Tunic ini ideal untuk busana kantor, acara formal, atau tampilan kasual yang berkelas. Cocok untuk semua ukuran (All Size fit to XL).",
+                    specs: "Brand: HIZA\nModel: Keyko Tunic (Etnik Modern)\nBahan: Borneo Premium Bertekstur (Adem & Nyaman)\nUkuran All Size: LD 110-115 cm, Panjang Baju (PB) 102 cm\nGaya: Fashion Muslim, Tunic Kantor, Formal & Semi-Formal",
                     review: ["Tunicnya sangat cantik dan elegan. Bahan Borneo terasa adem, nyaman, dan motif etniknya eksklusif. Jahitan rapi dan kualitas produk sangat terjamin. Pembelian yang memuaskan.", "Barangnya cepat sampai, bahan premium, motifnya unik banget. Kelihatan mahal saat dipakai. Cocok untuk pergi ke kantor.", "Sudah langganan HIZA, dan Keyko Tunic ini tidak pernah mengecewakan. Desainnya *timeless* dan warnanya tidak pudar setelah dicuci."],
                     rating: 4.8,
                     reviewCount: 1800 
@@ -635,12 +691,12 @@
                 {
                     id: 3,
                     category: "baju", 
-                    name: "Floral Id - Sonya Blouse Poplin Polos Kancing Gold",
+                    name: "Floral Id | Sonya Blouse Atasan Wanita Poplin Polos Kancing Gold | Baju Kantor",
                     price: "Rp 165.500",
                     imageUrl: "floralwebp.webp",
                     shopeeUrl: "https://s.shopee.co.id/70COsDFsps",
-                    description: "Blouse atasan wanita Sonya bergaya minimalis chic dengan detail kancing gold mewah dan kerah Sanghai. Terbuat dari Cotton Premium Poplin yang menciptakan siluet rapi, tidak mudah kusut, dan sangat nyaman. Pilihan tepat untuk outfit kantor profesional atau tampilan formal yang modis.",
-                    specs: "Brand: Floral Id\nModel: Sonya Blouse\nBahan: Cotton Premium Poplin (Berkualitas, Rapi)\nGaya: Basic, Minimalis, Formal/Kasual\nUkuran All Size: Lingkar Dada (LD) 114 cm, Panjang Atasan 70 cm\nDetail: Kancing Gold mewah, Kerah Sanghai\nCatatan: Disarankan menggunakan inner untuk varian warna cerah/putih.",
+                    description: "Blouse atasan wanita Sonya bergaya minimalis chic dengan sentuhan mewah kancing gold dan kerah Sanghai. Dibuat dari **Cotton Premium Poplin** yang menciptakan siluet rapi, tidak mudah kusut, dan sangat nyaman. Pilihan tepat untuk outfit kantor profesional atau tampilan formal yang modis. Tersedia dalam berbagai pilihan warna elegan.",
+                    specs: "Brand: Floral Id\nModel: Sonya Blouse\nBahan: Cotton Premium Poplin (Berkualitas, Rapi)\nGaya: Baju Kantor Wanita, Minimalis, Formal/Kasual\nUkuran All Size: LD 114 cm, Panjang Atasan 70 cm\nDetail: Lengan Panjang, Kerah Sanghai",
                     review: ["Blouse polos yang terlihat sangat mahal karena detail kancing emasnya. Bahan poplin premiumnya bagus, tebal, dan jahitannya rapi. Saya puas sekali dengan kualitasnya.", "Modelnya simpel tapi elegan. Sangat cocok untuk *daily wear* maupun acara penting. Bahan tidak panas dan mudah disetrika.", "Worth the price! Kualitas jahitan sekelas butik. Akan beli warna Black dan Plum."],
                     rating: 4.8,
                     reviewCount: 1800 
@@ -649,12 +705,12 @@
                 {
                     id: 4,
                     category: "bodylotion", 
-                    name: "Lavojoy Daily Shine Body Serum SPF 50 PA++++ Tone Up",
+                    name: "Lavojoy | Daily Shine Body Serum SPF 50 Tone Up | Skincare Viral Pencerah Instan",
                     price: "Rp 67.000",
                     imageUrl: "lavojoy.webp",
                     shopeeUrl: "https://s.shopee.co.id/9pWaG7Zdw7",
-                    description: "Dapatkan perlindungan matahari superior (SPF 50 PA++++) sekaligus efek pencerah instan (Instant Tone-up) dengan Lavojoy Body Serum Delicate Rose. Formula non-lengket ini diperkaya 3% Niacinamide untuk mencerahkan, Ceramide untuk memperkuat skin barrier, dan 6X Hyaluronic Acid untuk hidrasi maksimal. Produk perlindungan harian yang efektif dan beraroma mewah.",
-                    specs: "Brand: Lavojoy\nVolume: 180ml\nPerlindungan UV: SPF 50 PA++++ (Proteksi Harian)\nKandungan Aktif: 3% Niacinamide, Australian Super VC, Ceramide, 6X Hyaluronic Acid\nTekstur: Light Lotion (Cepat meresap, Non-Lengket)\nVarian Shade: 00 Silk White, 01 Cream Beige, 02 Warm Sand",
+                    description: "Body Serum Lavojoy Delicate Rose, **Skincare Viral** yang memberikan perlindungan matahari superior (**SPF 50 PA++++**) sekaligus efek pencerah instan (Instant Tone-up) yang natural. Formula non-lengket ini diperkaya **3% Niacinamide** dan **Ceramide** untuk mencerahkan, memperkuat *skin barrier*, dan hidrasi maksimal. Produk perawatan harian efektif dan beraroma mewah.",
+                    specs: "Brand: Lavojoy\nVolume: 180ml\nPerlindungan UV: SPF 50 PA++++ (Proteksi Harian)\nKandungan Aktif: 3% Niacinamide, Ceramide, 6X Hyaluronic Acid\nManfaat: Skincare Viral, Mencerahkan Instan, Melindungi Kulit, Tone-Up\nVarian Shade: 00 Silk White, 01 Cream Beige, 02 Warm Sand",
                     review: ["Wanginya sangat mewah, mirip parfum mahal dan tahan lama. Efek tone up-nya natural, tidak membuat kulit terlihat abu-abu. Cepat meresap dan sangat praktis karena sudah ada SPF 50.", "Penyelamat di siang hari! Tone up-nya instan dan tidak luntur saat berkeringat. Kulit jadi glowing sehat seharian.", "Baru pertama coba dan langsung jatuh cinta! Kulit jadi lembap dan wanginya disukai banyak orang. Benar-benar *worth the hype*."],
                     rating: 4.8,
                     reviewCount: 72500 
@@ -663,12 +719,12 @@
                 {
                     id: 5,
                     category: "bodylotion",
-                    name: "Purbasari White Glow Body Serum 3X Active Whitening",
+                    name: "Purbasari | White Glow Body Serum | Pemutih Kulit Viral BPOM Halal",
                     price: "Rp 27.400",
                     imageUrl: "purbasari.webp",
                     shopeeUrl: "https://s.shopee.co.id/3LJ6WKlPaS",
-                    description: "Body serum viral dengan aroma floral segar yang memberikan efek Instant White dan Glow tanpa meninggalkan rasa lengket. Formula ini memiliki 3X Active Whitening (Niacinamide, Ekstrak Radiant White, dan Ekstrak Bengkoang) yang bekerja sinergis untuk mencerahkan kulit secara bertahap dan melindunginya dari sinar UV.",
-                    specs: "Brand: Purbasari\nTipe: Body Serum (Instant White Glow)\nVolume: 180ml\nKandungan Aktif: 2% Niacinamide, Ekstrak Radiant White, Ekstrak Bengkoang, UV Protection\nKeunggulan: Tekstur ringan, cepat meresap, Halal dan BPOM (NA18220109846)",
+                    description: "Body serum viral dengan aroma floral segar yang memberikan efek **Instant White dan Glow** tanpa meninggalkan rasa lengket. Formula ini memiliki **3X Active Whitening** (Niacinamide, Ekstrak Radiant White, dan Ekstrak Bengkoang) yang bekerja sinergis untuk mencerahkan kulit secara bertahap dan melindunginya dari sinar UV. Produk pemutih kulit yang ringan dan efektif.",
+                    specs: "Brand: Purbasari\nTipe: Body Serum (Instant White Glow)\nVolume: 180ml\nManfaat: Pemutih Kulit Viral, Mencerahkan, Perlindungan UV\nKandungan Aktif: 2% Niacinamide, Ekstrak Radiant White, Ekstrak Bengkoang\nKeunggulan: Tekstur ringan, cepat meresap, Halal dan BPOM (NA18220109846)",
                     review: ["Body serum dengan harga yang sangat terjangkau namun memberikan kualitas juara. Kulit saya jadi lebih cerah dan lembap. Aromanya soft dan enak. Pasti beli lagi.", "Teksturnya seperti air, sangat ringan dan langsung meresap. Efek mencerahkannya terasa setelah rutin 1 bulan. Terbaik di kelasnya!", "Cocok untuk kulit berminyak karena tidak lengket. Wangi floralnya tahan lama. Kulit terlihat lebih sehat dan *plump*."],
                     rating: 4.8,
                     reviewCount: 15400 
@@ -677,12 +733,12 @@
                 {
                     id: 7,
                     category: "bodylotion",
-                    name: "MOOI Brightening Tone Up Booster Body Lotion SPF 30",
+                    name: "MOOI | Brightening Tone Up Booster Body Lotion SPF 30 | 10X Pencerah Kulit Viral",
                     price: "Rp 49.900",
                     imageUrl: "moik.webp", 
                     shopeeUrl: "https://s.shopee.co.id/12eYR1j7z",
-                    description: "Body Lotion Tone Up terbaru dari MOOI dengan formula 10X Extra Brightening Power. Memberikan efek cerah (tone up) natural yang tahan lama dan melindungi kulit dari paparan matahari dengan UV Filter setara SPF 30. Mengandung Niacinamide, Red Alga, Glutathio, dan Allantoin untuk mencerahkan, meratakan warna, dan menutrisi kulit secara intensif.",
-                    specs: "Brand: MOOI Pure Glow\nVolume: 120gr\nPerlindungan: UV Filter (Setara SPF 30)\nKandungan Aktif: Niacinamide & Glutathio (Mencerahkan 10X lebih efektif), Red Alga & Allantoin (Melembapkan dan memperbaiki tekstur kulit)\nKeunggulan: Instant Whitening, Non-Sticky, Fragrance White Floral Tahan Lama. BPOM (NA18240111449)",
+                    description: "Body Lotion Tone Up **Viral** dari MOOI dengan formula **10X Extra Brightening Power** (Glutathio & Niacinamide). Memberikan efek cerah natural yang tahan lama dan melindungi kulit dari matahari (UV Filter setara SPF 30). Mengandung Red Alga dan Allantoin untuk mencerahkan, meratakan warna, dan menutrisi kulit secara intensif. Hasil kulit cerah instan dan terlindungi.",
+                    specs: "Brand: MOOI Pure Glow\nVolume: 120gr\nPerlindungan: UV Filter (Setara SPF 30)\nManfaat Utama: 10X Pencerah Kulit Viral, Instant Tone Up, Proteksi UV\nKandungan Aktif: Niacinamide, Glutathio, Red Alga, Allantoin\nKeunggulan: Non-Sticky, Fragrance White Floral Tahan Lama. BPOM (NA18240111449)",
                     review: ["Efek tone up-nya sangat natural, tidak terlihat dempul sama sekali. Wanginya enak, menempel seharian. Formula 10X Brightening-nya terasa bekerja di kulit. Sangat direkomendasikan.", "Teksturnya cepat meresap dan tidak meninggalkan residu putih. Kulit saya jadi lebih glowing dan lembap. Harga terjangkau untuk manfaat sebanyak ini.", "Saya suka desain kemasannya yang travel-friendly. Efek tone up-nya bekerja sempurna di kulit sawo matang."],
                     rating: 4.8,
                     reviewCount: 27800 
@@ -691,12 +747,12 @@
                 {
                     id: 8,
                     category: "baju",
-                    name: "LADYCOLLECTION - Sweater Rajut Bordir Olop Kerah Bulat",
+                    name: "LADYCOLLECTION | Sweater Rajut Wanita Bordir Olop | Jaket Rajut Premium Korea",
                     price: "Rp 158.000",
                     imageUrl: "sweater.webp",
                     shopeeUrl: "https://s.shopee.co.id/30gG849TdY",
-                    description: "Sweater rajut premium lengan panjang dari LADYCOLLECTION. Dibuat menggunakan benang rajut tebal namun *breathable* dan tidak menimbulkan rasa gatal. Detail bordir 'Olop' yang rapi di bagian dada memberikan sentuhan unik. Pilihan tepat untuk tampil *stylish* dan hangat dalam berbagai OOTD.",
-                    specs: "Tipe: Sweater Rajut Lengan Panjang\nBahan: Rajut Premium (Tebal, Tidak Gatal)\nFitur: Bordir 'Olop' Rapi\nLeher: Kerah Bulat (O-Neck)\nUkuran: All Size fit to L\nGaya: Casual, Cozy Fashion",
+                    description: "Sweater rajut **Premium Lengan Panjang** dengan desain kerah bulat dan detail bordir 'Olop' yang unik. Dibuat menggunakan benang rajut tebal namun **breathable** dan dijamin tidak menimbulkan rasa gatal. Pilihan tepat untuk tampil *stylish*, hangat, dan nyaman dalam berbagai **OOTD musim dingin ala Korea**.",
+                    specs: "Tipe: Sweater Rajut Lengan Panjang\nBahan: Rajut Premium (Tebal, Tidak Gatal)\nFitur: Bordir 'Olop' Rapi, Kerah Bulat (O-Neck)\nUkuran: All Size fit to L\nGaya: Jaket Rajut Korea, Casual, Cozy Fashion",
                     review: ["Rajutannya sangat tebal dan berkualitas, tidak membuat gatal. Bordir 'Olop'-nya rapi sekali. Sangat hangat dan cocok dipakai saat cuaca dingin. Kualitas sebanding dengan harga.", "Modelnya stylish dan warnanya cantik. Nyaman banget dipakai di *weekend* atau saat traveling ke daerah dingin. Pengiriman cepat dan packing aman.", "Benang rajutnya halus dan tidak kasar. Pilihan yang bagus untuk sweater premium dengan harga terjangkau."],
                     rating: 4.8,
                     reviewCount: 500
@@ -705,12 +761,12 @@
                 {
                     id: 9,
                     category: "bodylotion",
-                    name: "Grace and Glow Brightening Sun Body Serum SPF 30 PA+++",
+                    name: "Grace and Glow | Brightening Sun Body Serum SPF 30 | Body Serum Pemutih & Parfum Viral",
                     price: "Rp 36.900",
                     imageUrl: "grace.webp",
                     shopeeUrl: "https://s.shopee.co.id/3qFN7hYGaJ",
-                    description: "Body Serum multifungsi yang tidak hanya mencerahkan, tetapi juga melindungi kulit dari sinar UV dengan SPF 30 PA+++. Diformulasikan dengan Alpha Arbutin dan Bearberry Extract untuk pencerahan, serta memberikan keharuman mewah yang terinspirasi dari parfum mahal. Tekstur ringan, cepat meresap, dan non-lengket.",
-                    specs: "Brand: Grace and Glow\nVolume: 100ml\nPerlindungan UV: SPF 30 PA+++\nKandungan Aktif: Alpha Arbutin & Bearberry Extract (Agen pencerah kulit), UV Filter (Perlindungan dari sinar matahari)\nKeunggulan: Wangi seperti parfum mahal, Mencerahkan, Melindungi. BPOM (NA18220104829)",
+                    description: "Body Serum multifungsi **Viral** yang memadukan pencerahan, perlindungan, dan aroma mewah. Melindungi kulit dari sinar UV (**SPF 30 PA+++**) dan mencerahkan dengan **Alpha Arbutin** dan **Bearberry Extract**. Memiliki keharuman premium yang terinspirasi dari parfum mahal. Tekstur ringan, cepat meresap, dan non-lengket, menjadikannya serum pemutih harian yang komplit.",
+                    specs: "Brand: Grace and Glow\nVolume: 100ml\nPerlindungan UV: SPF 30 PA+++\nManfaat: Body Serum Pemutih Viral, Melindungi, Parfum Mewah Tahan Lama\nKandungan Aktif: Alpha Arbutin, Bearberry Extract, UV Filter\nBPOM: NA18220104829",
                     review: ["Ini body serum sekaligus parfum. Wanginya sangat tahan lama dan mewah. Teksturnya ringan di kulit dan ada SPF 30-nya. Produk yang sangat komplit untuk perawatan harian.", "Aromanya benar-benar terinspirasi dari parfum *high-end*. Kulit jadi lembap dan wangi sepanjang hari tanpa perlu pakai parfum lagi. Kualitas terbaik!", "Saya suka karena ada Alpha Arbutin untuk mencerahkan. Formula ini ringan di kulit dan tidak pilling."],
                     rating: 4.9,
                     reviewCount: 215900 
@@ -719,12 +775,12 @@
                 {
                     id: 10,
                     category: "bodylotion",
-                    name: "NIVEA Body Lotion Extra White Brightening 190ML",
+                    name: "NIVEA | Body Lotion Extra White Brightening 190ML | Pemutih Kulit Cepat Vitamin C",
                     price: "Rp 27.500",
                     imageUrl: "nivea.webp",
                     shopeeUrl: "https://s.shopee.co.id/4AsDWQdFCt",
-                    description: "Body Lotion teruji klinis dari NIVEA yang efektif mencerahkan kulit secara intensif. Diperkaya konsentrasi tinggi Vitamin C dan UV Filter untuk melindungi kulit dari kerusakan dan kekusaman akibat sinar UV harian. Formula NIVEA yang ringan, cepat meresap, dan non-sticky, ideal untuk menjaga kelembapan kulit normal hingga kering.",
-                    specs: "Brand: NIVEA\nVarian: Extra White Brightening\nVolume: 190ML\nKandungan Utama: Vitamin C, UV Filter\nKeunggulan: Mencerahkan klinis, Melembapkan jangka panjang, Formula Non-Sticky",
+                    description: "Body Lotion teruji klinis dari NIVEA yang efektif mencerahkan kulit secara intensif. Diperkaya konsentrasi tinggi **Vitamin C** dan **UV Filter** untuk melindungi kulit dari kerusakan dan kekusaman harian. Formula NIVEA yang ringan, cepat meresap, dan non-sticky, ideal untuk menjaga kelembapan kulit normal hingga kering. Solusi **pemutih kulit cepat** dan aman.",
+                    specs: "Brand: NIVEA\nVarian: Extra White Brightening\nVolume: 190ML\nManfaat Utama: Pemutih Kulit Cepat, Mencerahkan klinis, Melembapkan\nKandungan Utama: Vitamin C, UV Filter\nKeunggulan: Formula Non-Sticky, Teruji Klinis",
                     review: ["Selalu jadi anadalan untuk kulit kering. Lembapnya maksimal, cerahnya juga terasa. Wanginya lembut dan khas NIVEA. Produk yang konsisten dan berkualitas tinggi.", "Cocok untuk kulit sensitif, tidak menimbulkan iritasi. Efek melembapkannya tahan lama bahkan di ruangan ber-AC.", "NIVEA memang tidak pernah mengecewakan. Harga terjangkau, kualitas bintang lima. Kulit terlihat lebih sehat dan halus."],
                     rating: 4.9,
                     reviewCount: 10000
@@ -733,12 +789,12 @@
                 {
                     id: 11,
                     category: "bodylotion",
-                    name: "[BUNDLE SUPER ISI 2] Purbasari Body Serum Gluta Hya + White Glow",
+                    name: "Purbasari BUNDLE | Body Serum Pemutih Gluta Hya + White Glow | Perawatan Kulit Viral",
                     price: "Rp 47.500",
                     imageUrl: "glutanya.webp",
                     shopeeUrl: "https://s.shopee.co.id/3VcWjJm67t",
-                    description: "Paket Body Serum super hemat yang menggabungkan dua formula pencerah terlaris Purbasari: White Glow (Instant White) dan Gluta Hya/Cybright (Pencerahan Powerful, Meremajakan, dan Anti-UV). Dapatkan solusi lengkap untuk kulit cerah, lembap, dan terlindungi dengan harga terbaik.",
-                    specs: "Brand: Purbasari\nIsi Paket: 2 Botol Body Serum (Gluta Hya/Cybright & White Glow)\nVolume: 2 x 180ml\nManfaat Gabungan: Pencerahan superior, Instant Glow, Perlindungan UV, Meremajakan Kulit\nBPOM: NA18220109846, NA18240102926",
+                    description: "Paket Body Serum **super hemat** yang menggabungkan dua formula pencerah terlaris Purbasari: **White Glow** (Instant White) dan **Gluta Hya/Cybright** (Pencerahan Powerful, Meremajakan, Anti-UV). Solusi lengkap 2-in-1 untuk kulit cerah, lembap, terlindungi, dan terawat dengan harga terbaik. Cocok untuk *skincare routine* pagi dan malam.",
+                    specs: "Brand: Purbasari\nIsi Paket: 2 Botol Body Serum (Gluta Hya/Cybright & White Glow)\nVolume: 2 x 180ml\nManfaat Utama: Pencerahan superior, Instant Glow, Perlindungan UV, Meremajakan Kulit\nBPOM: NA18220109846, NA18240102926",
                     review: ["Sangat hemat beli paket bundle ini. Bisa pakai White Glow di pagi hari dan Gluta Hya/Cybright untuk malam hari. Kedua serum efektif mencerahkan dan menghidrasi kulit. Highly recommended.", "Kualitas serumnya ringan dan cepat meresap. Kulit jadi terasa lembut dan lebih kenyal setelah pemakaian rutin.", "Harga bundelnya murah banget! Saya suka keduanya, memberikan efek cerah yang berbeda-beda. Pilihan terbaik untuk perawatan lengkap."],
                     rating: 4.9,
                     reviewCount: 2500 
@@ -747,12 +803,12 @@
                 {
                     id: 12,
                     category: "bodylotion",
-                    name: "[Share in Jar] Lavojoy Daily Shine Body Serum (Tester)",
+                    name: "Lavojoy [Share in Jar] | Daily Shine Body Serum Tone Up | Tester Hemat BPOM",
                     price: "Rp 10.000",
                     imageUrl: "rum.webp",
                     shopeeUrl: "https://s.shopee.co.id/50RKWBYbt3",
-                    description: "Pilihan ideal untuk mencoba dan menentukan kecocokan shade Lavojoy Daily Shine Body Serum sebelum membeli ukuran penuh. Produk yang kami jual 100% original, dikemas ulang secara steril dan higienis (Share in Jar). Solusi hemat untuk *tester* produk viral.",
-                    specs: "Tipe: Share in Jar (Kemasan Ulang/Tester)\nProduk: Lavojoy Daily Shine Body Serum\nUkuran Varian: 5ml atau 10ml\nJaminan: Produk Original, Proses Pemindahan Higienis, Amanah",
+                    description: "Pilihan ideal dan higienis untuk mencoba dan menentukan kecocokan shade Lavojoy Daily Shine Body Serum sebelum membeli ukuran penuh. Produk yang kami jual 100% original, dikemas ulang secara steril (Share in Jar). Solusi hemat dan aman untuk **tester** produk viral Tone Up.",
+                    specs: "Tipe: Share in Jar (Kemasan Ulang/Tester)\nProduk: Lavojoy Daily Shine Body Serum\nUkuran Varian: 5ml atau 10ml\nJaminan: Produk 100% Original, Proses Pemindahan Higienis, Solusi Hemat",
                     review: ["Terima kasih untuk opsi testernya. Sangat membantu untuk memastikan kecocokan shade. Produk original dan wadahnya higienis. Pasti akan beli ukuran besar setelah ini.", "Kemasan *share in jar* yang aman dan tidak tumpah. Saya bisa coba dulu sebelum beli full size. Lavojoy memang sebagus itu!", "Baru pertama kali coba, dan ternyata wanginya enak banget. Cepat meresap dan efek tone up-nya langsung terlihat. Puas dengan testernya."],
                     rating: 4.0,
                     reviewCount: 2000 
@@ -761,12 +817,12 @@
                 {
                     id: 13,
                     category: "baju",
-                    name: "Kaos Wanita Crop Top Korea Cotton Stretch",
+                    name: "Kaos Wanita Crop Top Korea | Cotton Stretch Basic Item | Fashion Viral Musim Panas",
                     price: "Rp 25.472",
                     imageUrl: "croptop.webp",
                     shopeeUrl: "https://s.shopee.co.id/70COu0JEgq",
-                    description: "Kaos *crop top* ala Korea yang merupakan *basic item* esensial untuk gaya kasual. Dibuat dari material Cotton Stretch berkualitas yang elastis, adem, dan sangat nyaman mengikuti bentuk tubuh. Sangat mudah dipadukan dengan *high-waist jeans* atau rok untuk tampilan yang modis di musim panas.",
-                    specs: "Bahan: Cotton Stretch (Melar, Adem)\nModel: Crop Top Korean Style, Lengan Pendek\nGaris Leher: Kerah Bulat\nUkuran Tersedia: S hingga XL (Lingkar Dada dapat melar hingga +/- 20 cm)\nCocok untuk: Musim Panas, Gaya Kasual",
+                    description: "Kaos **Crop Top Korea** yang merupakan *basic item* esensial untuk gaya kasual dan musim panas. Dibuat dari material **Cotton Stretch** berkualitas yang elastis, adem, dan nyaman mengikuti bentuk tubuh. Sangat mudah dipadukan dengan *high-waist jeans* atau rok untuk tampilan modis, wajib punya dalam berbagai warna.",
+                    specs: "Bahan: Cotton Stretch (Elastis, Adem)\nModel: Crop Top Korean Style, Lengan Pendek\nGaris Leher: Kerah Bulat\nUkuran Tersedia: S hingga XL (LD dapat melar hingga +/- 20 cm)\nCocok untuk: Fashion Viral, Musim Panas, Gaya Kasual",
                     review: ["Kualitas kaos sangat baik untuk harganya yang terjangkau. Bahannya adem, pas di badan, dan nyaman dipakai. Sudah menjadi *basic* favorit untuk OOTD harian.", "Bahan cotton stretch-nya lembut, nyaman banget dipakai seharian. Pilihan warnanya juga banyak dan cantik-cantik.", "Pengiriman cepat dan barang sesuai deskripsi. Model crop top yang pas, tidak terlalu pendek. Puas!"],
                     rating: 4.7,
                     reviewCount: 8300 
@@ -775,12 +831,12 @@
                 {
                     id: 14,
                     category: "baju",
-                    name: "Arika Blouse Stripe Peplum Wanita Lengan Puff (Semiwoll)",
+                    name: "Arika Blouse Stripe Peplum Wanita | Baju Kantor Lengan Puff | Fashion Modis Semiwoll",
                     price: "Rp 40.500",
                     imageUrl: "artika.webp",
                     shopeeUrl: "https://s.shopee.co.id/1LY29nQpIw",
-                    description: "Blouse atasan wanita Arika dengan desain *peplum* di bagian pinggang yang memberikan ilusi tubuh lebih ramping (body fitted). Blouse ini dipercantik dengan lengan *puff* dan motif garis vertikal. Terbuat dari bahan Semiwoll yang nyaman, menjadikannya pilihan modis untuk pakaian kantor atau acara semi-formal.",
-                    specs: "Model: Peplum Blouse (Fit Body Fitted)\nDetail: Lengan Puff, Motif Stripe Garis-Garis\nBahan: Semiwoll\nUkuran: S/M (LD 98-100 cm), L/XL (LD 108-110 cm), XXL (LD 118-120 cm)\nAcara: Kasual dan Kantor",
+                    description: "Blouse atasan wanita Arika dengan desain **Peplum** di bagian pinggang yang memberikan ilusi tubuh lebih ramping (*body fitted*). Dipercantik dengan lengan *puff* dan motif garis vertikal. Terbuat dari bahan **Semiwoll** yang nyaman, menjadikannya pilihan modis dan profesional untuk **baju kantor** atau acara semi-formal.",
+                    specs: "Model: Peplum Blouse (Fit Body Fitted)\nDetail: Lengan Puff, Motif Stripe Garis-Garis\nBahan: Semiwoll\nUkuran: Tersedia S/M, L/XL, dan XXL (LD 118-120 cm)\nAcara: Baju Kantor Profesional, Fashion Modis",
                     review: ["Blouse ini sangat cantik dan model peplumnya membuat saya terlihat lebih langsing. Bahan semowoll adem dan tidak mudah kusut. Pilihan warna dan ukurannya beragam. Suka sekali!", "Sangat cocok untuk ke kantor, terlihat profesional namun tetap fashionable. Jahitan rapi dan bahan tidak panas.", "Model lengan puff-nya manis banget. Stripe vertikalnya membantu memberikan kesan tinggi. Kualitas bagus dengan harga segini."],
                     rating: 4.8,
                     reviewCount: 5000 
@@ -789,12 +845,12 @@
                 {
                     id: 15,
                     category: "bodylotion",
-                    name: "MARINA Handbody Lotion UV White Healthy & Glow (3X Active White)",
+                    name: "MARINA | Handbody Lotion UV White Healthy & Glow | Pemutih Kulit 3X Active White BPOM",
                     price: "Rp 13.900", 
                     imageUrl: "dropku2.webp",
                     shopeeUrl: "https://s.shopee.co.id/4AsDXH8gxx",
-                    description: "Handbody Lotion anadalan MARINA dengan formula unggulan 3X Active White (Milk Protein, Pearl Nutrient, Niacinamide) yang terbukti mencerahkan kulit 3 kali lebih cepat dan meratakan warna kulit belang. Dilengkapi UV Protection untuk menjaga kulit tetap *glowing* dan terlindungi dari efek buruk sinar matahari. Tekstur ringan, cepat meresap, dan non-lengket, ideal untuk iklim tropis.",
-                    specs: "Brand: Marina\nVarian: UV White Healthy & Glow\nFormula Pencerah: 3X Active White (Milk Protein, Pearl Nutrient, Niacinamide)\nPerlindungan: UV Protection\nTipe: Cepat meresap, Non-berminyak\nVarian Ukuran: 92ml, 185ml, 350ml, 460ml",
+                    description: "Handbody Lotion andalan MARINA dengan formula unggulan **3X Active White** (Milk Protein, Pearl Nutrient, Niacinamide) yang terbukti mencerahkan kulit 3 kali lebih cepat dan meratakan warna kulit belang. Dilengkapi **UV Protection** untuk menjaga kulit tetap *glowing*. Tekstur ringan, cepat meresap, dan non-lengket, ideal untuk **pemutih kulit harian** di iklim tropis.",
+                    specs: "Brand: Marina\nVarian: UV White Healthy & Glow\nFormula Pencerah: 3X Active White (Milk Protein, Pearl Nutrient, Niacinamide)\nPerlindungan: UV Protection\nTipe: Pemutih Kulit Harian, Cepat meresap, Non-berminyak\nVarian Ukuran: 92ml, 185ml, 350ml, 460ml",
                     review: ["Lotion harian yang tidak pernah gagal. Sangat efektif melembapkan dan memberikan perlindungan UV yang memadai. Teksturnya nyaman di kulit, bahkan saat cuaca panas. Wajib stok di rumah.", "Marina selalu jadi pilihan keluarga. Harganya terjangkau dan kualitasnya terjamin BPOM. Kulit jadi lebih cerah dan lembap.", "Botol ukuran besar sangat hemat. Wanginya segar dan lembut. Sangat puas dengan efek *glowing*-nya."],
                     rating: 4.9, 
                     reviewCount: 10000 
@@ -803,12 +859,12 @@
                 {
                     id: 16,
                     category: "baju",
-                    name: "CILILY - Ellona Blouse Lengan Panjang (Reguler & Jumbo)",
+                    name: "CILILY | Ellona Blouse Lengan Panjang | Baju Jumbo Wanita Semiwool Premium",
                     price: "Rp 76.999",
                     imageUrl: "cicilly.webp",
                     shopeeUrl: "https://s.shopee.co.id/AA9QgOJ65B",
-                    description: "Blouse atasan Ellona dari CILILY yang menawarkan desain elegan minimalis dengan detail kancing unik. Dibuat dari bahan Semiwool yang nyaman dipakai dan memberikan kesan 'jatuh' yang rapi. Tersedia dalam ukuran lengkap, mulai dari standar hingga Jumbo (LD 120-125 cm), sangat serbaguna untuk pakaian formal maupun santai.",
-                    specs: "Brand: CILILY\nBahan: Semiwool (Nyaman, Rapi)\nTipe: Long Sleeve Blouse, Kerah Bulat, Motif Polos\nUkuran: Standar (LD 105-110 cm), Jumbo (LD 120-125 cm)\nPengiriman: Dari KOTA SURAKARTA (SOLO)",
+                    description: "Blouse atasan Ellona dari CILILY yang menawarkan desain elegan minimalis dengan detail kancing unik. Dibuat dari bahan **Semiwool Premium** yang nyaman dipakai, adem, dan memberikan kesan 'jatuh' yang rapi. Tersedia dalam ukuran lengkap, mulai dari standar hingga **Baju Jumbo Wanita (LD 120-125 cm)**, sangat serbaguna untuk pakaian formal maupun santai.",
+                    specs: "Brand: CILILY\nBahan: Semiwool (Nyaman, Rapi)\nTipe: Long Sleeve Blouse, Kerah Bulat, Motif Polos\nUkuran: Baju Jumbo Wanita, Standar (LD 105-110 cm), Jumbo (LD 120-125 cm)\nFitur: Detail Kancing Unik",
                     review: ["Kualitas bahan Blouse ini bagus sekali. Adem, flowy, dan modelnya sangat elegan. Ukuran jumbo tersedia dan sangat pas di badan. Cocok untuk ngantor atau *meeting* penting.", "Modelnya cantik banget, kancing-kancingnya unik. Bahannya tebal tapi tidak bikin gerah. Puas dengan produk CILILY.", "Warna Mahogany-nya mewah. Jahitan sangat rapi dan *cutting*-nya bagus. Benar-benar sesuai deskripsi."],
                     rating: 4.8, 
                     reviewCount: 702 
@@ -817,12 +873,12 @@
                 {
                     id: 17,
                     category: "bodylotion",
-                    name: "Purbasari Body Lotion Habbatussauda (Whitening Max & Antioksidan)",
+                    name: "Purbasari | Body Lotion Habbatussauda | Pemutih Kulit Antioksidan BPOM Aman",
                     price: "Rp 28.900", 
                     imageUrl: "dropku1.webp",
                     shopeeUrl: "https://s.shopee.co.id/8fKbBD2VrL", 
-                    description: "Body Lotion pencerah maksimal yang diperkaya Habbatussauda (Nigella Sativa) dan Extract Herb Whitening untuk mencerahkan kulit secara efektif dan meratakan warna kulit belang. Kaya akan Antioksidan (Multivitamin A, C, E) untuk melawan radikal bebas. Formulanya cepat meresap (Non-Sticky) dan diperkaya Minyak Zaitun, cocok untuk melembapkan kulit kering seharian.",
-                    specs: "Brand: Purbasari\nFormulasi: Krim / Lotion\nKandungan Utama: Habbatussauda, Extract Herb Whitening, Minyak Zaitun, Multivitamin (A, C, E)\nKeunggulan: Whitening Max, Antioksidan Kuat, Pelembap Instan\nTipe Khusus: Tidak Dibilas, Bebas Paraben, Alcohol Free\nUkuran Tersedia: 100 ml dan 200 ml",
+                    description: "Body Lotion pencerah maksimal yang diperkaya **Habbatussauda (Nigella Sativa)** dan **Extract Herb Whitening** untuk mencerahkan kulit secara efektif dan meratakan warna kulit belang. Kaya **Antioksidan (Multivitamin A, C, E)** untuk melawan radikal bebas. Formulanya cepat meresap (Non-Sticky), Bebas Paraben, dan cocok untuk melembapkan kulit kering seharian.",
+                    specs: "Brand: Purbasari\nFormulasi: Krim / Lotion\nManfaat Utama: Pemutih Kulit, Antioksidan Kuat, Pelembap Instan, Aman BPOM\nKandungan Utama: Habbatussauda, Extract Herb Whitening, Minyak Zaitun, Multivitamin (A, C, E)\nTipe Khusus: Tidak Dibilas, Bebas Paraben, Alcohol Free\nUkuran Tersedia: 100 ml dan 200 ml",
                     review: ["Lotion ini sangat disukai karena cepat meresap dan tidak lengket. Efek melembapkannya tahan lama. Adanya Habbatussauda membuat kulit terasa lebih terlindungi dan sehat. Pencerahannya juga terasa maksimal.", "Wanginya enak dan *calming*. Harga murah tapi kualitasnya premium. Cocok banget buat yang kulitnya kering dan butuh perlindungan antioksidan.", "Saya sudah repurchase. Kulit jadi lebih halus dan warna kulit yang belang mulai merata. Produk yang *underrated* tapi hasilnya luar biasa."],
                     rating: 4.9,
                     reviewCount: 0 
@@ -836,27 +892,26 @@
             const categoryTabs = document.querySelectorAll('.category-btn');
             
             const newsletterForm = document.getElementById('newsletter-form');
-            const newsletterWrapper = document.getElementById('newsletter-wrapper');
-            const newsletterSuccess = document.getElementById('newsletter-success');
-            const reviewCounterTarget = document.getElementById('review-counter-target');
             const customerCounterTarget = document.getElementById('customer-counter-target');
-            const testimoniGrid = document.getElementById('testimoni-grid');
+            const testimoniSliderTrack = document.getElementById('testimoni-slider-track');
+            const testimoniDotsContainer = document.getElementById('testimoni-dots');
+            const reviewCounterTarget = document.getElementById('review-counter-target'); // For 4.8 - 5.0 static text
 
             // Array nama-nama Indonesia untuk ulasan (DIPERLUAS UNTUK AUTHENTICITY)
             const indonesianNames = [
-                "Rina Amelia", "Sari Murni", "Dinda Putri", "Siska Dewi", "Mega Wati", 
-                "Fitri Nur", "Putri Kirana", "Bunga Citra", "Vina Larasati", "Ibu Wati",
+                "Rina Amelia", "Sari Murni", "Dinda Putri", "M. Siska", "Mega Wati", 
+                "Fitri N.", "Putri Kirana", "Bunga Citra", "Vina Larasati", "Ibu Wati",
                 "Diah Paramita", "Ayu Sekar", "Lisa Permata", "Dewi Ratna", "Siti Aisyah",
                 "Tika Sari", "Lia Andriani", "Adi Pratama", "Maya Kusuma", "Joko Susilo",
-                "Fahri Wijaya", "Indah Sari", "Kevin Gunawan", "Nadya Azka", "Rizky Firmansyah",
-                "Andi Susanto", "Citra Dewi", "Hadi Saputra", "Nurul Hidayah", "Gilang Ramadhan" // Tambahan nama Indonesia
+                "Fahri Wijaya", "Indah Sari", "Kevin Gunawan", "Nadya Azka", "Rizky F.",
+                "Andi Susanto", "Citra Dewi", "Hadi Saputra", "Nurul Hidayah", "Gilang Ramadhan"
             ];
 
             // 10 General Store Testimonials
             const storeTestimonials = [
                 "Kurasi produknya sangat cerdas, semua yang saya beli selalu berkualitas dan sesuai deskripsi. Benar-benar menghilangkan keraguan saat belanja online!",
                 "Pelayanan cepat dan ramah. Saya suka karena kaelyshp hanya menjual barang yang terbukti BPOM dan original. Sangat terpercaya.",
-                "Pilihan fashion dan body care-nya modern dan *up-to-date*. Harganya juga kompetitif. Thank you kaelyshp!",
+                "Pilihan fashion dan body care-nya modern dan up-to-date. Harganya juga kompetitif. Thank you kaelyshp!",
                 "Pengiriman selalu aman dan tepat waktu. Kemasan produk sangat rapi. Kualitas kurasi toko ini patut diacungi jempol.",
                 "Akhirnya ketemu toko yang fokus pada kualitas, bukan kuantitas. Produk yang direkomendasikan selalu yang terbaik.",
                 "Saya sudah sering belanja di sini dan tidak pernah kecewa. Semua item 100% original, jaminan mutu terjamin.",
@@ -923,34 +978,226 @@
                 }
             }
             
-            // Render Testimoni
+            // ===================================================================
+            // = TESTIMONIAL SLIDER LOGIC (Fully Responsive)
+            // ===================================================================
+            let currentTestiSlide = 0;
+            // Calculate slides per view dynamically
+            function getSlidesPerView() {
+                const width = window.innerWidth;
+                if (width < 640) return 1; // Mobile: 1 item
+                if (width < 1024) return 2; // Tablet: 2 items
+                return 3; // Desktop: 3 items
+            }
+            let slidesPerView = getSlidesPerView();
+            const totalTestiSlides = storeTestimonials.length;
+
+            function moveToTestiSlide(index) {
+                const slidesToShow = getSlidesPerView();
+                const totalViews = Math.ceil(totalTestiSlides / slidesToShow);
+                
+                // Calculate the track width needed to contain all slides 
+                const trackWidthFactor = totalTestiSlides / slidesToShow;
+                
+                // Calculate the percentage of the track that is visible per view (e.g., 100% / trackWidthFactor)
+                const viewPercentage = 100 / totalViews; 
+
+                // Calculate the slide index based on the number of slides per view
+                const slideIndexInView = Math.floor(index / slidesToShow);
+                
+                // Calculate the offset
+                const offset = slideIndexInView * viewPercentage;
+                
+                testimoniSliderTrack.style.transform = `translateX(-${offset}%)`;
+
+                // Update dots
+                const dots = Array.from(testimoniDotsContainer.children);
+                dots.forEach(dot => dot.classList.remove('bg-pink-600'));
+                
+                // Active dot index
+                const activeDotIndex = Math.floor(index / slidesToShow);
+                if (dots[activeDotIndex]) {
+                    dots[activeDotIndex].classList.add('bg-pink-600');
+                }
+            }
+
+            function initializeTestiDots() {
+                testimoniDotsContainer.innerHTML = '';
+                const slidesToShow = getSlidesPerView();
+                // Calculate dots needed (one dot for each view/set of slides)
+                const dotCount = Math.ceil(totalTestiSlides / slidesToShow);
+
+                for (let i = 0; i < dotCount; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('testi-dot', 'w-3', 'h-3', 'bg-pink-300', 'rounded-full', 'mx-1', 'transition-all', 'duration-300', 'hover:bg-pink-500');
+                    // Store the starting index for that view
+                    dot.setAttribute('data-index', i * slidesToShow);
+                    
+                    dot.addEventListener('click', (e) => {
+                        const newIndex = parseInt(e.target.getAttribute('data-index'));
+                        currentTestiSlide = newIndex;
+                        moveToTestiSlide(newIndex);
+                        resetTestiInterval();
+                    });
+                    testimoniDotsContainer.appendChild(dot);
+                }
+                if (testimoniDotsContainer.children.length > 0) {
+                     testimoniDotsContainer.children[0].classList.add('bg-pink-600');
+                }
+            }
+
+            let testiInterval;
+            function startTestiInterval() {
+                testiInterval = setInterval(() => {
+                    const slidesToShow = getSlidesPerView();
+                    let nextSlide = currentTestiSlide + slidesToShow;
+                    
+                    // Check if looping is needed (loop back to 0 if we hit the end)
+                    if (nextSlide >= totalTestiSlides) {
+                        nextSlide = 0; 
+                    }
+                    currentTestiSlide = nextSlide;
+                    moveToTestiSlide(currentTestiSlide);
+                }, 4000); // Change slide every 4 seconds
+            }
+
+            function resetTestiInterval() {
+                clearInterval(testiInterval);
+                startTestiInterval();
+            }
+
             function renderTestimonials() {
-                let html = '';
+                testimoniSliderTrack.innerHTML = ''; // Clear previous content
+                slidesPerView = getSlidesPerView(); // Re-calculate on render
+
+                // Calculate the track width needed to contain all slides relative to the view
+                const totalViews = Math.ceil(totalTestiSlides / slidesPerView);
+                testimoniSliderTrack.style.width = `${100 * totalViews}%`; 
+
+                // Individual slide item width
+                const slideItemWidthPercentage = 100 / totalTestiSlides;
+
+
                 // Use random names and ensure unique index cycle
-                for (let i = 0; i < storeTestimonials.length; i++) {
-                    // Ensure the name index doesn't exceed the array length
+                for (let i = 0; i < totalTestiSlides; i++) {
                     const nameIndex = i % indonesianNames.length;
                     const reviewerName = indonesianNames[nameIndex]; 
-                    const review = storeTestimonials[i];
+                    // Remove all '*' characters from testimonials for cleanliness
+                    const review = storeTestimonials[i].replace(/\*/g, ''); 
 
-                    html += `
-                        <div class="testimonial-item animated-section" data-animate data-delay="${100 + i * 50}">
+                    const slideItem = document.createElement('div');
+                    slideItem.classList.add('testimonial-slide-item', 'animated-section');
+                    // Set item width relative to the calculated track width
+                    slideItem.style.width = `${slideItemWidthPercentage}%`;
+
+
+                    slideItem.innerHTML = `
+                        <div class="testimonial-item" data-animate data-delay="${100 + i * 50}">
                             <div class="flex text-yellow-500 mb-2">${renderStars(5)}</div>
                             <p class="text-gray-700 italic leading-relaxed text-base">"${review}"</p>
-                            <p class="text-sm font-semibold text-pink-700 mt-3">- ${reviewerName}</p>
+                            <div class="mt-auto pt-3">
+                                <p class="text-sm font-semibold text-pink-700">- ${reviewerName}</p>
+                            </div>
                         </div>
                     `;
+                    testimoniSliderTrack.appendChild(slideItem);
+                    observer.observe(slideItem); // Re-observe new elements
                 }
 
-                testimoniGrid.innerHTML = html;
-                 document.querySelectorAll('#testimoni-grid .animated-section').forEach(item => {
-                    observer.observe(item);
-                });
+                initializeTestiDots();
+                startTestiInterval();
+                moveToTestiSlide(currentTestiSlide); // Initialize position
             }
+            
+            // ===================================================================
+            // = ABOUT SLIDER LOGIC (New feature)
+            // ===================================================================
+            const aboutSliderTrack = document.getElementById('about-slider-track');
+            const aboutDotsContainer = document.getElementById('about-dots');
+            const aboutSlides = Array.from(aboutSliderTrack.children);
+            const totalAboutSlides = aboutSlides.length;
+
+            function getAboutSlidesPerView() {
+                const width = window.innerWidth;
+                if (width < 768) return 1; // Mobile: 1 item
+                return 3; // Tablet/Desktop: 3 items (matching layout design)
+            }
+            let aboutSlidesPerView = getAboutSlidesPerView();
+
+            function moveToAboutSlide(index) {
+                const slidesToShow = getAboutSlidesPerView();
+                // Ensure we only calculate based on full slides that can transition
+                const totalViews = Math.ceil(totalAboutSlides / slidesToShow); 
+                
+                const viewPercentage = 100 / totalViews; 
+                const offset = index * viewPercentage;
+                
+                aboutSliderTrack.style.transform = `translateX(-${offset}%)`;
+
+                // Update dots
+                const dots = Array.from(aboutDotsContainer.children);
+                dots.forEach(dot => dot.classList.remove('bg-pink-600'));
+                if (dots[index]) {
+                    dots[index].classList.add('bg-pink-600');
+                }
+            }
+
+            function initializeAboutDots() {
+                aboutDotsContainer.innerHTML = '';
+                const slidesToShow = getAboutSlidesPerView();
+                const dotCount = Math.ceil(totalAboutSlides / slidesToShow);
+
+                for (let i = 0; i < dotCount; i++) {
+                    const dot = document.createElement('button');
+                    dot.classList.add('about-dot', 'w-3', 'h-3', 'bg-pink-300', 'rounded-full', 'mx-1', 'transition-all', 'duration-300', 'hover:bg-pink-500');
+                    dot.setAttribute('data-index', i);
+                    
+                    dot.addEventListener('click', (e) => {
+                        const newIndex = parseInt(e.target.getAttribute('data-index'));
+                        currentAboutSlide = newIndex;
+                        moveToAboutSlide(newIndex);
+                    });
+                    aboutDotsContainer.appendChild(dot);
+                }
+                if (aboutDotsContainer.children.length > 0) {
+                     aboutDotsContainer.children[0].classList.add('bg-pink-600');
+                }
+            }
+            
+            function resizeAboutSlider() {
+                aboutSlidesPerView = getAboutSlidesPerView();
+                const totalViews = Math.ceil(totalAboutSlides / aboutSlidesPerView);
+                aboutSliderTrack.style.width = `${100 * totalViews}%`;
+                
+                // Calculate width for individual slides to fit the responsive view
+                const slideItemWidthPercentage = 100 / totalAboutSlides;
+                aboutSlides.forEach(slide => {
+                    slide.style.width = `${slideItemWidthPercentage}%`;
+                });
+                
+                initializeAboutDots();
+                moveToAboutSlide(currentAboutSlide); 
+            }
+            
+            let currentAboutSlide = 0; 
+            resizeAboutSlider(); 
+
+
+            window.addEventListener('resize', () => {
+                // Resize Testimonial Slider
+                const newSlidesPerViewTesti = getSlidesPerView();
+                if (newSlidesPerViewTesti !== slidesPerView) {
+                    slidesPerView = newSlidesPerViewTesti;
+                    currentTestiSlide = 0; 
+                    renderTestimonials(); 
+                }
+                // Resize About Slider
+                resizeAboutSlider();
+            });
 
 
             
-            // Fungsi untuk membuat HTML bintang
+            // Fungsi untuk membuat HTML bintang (dipindahkan ke bawah agar dapat diakses)
             function renderStars(rating) {
                 let starsHTML = '';
                 const fullStars = Math.floor(rating);
@@ -1140,6 +1387,7 @@
                 });
             });
 
+
             // 5. Render produk "Semua" saat halaman pertama kali dimuat
             renderProducts('all');
             renderTestimonials(); // Render testimonials on load
@@ -1195,7 +1443,7 @@
                 // 1. Buat Dots
                 trustSlides.forEach((slide, index) => {
                     const dot = document.createElement('button');
-                    dot.classList.add('trust-dot', 'w-2', 'h-2', 'bg-pink-200', 'rounded-full', 'transition-all', 'duration-300');
+                    dot.classList.add('trust-dot', 'w-2', 'h-2', 'bg-pink-200', 'rounded-full', 'mx-1', 'transition-all', 'duration-300');
                     dot.setAttribute('aria-label', `Go to slide ${index + 1}`);
                     dot.addEventListener('click', () => {
                         moveToTrustSlide(index);
