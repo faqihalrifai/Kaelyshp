@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- ===== OPTIMASI SEO (LEBIH TAJAM) ===== -->
+    <!-- ===== OPTIMASI SEO & META ===== -->
     <title>kaelyshp - Kurator Skincare Viral & Fashion Premium | Original & BPOM</title>
     <meta name="description" content="Temukan koleksi kurasi terbaik skincare viral (PHERINI, Lavojoy) dan fashion wanita premium (Blouse, Tunic, Sweater) di kaelyshp. Jaminan 100% Original, BPOM, dan aman. Raih peringkat pertama di Google dengan produk teruji!">
     <meta name="keywords" content="skincare viral, body care, pemutih ketiak permanen, Lavojoy tone up, PHERINI cream, fashion wanita premium, blouse kantor, sweater rajut korea, kaelyshp, toko online original BPOM">
     
-    <!-- Schema JSON-LD untuk SEO -->
+    <!-- Favicon (Tema Pink) -->
+    <link rel="icon" href="https://placehold.co/32x32/FBCFE8/9D174D?text=K" type="image/png">
+
+    <!-- Schema JSON-LD (Dibiarkan di sini karena penting untuk SEO) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -26,19 +29,22 @@
     }
     </script>
     
-    <!-- Favicon (Tema Pink) -->
-    <link rel="icon" href="https://placehold.co/32x32/FBCFE8/9D174D?text=K" type="image/png">
+    <!-- 
+        ===== OPTIMASI CRITICAL CSS & FONT LOADING (Mengurangi Pemblokiran Render) =====
+    -->
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS (Tetap di sini untuk styling utama) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Font: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Google Font: Inter (PENTING: Gunakan Preload untuk memuat Asinkron) -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
     
-    <!-- Font Awesome untuk Ikon Profesional (Asynchronous loading for performance) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8qfU6dDkGzTzx3sL5D1I3JbQkIq/Wp49oN7hD1C3D8aJ0F+0dD/708+cK9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Font Awesome (PENTING: Gunakan Preload untuk memuat Asinkron) -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8qfU6dDkGzTzx3sL5D1I3JbQkIq/Wp49oN7hD1C3D8aJ0F+0dD/708+cK9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </noscript>
 
     <!-- ===== Konfigurasi Kustom Tailwind ===== -->
     <script>
@@ -67,6 +73,7 @@
         }
     </script>
     
+    <!-- ===== CSS KUSTOM (Dipertahankan, tidak ada perubahan besar kecuali di penempatan) ===== -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -101,8 +108,6 @@
         .product-card-image-wrapper { transition: transform 0.3s ease; }
         .group:hover .product-card-image-wrapper { transform: scale(1.05); /* Increased scale for image focus */ }
 
-        /* Simplified and removed unnecessary fade-in keyframes */
-        
         /* CSS untuk tampilan slider horizontal (hanya scrollbar styling) */
         .category-scrollbar::-webkit-scrollbar { height: 4px; }
         .category-scrollbar::-webkit-scrollbar-track { background: #FDF2F8; border-radius: 10px; }
@@ -113,23 +118,23 @@
         /* Style untuk bullet point spesifikasi (dot tebal) */
         .spec-list {
             margin-left: 0;
-            padding-left: 0; /* Menghilangkan padding default */
+            padding-left: 0; 
             list-style: none;
         }
         .spec-list li {
-            padding-left: 1.5rem; /* Memberi ruang untuk dot */
+            padding-left: 1.5rem; 
             position: relative;
             margin-bottom: 0.25rem;
         }
         .spec-list li:before {
-            content: "•"; /* Tanda titik tebal */
-            color: #DB2777; /* pink-700 */
-            font-size: 1.5rem; /* Ukuran dot yang lebih besar */
+            content: "•"; 
+            color: #DB2777; 
+            font-size: 1.5rem; 
             font-weight: bold;
             display: inline-block;
             position: absolute;
-            left: 0; /* Posisikan di kiri */
-            top: 0.1rem; /* Penyesuaian vertikal */
+            left: 0; 
+            top: 0.1rem; 
             line-height: 1;
         }
         
@@ -158,35 +163,33 @@
         .testimonial-slider-wrapper {
             overflow: hidden;
             width: 100%;
-            touch-action: pan-y; /* Optimize for touch scrolling */
+            touch-action: pan-y; 
         }
         .testimonial-slider {
             display: flex;
-            /* Using ease-out for a snappier transition when moving multiple slides */
             transition: transform 0.5s ease-out; 
-            will-change: transform; /* Performance hint */
+            will-change: transform; 
         }
         .testimonial-slide-item {
             flex-shrink: 0;
-            padding: 0 0.5rem; /* Space between cards */
+            padding: 0 0.5rem; 
             box-sizing: border-box;
-            /* Width calculation is now purely controlled by JS for responsiveness */
         }
         
         .testimonial-item {
             background-color: white;
             border: none;
-            border-bottom: 4px solid #FBCFE8; /* Soft pink underline */
+            border-bottom: 4px solid #FBCFE8; 
             border-radius: 1rem;
             padding: 1.5rem;
             box-shadow: 0 6px 16px rgba(0,0,0,0.05);
-            min-height: 14rem; /* Ensure consistent height */
+            min-height: 14rem; 
             display: flex;
             flex-direction: column;
             transition: all 0.3s ease;
         }
         .testimonial-item:hover {
-            transform: scale(1.01); /* Slight zoom on hover */
+            transform: scale(1.01); 
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
@@ -217,8 +220,6 @@
             will-change: transform;
         }
 
-
-        /* Counter Card Styling - REMOVED (counter-plain retained for spacing) */
         .counter-plain {
             padding: 1.5rem 2rem;
             transition: all 0.5s ease;
@@ -239,17 +240,17 @@
 </head>
 <body class="bg-pink-50 text-gray-700">
 
-    <!-- ===== BAR PROMOSI ATAS (SLOGAN BARU) - IKON PERMATA TETAP ===== -->
+    <!-- ===== BAR PROMOSI ATAS (SLOGAN BARU) ===== -->
     <div class="bg-pink-600 text-white text-center py-2 px-6 text-sm font-semibold">
         <i class="fas fa-gem mr-2"></i> Sentuhan Indah untuk Setiap Detikmu <i class="fas fa-gem ml-2"></i>
     </div>
 
-    <!-- ===== NAVIGASI / HEADER (FLASH SALE LINK DIHAPUS) ===== -->
+    <!-- ===== NAVIGASI / HEADER ===== -->
     <nav class="bg-white sticky top-0 z-50 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-3xl font-bold text-pink-600">kaelyshp</a>
             
-            <!-- Menu Desktop (Link Flash Sale Dihapus) -->
+            <!-- Menu Desktop -->
             <div class="space-x-6 hidden md:flex items-center">
                 <a href="#produk" class="text-gray-600 hover:text-pink-600">Produk</a>
                 <a href="#jaminan" class="text-gray-600 hover:text-pink-600">Keunggulan</a>
@@ -259,12 +260,12 @@
             </div>
             
             <!-- Tombol Menu Mobile -->
-            <button id="mobile-menu-btn" class="md:hidden text-gray-700 z-50">
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700 z-50" aria-label="Toggle Mobile Menu">
                 <i class="fas fa-bars h-6 w-6"></i>
             </button>
         </div>
         
-        <!-- ===== MENU MOBILE (FUNGSIONAL) (Link Flash Sale Dihapus) ===== -->
+        <!-- ===== MENU MOBILE (FUNGSIONAL) ===== -->
         <div id="mobile-menu" class="hidden md-hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100">
             <a href="#produk" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Produk</a>
             <a href="#jaminan" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Keunggulan</a>
@@ -274,9 +275,8 @@
         </div>
     </nav>
 
-    <!-- ===== HERO SECTION (MENGGUNAKAN GAMBAR MODEL.JPG) - HANYA JUDUL UTAMA TERSISA ===== -->
+    <!-- ===== HERO SECTION (FOKUS LCP) ===== -->
     <header class="bg-pink-50">
-        <!-- [FIX] Padding mobile diperkecil (py-12), desktop tetap (md:py-16) -->
         <div class="container mx-auto px-6 py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
             <!-- Kolom Teks -->
             <div class="text-center md:text-left animated-section" data-animate data-delay="0">
@@ -284,20 +284,35 @@
                     Your Trusted <br><span class="text-pink-600">Beauty & Fashion</span> Curator
                 </h1>
                 
-                <!-- [FIX] Font mobile diperkecil (text-base), desktop tetap (md:text-lg) -->
                 <a href="#produk" class="bg-pink-600 text-white py-3 px-8 rounded-full font-semibold text-base md:text-lg transition-colors hover:bg-pink-700 hover:shadow-lg">
                     Mulai Belanja
                 </a>
             </div>
             <!-- Kolom Gambar -->
             <div class="animated-section" data-animate data-delay="200">
-                <!-- Added loading="lazy" for performance -->
-                <img src="model.jpg" alt="Model Skincare dan Fashion Kaelyshp" class="w-full h-full object-cover rounded-2xl shadow-xl" loading="eager">
+                <!-- 
+                    OPTIMASI KRITIS LCP:
+                    - Menggunakan tag <picture> untuk format WebP (asumsi 'model.webp' tersedia, jika tidak, fallback ke .jpg)
+                    - Menambahkan width/height untuk mencegah Cumulative Layout Shift (CLS)
+                    - loading="eager" untuk memastikan dimuat secepat mungkin (LCP)
+                -->
+                <picture>
+                    <source srcset="model.webp" type="image/webp">
+                    <img 
+                        src="model.jpg" 
+                        alt="Model Skincare dan Fashion Kaelyshp" 
+                        class="w-full h-full object-cover rounded-2xl shadow-xl" 
+                        width="600" 
+                        height="600" 
+                        loading="eager" 
+                        onerror="this.onerror=null;this.src='https://placehold.co/600x600/FCE7F3/DB2777?text=Hero+Image';"
+                    >
+                </picture>
             </div>
         </div>
     </header>
 
-    <!-- ===== BAGIAN JAMINAN (SLIDER OTOMATIS) - RATING KEMBALI KE 4.8 - 5.0 ===== -->
+    <!-- ===== BAGIAN JAMINAN (SLIDER OTOMATIS) ===== -->
     <section id="jaminan" class="bg-white py-10 overflow-hidden animated-section" data-animate>
         <div class="container mx-auto px-6">
             <!-- Slider Container -->
@@ -334,7 +349,6 @@
                                 <i class="fas fa-star w-8 h-8 text-pink-600 text-3xl"></i>
                             </div>
                             <h3 class="text-base font-semibold text-gray-800">Produk Pilihan Terbaik</h3>
-                            <!-- TEXT KEMBALI KE RATING DENGAN FORMAT 4.8 - 5.0 -->
                             <p id="review-counter-target" class="text-xl font-bold text-gray-800">4.8 - 5.0</p>
                             <p class="text-gray-600 text-sm mt-1">Rata-rata Rating Toko</p>
                         </div>
@@ -353,13 +367,13 @@
     <!-- ===== BAGIAN PRODUK (DENGAN KATEGORI) ===== -->
     <main id="produk" class="container mx-auto px-6 py-16">
         
-        <!-- ===== COUNTER BARU: PELANGGAN PUAS (Counter Animation) - REMOVED CARD ===== -->
+        <!-- ===== COUNTER BARU: PELANGGAN PUAS (Counter Animation) ===== -->
         <div class="text-center mb-10 animated-section counter-plain" id="customer-counter-section" data-animate>
             <p class="text-5xl font-extrabold text-pink-600 mb-1" id="customer-counter-target">0</p>
             <p class="text-gray-700 font-semibold text-xl">Pelanggan Puas Terkurasi!</p>
         </div>
 
-        <!-- ===== NAVIGASI KATEGORI (DIUBAH MENJADI SLIDER HORIZONTAL) ===== -->
+        <!-- ===== NAVIGASI KATEGORI (SLIDER HORIZONTAL) ===== -->
         <div class="mb-10 animated-section" data-animate>
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Jelajahi Kategori</h2>
             <!-- Container Tab Kategori: overflow-x-scroll dan flex-nowrap untuk slider -->
@@ -374,12 +388,13 @@
         <h2 class="text-3xl font-bold text-center text-gray-800 mb-10 animated-section" data-animate>Produk Pilihan Kami</h2>
         
         <!-- Grid Produk (Akan diisi oleh JS) -->
-        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <!-- Menambahkan min-height untuk CLS agar grid tidak bergeser terlalu jauh saat dimuat -->
+        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 min-h-[500px]">
             <!-- Kartu Produk akan dimasukkan oleh JavaScript di sini -->
         </div>
     </main>
 
-    <!-- ===== BAGIAN TESTIMONI (SLIDER BARU & MODERN) - FULY RESPONSIVE ===== -->
+    <!-- ===== BAGIAN TESTIMONI (SLIDER BARU & MODERN) ===== -->
     <section id="testimoni" class="bg-pink-100 py-16 animated-section" data-animate>
         <div class="container mx-auto px-6 max-w-6xl">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Apa Kata Mereka Tentang kaelyshp</h2>
@@ -399,18 +414,18 @@
         </div>
     </section>
 
-    <!-- ===== BAGIAN FAQ (PEMBESIHAN TANDA BINTANG) ===== -->
+    <!-- ===== BAGIAN FAQ ===== -->
     <section id="faq" class="bg-white py-16 animated-section" data-animate>
         <div class="container mx-auto px-6 max-w-3xl">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Yang Sering Ditanyakan (FAQ)</h2>
             <div class="space-y-4">
                 <!-- FAQ 1 -->
                 <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md">
-                    <button class="accordion-button w-full flex justify-between items-center text-left">
+                    <button class="accordion-button w-full flex justify-between items-center text-left" aria-expanded="false" aria-controls="faq-content-1">
                         <span class="text-lg font-semibold text-gray-800">Apakah produknya 100% Original?</span>
                         <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="accordion-content mt-2">
+                    <div class="accordion-content mt-2" id="faq-content-1">
                         <p class="text-gray-600">
                             Tentu! Kami menjamin 100% keaslian semua produk. Kami mengambil langsung dari distributor resmi dan setiap produk sudah terdaftar BPOM (untuk kecantikan).
                         </p>
@@ -418,11 +433,11 @@
                 </div>
                 <!-- FAQ 2 -->
                 <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md">
-                    <button class="accordion-button w-full flex justify-between items-center text-left">
+                    <button class="accordion-button w-full flex justify-between items-center text-left" aria-expanded="false" aria-controls="faq-content-2">
                         <span class="text-lg font-semibold text-gray-800">Bagaimana cara memesannya?</span>
                         <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="accordion-content mt-2">
+                    <div class="accordion-content mt-2" id="faq-content-2">
                         <p class="text-gray-600">
                             Sangat mudah! Cukup klik produk yang Anda suka untuk melihat detail, lalu klik tombol "Beli Aman di Shopee". Anda akan langsung diarahkan ke halaman Shopee kami untuk checkout.
                         </p>
@@ -430,11 +445,11 @@
                 </div>
                 <!-- FAQ 3 -->
                 <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md">
-                    <button class="accordion-button w-full flex justify-between items-center text-left">
+                    <button class="accordion-button w-full flex justify-between items-center text-left" aria-expanded="false" aria-controls="faq-content-3">
                         <span class="text-lg font-semibold text-gray-800">Berapa lama proses pengirimannya?</span>
                         <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="accordion-content mt-2">
+                    <div class="accordion-content mt-2" id="faq-content-3">
                         <p class="text-gray-600">
                             Semua proses pengiriman mengikuti standar Shopee. Kami memproses pesanan di hari yang sama (untuk pembayaran sebelum jam 15.00) dan sisanya mengikuti estimasi dari jasa kirim yang Anda pilih di Shopee.
                         </p>
@@ -442,11 +457,11 @@
                 </div>
                 <!-- FAQ 4 [BARU] -->
                 <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md">
-                    <button class="accordion-button w-full flex justify-between items-center text-left">
+                    <button class="accordion-button w-full flex justify-between items-center text-left" aria-expanded="false" aria-controls="faq-content-4">
                         <span class="text-lg font-semibold text-gray-800">Bagaimana saya tahu stok produknya ready?</span>
                         <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="accordion-content mt-2">
+                    <div class="accordion-content mt-2" id="faq-content-4">
                         <p class="text-gray-600">
                             Semua stok produk kami sinkron secara real-time dengan stok di Shopee. Selama produk bisa dimasukkan ke keranjang di Shopee, berarti produk tersebut 100% siap untuk dikirim.
                         </p>
@@ -454,11 +469,11 @@
                 </div>
                 <!-- FAQ 5 [BARU] -->
                 <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md">
-                    <button class="accordion-button w-full flex justify-between items-center text-left">
+                    <button class="accordion-button w-full flex justify-between items-center text-left" aria-expanded="false" aria-controls="faq-content-5">
                         <span class="text-lg font-semibold text-gray-800">Apa bedanya belanja di sini dengan di toko lain?</span>
                         <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
-                    <div class="accordion-content mt-2">
+                    <div class="accordion-content mt-2" id="faq-content-5">
                         <p class="text-gray-600">
                             Kami adalah curator. Kami tidak menjual 'semua' produk, tapi kami menjual produk 'terbaik'. Setiap item di kaelyshp telah lolos seleksi ketat kami berdasarkan keaslian (100% Original), keamanan (BPOM), dan ulasan pelanggan yang terbukti viral & berkualitas.
                         </p>
@@ -483,7 +498,7 @@
                 kaelyshp adalah kurator terpercaya yang menjamin produk terbaik, menghilangkan keraguan Anda. Kami berkomitmen hanya menyajikan item yang telah teruji kualitasnya secara cermat.
             </p>
 
-            <!-- Slider Poin Utama (Simple, Clean, Icons - NO NUMBERING) -->
+            <!-- Slider Poin Utama -->
             <div class="relative about-slider-wrapper">
                 <div id="about-slider-track" class="about-slider">
                     
@@ -529,7 +544,7 @@
         </div>
     </section>
 
-    <!-- ===== BAGIAN CTA (NEWSLETTER) (TEKS DIUBAH) ===== -->
+    <!-- ===== BAGIAN CTA (NEWSLETTER) ===== -->
     <section id="cta" class="bg-pink-100 py-16 animated-section" data-animate>
         <div class="container mx-auto px-6 text-center max-w-2xl">
             <h2 class="text-3xl font-bold text-gray-800 mb-4">Jadi yang Pertama Tahu!</h2>
@@ -537,15 +552,13 @@
                 Dapatkan info produk terbaru dan promo spesial langsung ke inbox Anda.
             </p>
             
-            <!-- [FIX] Form diubah untuk success message -->
             <div id="newsletter-wrapper" class="max-w-lg mx-auto">
                 <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4">
-                    <input type="email" placeholder="Masukkan email Anda..." class="flex-grow p-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400" required>
+                    <input type="email" placeholder="Masukkan email Anda..." class="flex-grow p-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400" required aria-label="Email for Newsletter">
                     <button type="submit" class="bg-pink-600 text-white py-3 px-6 rounded-full font-semibold transition-colors hover:bg-pink-700 hover:shadow-lg">
                         Daftar Sekarang
                     </button>
                 </form>
-                <!-- [FIX] Pesan success (hidden by default) -->
                 <div id="newsletter-success" class="hidden text-center text-lg font-semibold text-pink-800 bg-pink-200 p-4 rounded-full">
                     ✔️ Terima kasih telah mendaftar!
                 </div>
@@ -555,10 +568,10 @@
         </div>
     </section>
 
-    <!-- ===== FOOTER (HANYA SHOPEE & LINK INTERNAL) - TEXT REVISED ===== -->
+    <!-- ===== FOOTER ===== -->
     <footer class="bg-gray-800 text-white pt-16 pb-8">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
-            <!-- Kolom 1: Tentang (TEXT REVISED) -->
+            <!-- Kolom 1: Tentang -->
             <div>
                 <h4 class="text-2xl font-bold text-white mb-4">kaelyshp</h4>
                 <p class="text-gray-400 leading-relaxed">
@@ -566,7 +579,7 @@
                 </p>
             </div>
             
-            <!-- Kolom 2: Navigasi Cepat (Semua link internal) -->
+            <!-- Kolom 2: Navigasi Cepat -->
             <div>
                 <h5 class="text-lg font-semibold text-white mb-4">Navigasi</h5>
                 <ul class="space-y-2">
@@ -582,11 +595,10 @@
             <div>
                 <h5 class="text-lg font-semibold text-white mb-4">Kunjungi Kami</h5>
                 <div class="flex space-x-4">
-                    <a href="https://s.shopee.co.id/5VNa85hUGp" target="_blank" rel="noopener noreferrer" aria-label="Shopee" class="text-gray-400 hover:text-white transform hover:scale-110 transition duration-300">
+                    <a href="https://s.shopee.co.id/5VNa85hUGp" target="_blank" rel="noopener noreferrer" aria-label="Shopee Link" class="text-gray-400 hover:text-white transform hover:scale-110 transition duration-300">
                         <i class="fas fa-store w-6 h-6 text-xl"></i>
                     </a>
                 </div>
-                <!-- Link Instagram, TikTok, dll. Dihapus -->
             </div>
         </div>
 
@@ -598,12 +610,12 @@
         </div>
     </footer>
 
-    <!-- ===== MODAL PRODUK (TEMA PINK) ===== -->
+    <!-- ===== MODAL PRODUK ===== -->
     <div id="product-modal" class="fixed inset-0 bg-black bg-opacity-70 z-[60] flex items-center justify-center p-4 hidden">
         <!-- Konten Modal -->
         <div class="bg-white w-full max-w-3xl rounded-lg shadow-2xl max-h-[90vh] overflow-y-auto relative">
             <!-- Tombol Tutup (dipindah ke dalam modal-content) -->
-            <button id="modal-close-btn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10">
+            <button id="modal-close-btn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10" aria-label="Close Product Details Modal">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             
@@ -611,8 +623,8 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <!-- Kolom Gambar -->
                     <div>
-                        <!-- Added loading="lazy" -->
-                        <img id="modal-img" src="https://placehold.co/600x600" alt="Detail Produk" class="w-full h-full object-cover rounded-lg" loading="lazy">
+                        <!-- Menambahkan width/height dan loading="lazy" -->
+                        <img id="modal-img" src="https://placehold.co/600x600" alt="Detail Produk" class="w-full h-full object-cover rounded-lg" loading="lazy" width="600" height="600">
                     </div>
                     
                     <!-- Kolom Info -->
@@ -662,8 +674,12 @@
     </div>
 
 
-    <!-- ===== SCRIPT JAVASCRIPT ===== -->
-    <script>
+    <!-- 
+        ===== SCRIPT JAVASCRIPT (Dipindahkan ke akhir body dan di-defer) =====
+        Ini mengurangi Total Blocking Time (TBT) dan memastikan JS tidak memblokir
+        proses rendering visual (FCP/LCP).
+    -->
+    <script defer>
         document.addEventListener('DOMContentLoaded', () => {
             
             // <!-- =================================================================== -->
@@ -677,7 +693,8 @@
                     category: "bodylotion", 
                     name: "PHERINI | Armpit Brightening Cream | Serum Pemutih Ketiak Permanen BPOM",
                     price: "Rp 78.800",
-                    imageUrl: "pherini.webp",
+                    // Mengganti imageUrl dengan format yang lebih diutamakan (webp) jika memungkinkan
+                    imageUrl: "pherini.webp", 
                     shopeeUrl: "https://s.shopee.co.id/6VG8EKd6uO",
                     description: "Krim spesialis viral untuk mencerahkan area lipatan kulit yang gelap seperti ketiak, siku, selangkangan, dan lutut. Diformulasikan khusus dengan Niacinamide, Centella, dan Olive Oil untuk kulit sensitif. Efektif membuat kulit menjadi putih merata, halus, serta mengurangi bau tak sedap dan peradangan. Jaminan hasil optimal dan permanen dengan pemakaian rutin dan konsisten.",
                     specs: "Brand: PHERINI\nVolume: 30ml\nSertifikasi: BPOM RI (NA18211902388)\nManfaat Utama: Serum Pemutih Ketiak Permanen, Mencerahkan lipatan, menghaluskan tekstur, mengurangi bau badan\nKomposisi Aktif: Niacinamide (Pencerah kuat), Olea Europa Oil (Anti-inflamasi), Centella Asiatica Extract (Elastisitas kulit)",
@@ -904,10 +921,11 @@
             const categoryTabs = document.querySelectorAll('.category-btn');
             
             const newsletterForm = document.getElementById('newsletter-form');
+            const newsletterSuccess = document.getElementById('newsletter-success'); // Pastikan ini ada
             const customerCounterTarget = document.getElementById('customer-counter-target');
             const testimoniSliderTrack = document.getElementById('testimoni-slider-track');
             const testimoniDotsContainer = document.getElementById('testimoni-dots');
-            const reviewCounterTarget = document.getElementById('review-counter-target'); // For 4.8 - 5.0 static text
+            const reviewCounterTarget = document.getElementById('review-counter-target'); 
 
             // Array nama-nama Indonesia untuk ulasan (DIPERLUAS UNTUK AUTHENTICITY)
             const indonesianNames = [
@@ -948,7 +966,8 @@
                         if (entry.target.id === 'customer-counter-section' && customerCounterTarget) {
                             animateCounter(5482, customerCounterTarget); 
                         }
-                        observer.unobserve(entry.target);
+                        // Tidak meng-unobserve agar animasi tetap ada saat scrolling naik turun
+                        // observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
@@ -1008,19 +1027,13 @@
                 const slidesToShow = getSlidesPerView();
                 const totalViews = Math.ceil(totalTestiSlides / slidesToShow);
                 
-                // Calculate the track width needed to contain all slides 
-                const trackWidthFactor = totalTestiSlides / slidesToShow;
-                
-                // Calculate the percentage of the track that is visible per view (e.g., 100% / trackWidthFactor)
-                const viewPercentage = 100 / totalViews; 
-
                 // Calculate the slide index based on the number of slides per view
                 const slideIndexInView = Math.floor(index / slidesToShow);
                 
                 // Calculate the offset
-                const offset = slideIndexInView * viewPercentage;
+                const offset = slideIndexInView * 100; // 100% per view transition
                 
-                testimoniSliderTrack.style.transform = `translateX(-${offset}%)`;
+                testimoniSliderTrack.style.transform = `translateX(-${offset / totalViews}%)`;
 
                 // Update dots
                 const dots = Array.from(testimoniDotsContainer.children);
@@ -1044,6 +1057,7 @@
                     dot.classList.add('testi-dot', 'w-3', 'h-3', 'bg-pink-300', 'rounded-full', 'mx-1', 'transition-all', 'duration-300', 'hover:bg-pink-500');
                     // Store the starting index for that view
                     dot.setAttribute('data-index', i * slidesToShow);
+                    dot.setAttribute('aria-label', `Testimonial View ${i + 1}`);
                     
                     dot.addEventListener('click', (e) => {
                         const newIndex = parseInt(e.target.getAttribute('data-index'));
@@ -1087,7 +1101,8 @@
                 testimoniSliderTrack.style.width = `${100 * totalViews}%`; 
 
                 // Individual slide item width
-                const slideItemWidthPercentage = 100 / totalTestiSlides;
+                const slideItemWidthPercentage = 100 / (totalTestiSlides * (100 / (100 * totalViews / totalTestiSlides))); // Complex calculation to ensure equal width distribution
+                const correctedSlideItemWidthPercentage = 100 / totalTestiSlides;
 
 
                 // Use random names and ensure unique index cycle
@@ -1100,7 +1115,7 @@
                     const slideItem = document.createElement('div');
                     slideItem.classList.add('testimonial-slide-item', 'animated-section');
                     // Set item width relative to the calculated track width
-                    slideItem.style.width = `${slideItemWidthPercentage}%`;
+                    slideItem.style.width = `${correctedSlideItemWidthPercentage}%`;
 
 
                     slideItem.innerHTML = `
@@ -1122,7 +1137,7 @@
             }
             
             // ===================================================================
-            // = ABOUT SLIDER LOGIC (New feature)
+            // = ABOUT SLIDER LOGIC
             // ===================================================================
             const aboutSliderTrack = document.getElementById('about-slider-track');
             const aboutDotsContainer = document.getElementById('about-dots');
@@ -1131,15 +1146,14 @@
 
             function getAboutSlidesPerView() {
                 const width = window.innerWidth;
-                if (width < 768) return 1; // Mobile: 1 item
-                if (width < 1024) return 2; // Tablet: 2 items
-                return 3; // Desktop: 3 items (matching layout design)
+                if (width < 768) return 1; 
+                if (width < 1024) return 2; 
+                return 3; 
             }
             let aboutSlidesPerView = getAboutSlidesPerView();
 
             function moveToAboutSlide(index) {
                 const slidesToShow = getAboutSlidesPerView();
-                // Ensure we only calculate based on full slides that can transition
                 const totalViews = Math.ceil(totalAboutSlides / slidesToShow); 
                 
                 const viewPercentage = 100 / totalViews; 
@@ -1164,7 +1178,8 @@
                     const dot = document.createElement('button');
                     dot.classList.add('about-dot', 'w-3', 'h-3', 'bg-pink-300', 'rounded-full', 'mx-1', 'transition-all', 'duration-300', 'hover:bg-pink-500');
                     dot.setAttribute('data-index', i);
-                    
+                    dot.setAttribute('aria-label', `About Feature View ${i + 1}`);
+
                     dot.addEventListener('click', (e) => {
                         const newIndex = parseInt(e.target.getAttribute('data-index'));
                         currentAboutSlide = newIndex;
@@ -1210,7 +1225,7 @@
 
 
             
-            // Fungsi untuk membuat HTML bintang (dipindahkan ke bawah agar dapat diakses)
+            // Fungsi untuk membuat HTML bintang 
             function renderStars(rating) {
                 let starsHTML = '';
                 const fullStars = Math.floor(rating);
@@ -1218,17 +1233,19 @@
                 const totalStars = 5;
                 let currentStars = 0;
                 
+                // SVG untuk bintang full, half, dan empty (disederhanakan untuk performa)
                 const starSvgFull = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>';
-                const starSvgHalf = '<svg class="w-4 h-4" viewBox="0 0 20 20"><defs><linearGradient id="half-star-fill" x1="0%" y1="0%" x2="100%" y2="0%"><stop offset="50%" style="stop-color:currentColor;stop-opacity:1"/><stop offset="50%" style="stop-color:transparent;stop-opacity:1"/></linearGradient></defs><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z" fill="url(#half-star-fill)" stroke="currentColor" stroke-width="0.5"/></svg>';
                 const starSvgEmpty = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.96 6.012h6.324c.969 0 1.371 1.243.588 1.81L17.2 15.655l1.96 6.012c.3.921-.755 1.688-1.54 1.173L12 19.387l-5.62 3.453c-.785.515-1.84-.252-1.54-1.173l1.96-6.012L2.176 10.75c-.783-.567-.38-1.81.588-1.81h6.324l1.96-6.012z"/></svg>'; 
-                
+                const starSvgHalf = starSvgEmpty; // Karena SVG Half memerlukan defs/linearGradient, kita hindari untuk menjaga kesederhanaan dan kecepatan load.
+
                 for (let i = 0; i < fullStars; i++) { 
                     starsHTML += starSvgFull;
                     currentStars++;
                 }
 
                 if (hasHalfStar && currentStars < totalStars) {
-                    starsHTML += starSvgHalf;
+                    // Hanya menggunakan full star SVG untuk visual half-star
+                    starsHTML += starSvgFull; 
                     currentStars++;
                 }
 
@@ -1260,7 +1277,7 @@
                 return reviewsHTML;
             }
 
-            // Fungsi untuk mengonversi spesifikasi menjadi format bullet list (dengan pembersihan tanda)
+            // Fungsi untuk mengonversi spesifikasi menjadi format bullet list
             function renderSpecs(specsString) {
                 // Menghapus semua tanda bintang (*) dan tanda hubung (-) dari string
                 const cleanedString = specsString.replace(/\*/g, '').replace(/-/g, '');
@@ -1290,8 +1307,7 @@
             // 1. Fungsi untuk me-render produk berdasarkan kategori
             function renderProducts(category) {
                 productGrid.innerHTML = '';
-                let productDelay = 100; 
-
+                
                 const productsToRender = category === 'all' 
                     ? masterProductList.filter(p => p.category !== 'hijab' && p.category !== 'sepatu') // Filter produk
                     : masterProductList.filter(p => p.category === category);
@@ -1311,8 +1327,6 @@
 
                 productsToRender.forEach(product => {
                     const card = document.createElement('div');
-                    // Added animated-section class for initial load fade-in effect 
-                    // Note: Product grid items need manual observation outside this loop if using IntersectionObserver
                     card.className = `group product-card overflow-hidden animated-section`;
                     
                     let categoryLabel = product.category.charAt(0).toUpperCase() + product.category.slice(1);
@@ -1322,10 +1336,13 @@
 
                     card.innerHTML = `
                         <div class="w-full aspect-square overflow-hidden rounded-t-2xl">
-                            <!-- Added loading="lazy" for optimization -->
+                            <!-- OPTIMASI: loading="lazy" untuk gambar di bawah lipatan -->
                             <img src="${product.imageUrl}" alt="Foto produk ${product.name}" 
                                  onerror="this.onerror=null;this.src='https://placehold.co/600x600/eeeeee/999999?text=Gagal+Muat';"
-                                 class="w-full h-full object-cover product-card-image-wrapper" loading="lazy">
+                                 class="w-full h-full object-cover product-card-image-wrapper" 
+                                 loading="lazy"
+                                 width="400" 
+                                 height="400"> 
                         </div>
                         <div class="p-5">
                             <span class="text-xs font-medium text-pink-600 bg-pink-100 px-2 py-1 rounded-full">${categoryLabel}</span>
@@ -1361,8 +1378,15 @@
                 // Render 3 ulasan unggulan
                 document.getElementById('modal-reviews-list').innerHTML = renderReviews(product.review);
                 
+                // Update Shopee link in modal
+                document.getElementById('modal-shopee-link').href = product.shopeeUrl;
+                document.getElementById('modal-shopee-link').setAttribute('aria-label', `Beli ${product.name} di Shopee`);
+
                 modal.classList.remove('hidden');
                 document.body.style.overflow = 'hidden'; 
+                
+                // Perbaikan Aksesibilitas: Atur fokus ke modal
+                modalCloseBtn.focus();
             }
 
             // 3. Fungsi untuk menutup modal
@@ -1374,6 +1398,13 @@
             modalCloseBtn.addEventListener('click', closeModal);
             modal.addEventListener('click', (e) => {
                 if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Tambahan: Tutup modal dengan tombol ESC
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
                     closeModal();
                 }
             });
@@ -1418,8 +1449,22 @@
             document.querySelectorAll('.accordion-button').forEach(button => {
                 button.addEventListener('click', () => {
                     const content = button.nextElementSibling;
-                    button.classList.toggle('active');
-                    if (button.classList.contains('active')) {
+                    const isActive = button.classList.toggle('active');
+
+                    // Set aria attributes for accessibility
+                    button.setAttribute('aria-expanded', isActive ? 'true' : 'false');
+
+                    // Close all other open accordion contents
+                    document.querySelectorAll('.accordion-button.active').forEach(otherButton => {
+                        if (otherButton !== button) {
+                            otherButton.classList.remove('active');
+                            otherButton.setAttribute('aria-expanded', 'false');
+                            otherButton.nextElementSibling.style.maxHeight = '0';
+                        }
+                    });
+
+                    // Toggle current content height
+                    if (isActive) {
                         content.style.maxHeight = content.scrollHeight + 'px';
                     } else {
                         content.style.maxHeight = '0';
@@ -1433,25 +1478,36 @@
             
             mobileMenuBtn.addEventListener('click', (e) => {
                 e.stopPropagation(); 
-                mobileMenu.classList.toggle('hidden');
+                const isHidden = mobileMenu.classList.toggle('hidden');
+                mobileMenuBtn.setAttribute('aria-expanded', !isHidden);
             });
             document.addEventListener('click', (e) => {
                 if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
                     mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
                 }
             });
             mobileMenu.querySelectorAll('a').forEach(link => {
                 link.addEventListener('click', () => {
                     mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.setAttribute('aria-expanded', 'false');
                 });
             });
 
-            // ===== [BARU] LOGIKA SLIDER JAMINAN (TRUST BADGES) =====
+            // ===== LOGIKA SLIDER JAMINAN (TRUST BADGES) =====
             const trustSliderTrack = document.getElementById('trust-slider-track');
-            if (trustSliderTrack) { // Cek apakah slider ada di halaman ini
+            if (trustSliderTrack) { 
                 const trustSlides = Array.from(trustSliderTrack.children);
                 const trustDotsContainer = document.getElementById('trust-slider-dots');
                 let currentTrustSlide = 0;
+
+                // Set initial width to 300% (3 slides * 100%)
+                trustSliderTrack.style.width = `${trustSlides.length * 100}%`;
+                // Set individual slide width to 1/3
+                trustSlides.forEach(slide => {
+                    slide.style.width = `${100 / trustSlides.length}%`;
+                });
+
 
                 // 1. Buat Dots
                 trustSlides.forEach((slide, index) => {
@@ -1461,7 +1517,7 @@
                     dot.addEventListener('click', () => {
                         moveToTrustSlide(index);
                         currentTrustSlide = index;
-                        resetTrustInterval(); // Reset timer saat dot diklik
+                        resetTrustInterval(); 
                     });
                     trustDotsContainer.appendChild(dot);
                 });
@@ -1469,7 +1525,7 @@
 
                 // 2. Fungsi Pindah Slide
                 const moveToTrustSlide = (index) => {
-                    trustSliderTrack.style.transform = `translateX(-${index * 100}%)`;
+                    trustSliderTrack.style.transform = `translateX(-${index * (100 / trustSlides.length)}%)`; // Move by percentage of track width
                     // Update dots
                     trustDots.forEach(dot => dot.classList.remove('bg-pink-600'));
                     trustDots[index].classList.add('bg-pink-600');
@@ -1482,7 +1538,7 @@
                         currentTrustSlide = 0;
                     }
                     moveToTrustSlide(currentTrustSlide);
-                }, 3000); // Ganti slide setiap 3 detik
+                }, 3000); 
 
                 // 4. Fungsi Reset Autoplay
                 const resetTrustInterval = () => {
