@@ -6,13 +6,13 @@
     
     <!-- ===== OPTIMASI SEO & META ===== -->
     <title>kaelyshp - Kurator Skincare Viral & Fashion Premium | Original & BPOM</title>
-    <meta name="description" content="Temukan koleksi kurasi terbaik skincare viral (PHERINI, Lavojoy) dan fashion wanita premium (Blouse, Tunic, Sweater) di kaelyshp. Jaminan 100% Original, BPOM, dan aman. Raih peringkat pertama di Google dengan produk teruji!">
+    <meta name="description" content="Temukan koleksi kurasi terbaik skincare viral (PHERINI, Lavojoy) dan fashion wanita premium (Blouse, Tunic, Sweater) di kaelyshp. Jaminan 100% Original, BPOM, dan aman.">
     <meta name="keywords" content="skincare viral, body care, pemutih ketiak permanen, Lavojoy tone up, PHERINI cream, fashion wanita premium, blouse kantor, sweater rajut korea, kaelyshp, toko online original BPOM">
     
     <!-- Favicon (Tema Pink) -->
     <link rel="icon" href="https://placehold.co/32x32/FBCFE8/9D174D?text=K" type="image/png">
 
-    <!-- Schema JSON-LD (Dibiarkan di sini karena penting untuk SEO) -->
+    <!-- Schema JSON-LD -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -29,18 +29,14 @@
     }
     </script>
     
-    <!-- 
-        ===== OPTIMASI CRITICAL CSS & FONT LOADING (Mengurangi Pemblokiran Render) =====
-    -->
-
-    <!-- Tailwind CSS (Tetap di sini untuk styling utama) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Google Font: Inter (PENTING: Gunakan Preload untuk memuat Asinkron) -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"></noscript>
+    <!-- Google Font: Inter -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"></noscript>
     
-    <!-- Font Awesome (PENTING: Gunakan Preload untuk memuat Asinkron) -->
+    <!-- Font Awesome -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" xintegrity="sha512-SnH5WK+bZxgPHs44uWIX+LLMDJ8qfU6dDkGzTzx3sL5D1I3JbQkIq/Wp49oN7hD1C3D8aJ0F+0dD/708+cK9g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -73,7 +69,7 @@
         }
     </script>
     
-    <!-- ===== CSS KUSTOM (Dipertahankan, tidak ada perubahan besar kecuali di penempatan) ===== -->
+    <!-- ===== CSS KUSTOM ===== -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -85,7 +81,6 @@
         }
         html { scroll-behavior: smooth; }
         
-        /* Smooth transition for general elements */
         a, button, .product-card {
             transition: all 0.3s ease-in-out;
         }
@@ -100,22 +95,24 @@
             border-radius: 1.25rem;
             box-shadow: 0 4px 12px rgba(0,0,0,0.03);
             cursor: pointer;
+            overflow: hidden;
         }
         .product-card:hover {
-            transform: translateY(-5px) scale(1.01); /* Added slight scale for professional effect */
-            box-shadow: 0 16px 30px rgba(0,0,0,0.1); /* Slightly stronger shadow on hover */
+            transform: translateY(-5px); 
+            box-shadow: 0 16px 30px rgba(236, 72, 153, 0.15); /* Pinkish shadow on hover */
+            border-color: #FBCFE8;
         }
-        .product-card-image-wrapper { transition: transform 0.3s ease; }
-        .group:hover .product-card-image-wrapper { transform: scale(1.05); /* Increased scale for image focus */ }
+        .product-card-image-wrapper { transition: transform 0.5s ease; }
+        .group:hover .product-card-image-wrapper { transform: scale(1.08); }
 
-        /* CSS untuk tampilan slider horizontal (hanya scrollbar styling) */
+        /* Scrollbar styling */
         .category-scrollbar::-webkit-scrollbar { height: 4px; }
         .category-scrollbar::-webkit-scrollbar-track { background: #FDF2F8; border-radius: 10px; }
         .category-scrollbar::-webkit-scrollbar-thumb { background: #FBCFE8; border-radius: 10px; }
         .category-scrollbar::-webkit-scrollbar-thumb:hover { background: #F9A8D4; }
         .category-scrollbar { scrollbar-width: thin; scrollbar-color: #FBCFE8 #FDF2F8; }
         
-        /* Style untuk bullet point spesifikasi (dot tebal) */
+        /* Spec List Styling */
         .spec-list {
             margin-left: 0;
             padding-left: 0; 
@@ -124,7 +121,8 @@
         .spec-list li {
             padding-left: 1.5rem; 
             position: relative;
-            margin-bottom: 0.25rem;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
         }
         .spec-list li:before {
             content: "•"; 
@@ -134,21 +132,26 @@
             display: inline-block;
             position: absolute;
             left: 0; 
-            top: 0.1rem; 
+            top: -0.1rem; 
             line-height: 1;
         }
         
-        /* Style untuk ulasan tambahan */
-        .review-card {
-            background-color: white;
-            border-radius: 0.5rem;
-            padding: 0.75rem;
-            margin-top: 0.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            border: 1px solid #FBCFE8;
+        /* --- NEW MODERN REVIEW CARD CSS --- */
+        .modern-review-card {
+            background-color: #fff;
+            border-radius: 1rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid #F3F4F6;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: transform 0.2s;
+        }
+        .modern-review-card:hover {
+            border-color: #FBCFE8;
+            background-color: #FFFDFE;
         }
         
-        /* New CSS for better fading effect on sections */
+        /* Animations */
         .animated-section {
             opacity: 0;
             transform: translateY(20px);
@@ -159,7 +162,7 @@
             transform: translateY(0);
         }
 
-        /* Testimoni Styling - UPGRADED TO SLIDER */
+        /* Testimonial Slider */
         .testimonial-slider-wrapper {
             overflow: hidden;
             width: 100%;
@@ -193,7 +196,7 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
         
-        /* About Slider Item */
+        /* About Slider */
         .about-slide-item {
              flex-shrink: 0;
             padding: 0 0.75rem;
@@ -224,133 +227,149 @@
             padding: 1.5rem 2rem;
             transition: all 0.5s ease;
         }
+        
+        /* --- HERO OVERLAY TEXT SHADOW --- */
+        .hero-text-shadow {
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
     </style>
 
-    <!-- KODE GLOBAL SITE TAG (G-Tag) GOOGLE ANALYTICS 4 -->
-    <!-- Measurement ID Anda: G-XEP8BFJK7Q -->
+    <!-- GOOGLE ANALYTICS -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XEP8BFJK7Q"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-XEP8BFJK7Q');
     </script>
-    <!-- AKHIR KODE GOOGLE ANALYTICS -->
 </head>
 <body class="bg-pink-50 text-gray-700">
 
-    <!-- ===== BAR PROMOSI ATAS (SLOGAN BARU) ===== -->
+    <!-- ===== BAR PROMOSI ATAS ===== -->
     <div class="bg-pink-600 text-white text-center py-2 px-6 text-sm font-semibold">
         <i class="fas fa-gem mr-2"></i> Sentuhan Indah untuk Setiap Detikmu <i class="fas fa-gem ml-2"></i>
     </div>
 
     <!-- ===== NAVIGASI / HEADER ===== -->
-    <nav class="bg-white sticky top-0 z-50 shadow-sm">
+    <nav class="bg-white/95 backdrop-blur-md sticky top-0 z-50 shadow-sm transition-all duration-300">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold text-pink-600">kaelyshp</a>
+            <a href="#" class="text-3xl font-bold text-pink-600 tracking-tight">kaelyshp</a>
             
             <!-- Menu Desktop -->
-            <div class="space-x-6 hidden md:flex items-center">
-                <a href="#produk" class="text-gray-600 hover:text-pink-600">Produk</a>
-                <a href="#jaminan" class="text-gray-600 hover:text-pink-600">Keunggulan</a>
-                <a href="#testimoni" class="text-gray-600 hover:text-pink-600">Testimoni</a>
-                <a href="#faq" class="text-gray-600 hover:text-pink-600">FAQ</a>
-                <a href="#tentang" class="text-gray-600 hover:text-pink-600">Tentang Kami</a>
+            <div class="space-x-8 hidden md:flex items-center font-medium">
+                <a href="#produk" class="text-gray-600 hover:text-pink-600 transition-colors">Produk</a>
+                <a href="#jaminan" class="text-gray-600 hover:text-pink-600 transition-colors">Keunggulan</a>
+                <a href="#testimoni" class="text-gray-600 hover:text-pink-600 transition-colors">Testimoni</a>
+                <a href="#faq" class="text-gray-600 hover:text-pink-600 transition-colors">FAQ</a>
+                <a href="#tentang" class="text-gray-600 hover:text-pink-600 transition-colors">Tentang Kami</a>
             </div>
             
             <!-- Tombol Menu Mobile -->
-            <button id="mobile-menu-btn" class="md:hidden text-gray-700 z-50" aria-label="Toggle Mobile Menu">
+            <button id="mobile-menu-btn" class="md:hidden text-gray-700 z-50 p-2" aria-label="Toggle Mobile Menu">
                 <i class="fas fa-bars h-6 w-6"></i>
             </button>
         </div>
         
-        <!-- ===== MENU MOBILE (FUNGSIONAL) ===== -->
-        <div id="mobile-menu" class="hidden md-hidden absolute top-full left-0 w-full bg-white shadow-lg border-t border-gray-100">
-            <a href="#produk" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Produk</a>
-            <a href="#jaminan" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Keunggulan</a>
-            <a href="#testimoni" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Testimoni</a>
-            <a href="#faq" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">FAQ</a>
-            <a href="#tentang" class="block py-3 px-6 text-gray-700 hover:bg-pink-50">Tentang Kami</a>
+        <!-- ===== MENU MOBILE ===== -->
+        <div id="mobile-menu" class="hidden md-hidden absolute top-full left-0 w-full bg-white shadow-xl border-t border-gray-100">
+            <a href="#produk" class="block py-3 px-6 text-gray-700 hover:bg-pink-50 font-medium">Produk</a>
+            <a href="#jaminan" class="block py-3 px-6 text-gray-700 hover:bg-pink-50 font-medium">Keunggulan</a>
+            <a href="#testimoni" class="block py-3 px-6 text-gray-700 hover:bg-pink-50 font-medium">Testimoni</a>
+            <a href="#faq" class="block py-3 px-6 text-gray-700 hover:bg-pink-50 font-medium">FAQ</a>
+            <a href="#tentang" class="block py-3 px-6 text-gray-700 hover:bg-pink-50 font-medium">Tentang Kami</a>
         </div>
     </nav>
 
-    <!-- ===== HERO SECTION (FOKUS LCP) ===== -->
-    <header class="bg-pink-50">
-        <div class="container mx-auto px-6 py-12 md:py-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-            <!-- Kolom Teks -->
-            <div class="text-center md:text-left animated-section" data-animate data-delay="0">
-                <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800 mb-8">
-                    Your Trusted <br><span class="text-pink-600">Beauty & Fashion</span> Curator
+    <!-- ===== HERO SECTION (FULL WIDTH) ===== -->
+    <!-- Diperbarui: Menggunakan Layout Full Screen Immersive -->
+    <header class="relative w-full h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+             <picture>
+                <source srcset="model.webp" type="image/webp">
+                <img 
+                    src="model.jpg" 
+                    alt="Model Skincare dan Fashion Kaelyshp" 
+                    class="w-full h-full object-cover object-top" 
+                    loading="eager" 
+                    onerror="this.onerror=null;this.src='https://placehold.co/1920x1080/FCE7F3/DB2777?text=Hero+Image';"
+                >
+            </picture>
+            <!-- Overlay Gradient untuk Readability -->
+            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 md:bg-gradient-to-r md:from-black/70 md:via-transparent md:to-transparent"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="container mx-auto px-6 relative z-10 text-center md:text-left h-full flex flex-col justify-center md:justify-center">
+            <div class="animated-section max-w-2xl" data-animate data-delay="0">
+                <span class="inline-block py-1 px-3 rounded-full bg-pink-600/90 text-white text-xs font-bold uppercase tracking-wider mb-4 shadow-lg backdrop-blur-sm">
+                    ✨ New Collection 2025
+                </span>
+                <h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight hero-text-shadow">
+                    Kurasi Terbaik <br>
+                    <span class="text-pink-300">Beauty & Fashion</span>
                 </h1>
+                <p class="text-lg md:text-xl text-gray-100 mb-8 leading-relaxed max-w-lg mx-auto md:mx-0 hero-text-shadow">
+                    Temukan produk viral pilihan yang 100% Original dan BPOM. Kami memilah yang terbaik agar Anda tidak perlu ragu lagi.
+                </p>
                 
-                <a href="#produk" class="bg-pink-600 text-white py-3 px-8 rounded-full font-semibold text-base md:text-lg transition-colors hover:bg-pink-700 hover:shadow-lg">
-                    Mulai Belanja
-                </a>
-            </div>
-            <!-- Kolom Gambar -->
-            <div class="animated-section" data-animate data-delay="200">
-                <!-- 
-                    OPTIMASI KRITIS LCP:
-                    - Menggunakan tag <picture> untuk format WebP (asumsi 'model.webp' tersedia, jika tidak, fallback ke .jpg)
-                    - Menambahkan width/height untuk mencegah Cumulative Layout Shift (CLS)
-                    - loading="eager" untuk memastikan dimuat secepat mungkin (LCP)
-                -->
-                <picture>
-                    <source srcset="model.webp" type="image/webp">
-                    <img 
-                        src="model.jpg" 
-                        alt="Model Skincare dan Fashion Kaelyshp" 
-                        class="w-full h-full object-cover rounded-2xl shadow-xl" 
-                        width="600" 
-                        height="600" 
-                        loading="eager" 
-                        onerror="this.onerror=null;this.src='https://placehold.co/600x600/FCE7F3/DB2777?text=Hero+Image';"
-                    >
-                </picture>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#produk" class="bg-pink-600 text-white py-4 px-10 rounded-full font-bold text-lg transition-all hover:bg-pink-500 hover:shadow-xl hover:-translate-y-1 ring-4 ring-pink-600/30">
+                        Belanja Sekarang
+                    </a>
+                    <a href="#testimoni" class="bg-white/10 backdrop-blur-md border border-white/50 text-white py-4 px-10 rounded-full font-bold text-lg transition-all hover:bg-white hover:text-pink-600">
+                        Lihat Testimoni
+                    </a>
+                </div>
             </div>
         </div>
     </header>
 
     <!-- ===== BAGIAN JAMINAN (SLIDER OTOMATIS) ===== -->
-    <section id="jaminan" class="bg-white py-10 overflow-hidden animated-section" data-animate>
+    <section id="jaminan" class="bg-white py-10 overflow-hidden animated-section shadow-sm relative z-20 -mt-8 mx-4 md:mx-auto md:max-w-5xl rounded-xl border border-gray-100" data-animate>
         <div class="container mx-auto px-6">
             <!-- Slider Container -->
             <div class="relative max-w-3xl mx-auto">
                 <!-- Slider Track -->
                 <div id="trust-slider-track" class="flex transition-transform duration-700 ease-in-out">
                     
-                    <!-- Slide 1: Original & BPOM (Icon: Shield Check) -->
+                    <!-- Slide 1 -->
                     <div class="w-full flex-shrink-0">
                         <div class="text-center px-4">
                             <div class="flex items-center justify-center mb-2">
-                                <i class="fas fa-shield-halved w-8 h-8 text-pink-600 text-3xl"></i>
+                                <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-shield-halved text-pink-600 text-xl"></i>
+                                </div>
                             </div>
-                            <h3 class="text-base font-semibold text-gray-800">100% Original & BPOM</h3>
-                            <p class="text-gray-600 text-sm">Keaslian produk dan legalitas terjamin.</p>
+                            <h3 class="text-base font-bold text-gray-800">100% Original & BPOM</h3>
+                            <p class="text-gray-500 text-sm">Garansi uang kembali jika produk palsu.</p>
                         </div>
                     </div>
                     
-                    <!-- Slide 2: Pembayaran Aman (Icon: Credit Card) -->
+                    <!-- Slide 2 -->
                     <div class="w-full flex-shrink-0">
                         <div class="text-center px-4">
                             <div class="flex items-center justify-center mb-2">
-                                <i class="far fa-credit-card w-8 h-8 text-pink-600 text-3xl"></i>
+                                <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+                                    <i class="far fa-credit-card text-pink-600 text-xl"></i>
+                                </div>
                             </div>
-                            <h3 class="text-base font-semibold text-gray-800">Pembayaran Aman</h3>
-                            <p class="text-gray-600 text-sm">Transaksi terpercaya via platform Shopee.</p>
+                            <h3 class="text-base font-bold text-gray-800">Pembayaran Aman</h3>
+                            <p class="text-gray-500 text-sm">Transaksi terpercaya via Shopee.</p>
                         </div>
                     </div>
 
-                    <!-- Slide 3: Produk Terbaik (Icon: Star) -->
+                    <!-- Slide 3 -->
                     <div class="w-full flex-shrink-0">
                         <div class="text-center px-4">
                             <div class="flex items-center justify-center mb-2">
-                                <i class="fas fa-star w-8 h-8 text-pink-600 text-3xl"></i>
+                                <div class="w-12 h-12 bg-pink-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-star text-pink-600 text-xl"></i>
+                                </div>
                             </div>
-                            <h3 class="text-base font-semibold text-gray-800">Produk Pilihan Terbaik</h3>
-                            <p id="review-counter-target" class="text-xl font-bold text-gray-800">4.8 - 5.0</p>
-                            <p class="text-gray-600 text-sm mt-1">Rata-rata Rating Toko</p>
+                            <h3 class="text-base font-bold text-gray-800">Produk Pilihan Terbaik</h3>
+                            <p id="review-counter-target" class="text-lg font-bold text-gray-800">Rating 4.8+</p>
+                            <p class="text-gray-500 text-sm mt-0">Hanya menjual produk berkualitas.</p>
                         </div>
                     </div>
 
@@ -358,7 +377,7 @@
             </div>
             
             <!-- Dots -->
-            <div id="trust-slider-dots" class="flex justify-center space-x-2 mt-6">
+            <div id="trust-slider-dots" class="flex justify-center space-x-2 mt-4">
                 <!-- Dots akan di-generate oleh JS -->
             </div>
         </div>
@@ -367,46 +386,43 @@
     <!-- ===== BAGIAN PRODUK (DENGAN KATEGORI) ===== -->
     <main id="produk" class="container mx-auto px-6 py-16">
         
-        <!-- ===== COUNTER BARU: PELANGGAN PUAS (Counter Animation) ===== -->
-        <div class="text-center mb-10 animated-section counter-plain" id="customer-counter-section" data-animate>
-            <p class="text-5xl font-extrabold text-pink-600 mb-1" id="customer-counter-target">0</p>
-            <p class="text-gray-700 font-semibold text-xl">Pelanggan Puas Terkurasi!</p>
+        <!-- ===== COUNTER: PELANGGAN PUAS ===== -->
+        <div class="text-center mb-12 animated-section counter-plain" id="customer-counter-section" data-animate>
+            <p class="text-5xl md:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-pink-600 to-purple-600 mb-2" id="customer-counter-target">0</p>
+            <p class="text-gray-600 font-medium text-lg">Pelanggan Puas & Terkurasi ✔️</p>
         </div>
 
         <!-- ===== NAVIGASI KATEGORI (SLIDER HORIZONTAL) ===== -->
         <div class="mb-10 animated-section" data-animate>
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Jelajahi Kategori</h2>
-            <!-- Container Tab Kategori: overflow-x-scroll dan flex-nowrap untuk slider -->
-            <div id="category-tabs" class="flex flex-nowrap space-x-2 overflow-x-auto pb-4 category-scrollbar justify-start md:justify-center">
-                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-pink-600 text-white py-2 px-5 rounded-full text-sm font-semibold transition-all hover:shadow-md" data-category="all">✔️ Semua</button>
-                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all hover:shadow-md" data-category="skincare">Skincare</button>
-                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all hover:shadow-md" data-category="bodylotion">Body Lotion</button>
-                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-white text-gray-600 hover:bg-pink-100 py-2 px-5 rounded-full text-sm font-semibold transition-all hover:shadow-md" data-category="baju">Baju</button>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Pilih Kategori Favoritmu</h2>
+            <div id="category-tabs" class="flex flex-nowrap space-x-3 overflow-x-auto pb-6 category-scrollbar justify-start md:justify-center px-4">
+                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-pink-600 text-white py-3 px-6 rounded-full text-sm font-semibold transition-all hover:shadow-lg hover:-translate-y-1 shadow-md" data-category="all">✔️ Semua</button>
+                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-white text-gray-600 hover:bg-pink-50 py-3 px-6 rounded-full text-sm font-semibold transition-all hover:shadow-lg border border-gray-100" data-category="skincare">Skincare</button>
+                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-white text-gray-600 hover:bg-pink-50 py-3 px-6 rounded-full text-sm font-semibold transition-all hover:shadow-lg border border-gray-100" data-category="bodylotion">Body Lotion</button>
+                <button class="category-btn flex-shrink-0 whitespace-nowrap bg-white text-gray-600 hover:bg-pink-50 py-3 px-6 rounded-full text-sm font-semibold transition-all hover:shadow-lg border border-gray-100" data-category="baju">Fashion</button>
             </div>
         </div>
 
-        <h2 class="text-3xl font-bold text-center text-gray-800 mb-10 animated-section" data-animate>Produk Pilihan Kami</h2>
-        
-        <!-- Grid Produk (Akan diisi oleh JS) -->
-        <!-- Menambahkan min-height untuk CLS agar grid tidak bergeser terlalu jauh saat dimuat -->
-        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 min-h-[500px]">
+        <!-- Grid Produk -->
+        <div id="product-grid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 min-h-[500px]">
             <!-- Kartu Produk akan dimasukkan oleh JavaScript di sini -->
         </div>
     </main>
 
-    <!-- ===== BAGIAN TESTIMONI (SLIDER BARU & MODERN) ===== -->
-    <section id="testimoni" class="bg-pink-100 py-16 animated-section" data-animate>
+    <!-- ===== BAGIAN TESTIMONI (SLIDER) ===== -->
+    <section id="testimoni" class="bg-gradient-to-b from-pink-50 to-white py-20 animated-section" data-animate>
         <div class="container mx-auto px-6 max-w-6xl">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Apa Kata Mereka Tentang kaelyshp</h2>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Kata Mereka Tentang Kami</h2>
+                <div class="w-20 h-1 bg-pink-500 mx-auto rounded-full"></div>
+            </div>
             
             <div class="relative testimonial-slider-wrapper">
-                <!-- Slider Track Container -->
                 <div id="testimoni-slider-track" class="testimonial-slider">
                     <!-- Testimoni akan di-generate oleh JS -->
                 </div>
             </div>
                 
-            <!-- Testimoni Dots -->
             <div id="testimoni-dots" class="flex justify-center space-x-2 mt-8">
                 <!-- Dots akan di-generate oleh JS -->
             </div>
@@ -417,13 +433,13 @@
     <!-- ===== BAGIAN FAQ ===== -->
     <section id="faq" class="bg-white py-16 animated-section" data-animate>
         <div class="container mx-auto px-6 max-w-3xl">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Yang Sering Ditanyakan (FAQ)</h2>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-10">Pertanyaan Umum (FAQ)</h2>
             <div class="space-y-4">
                 <!-- FAQ 1 -->
-                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                     <button class="accordion-button w-full flex justify-between items-center text-left" aria-expanded="false" aria-controls="faq-content-1">
                         <span class="text-lg font-semibold text-gray-800">Apakah produknya 100% Original?</span>
-                        <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div class="accordion-content mt-2" id="faq-content-1">
                         <p class="text-gray-600">
@@ -432,10 +448,10 @@
                     </div>
                 </div>
                 <!-- FAQ 2 -->
-                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                     <button class="accordion-button w-full flex justify-between items-center text-left" aria-expanded="false" aria-controls="faq-content-2">
                         <span class="text-lg font-semibold text-gray-800">Bagaimana cara memesannya?</span>
-                        <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div class="accordion-content mt-2" id="faq-content-2">
                         <p class="text-gray-600">
@@ -444,10 +460,10 @@
                     </div>
                 </div>
                 <!-- FAQ 3 -->
-                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md">
+                <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                     <button class="accordion-button w-full flex justify-between items-center text-left" aria-expanded="false" aria-controls="faq-content-3">
                         <span class="text-lg font-semibold text-gray-800">Berapa lama proses pengirimannya?</span>
-                        <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div class="accordion-content mt-2" id="faq-content-3">
                         <p class="text-gray-600">
@@ -455,11 +471,11 @@
                         </p>
                     </div>
                 </div>
-                <!-- FAQ 4 [BARU] -->
-                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md">
+                 <!-- FAQ 4 -->
+                 <div class="bg-white p-5 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
                     <button class="accordion-button w-full flex justify-between items-center text-left" aria-expanded="false" aria-controls="faq-content-4">
                         <span class="text-lg font-semibold text-gray-800">Bagaimana saya tahu stok produknya ready?</span>
-                        <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
                     </button>
                     <div class="accordion-content mt-2" id="faq-content-4">
                         <p class="text-gray-600">
@@ -467,69 +483,58 @@
                         </p>
                     </div>
                 </div>
-                <!-- FAQ 5 [BARU] -->
-                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-200 hover:shadow-md">
-                    <button class="accordion-button w-full flex justify-between items-center text-left" aria-expanded="false" aria-controls="faq-content-5">
-                        <span class="text-lg font-semibold text-gray-800">Apa bedanya belanja di sini dengan di toko lain?</span>
-                        <svg class="arrow w-6 h-6 text-pink-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
-                    <div class="accordion-content mt-2" id="faq-content-5">
-                        <p class="text-gray-600">
-                            Kami adalah curator. Kami tidak menjual 'semua' produk, tapi kami menjual produk 'terbaik'. Setiap item di kaelyshp telah lolos seleksi ketat kami berdasarkan keaslian (100% Original), keamanan (BPOM), dan ulasan pelanggan yang terbukti viral & berkualitas.
-                        </p>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
     
-    <!-- ===== BAGIAN TENTANG KAMI (SLIDER HORIZONTAL BARU) ===== -->
-    <section id="tentang" class="bg-white py-16 border-t border-pink-200 animated-section" data-animate>
+    <!-- ===== BAGIAN TENTANG KAMI ===== -->
+    <section id="tentang" class="bg-white py-16 border-t border-pink-100 animated-section" data-animate>
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-gray-800 mb-2">Tentang Kami</h2>
-                <p class="text-gray-600 leading-relaxed max-w-3xl mx-auto text-lg font-medium">
-                    Didirikan dengan visi menaikkan standar belanja Beauty & Fashion Anda.
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Kenapa Memilih kaelyshp?</h2>
+                <p class="text-gray-600 leading-relaxed max-w-3xl mx-auto text-lg">
+                    Kami lebih dari sekadar toko online. Kami adalah asisten belanja pribadi Anda yang memastikan setiap Rupiah yang Anda keluarkan mendapatkan kualitas terbaik.
                 </p>
             </div>
             
-            <!-- Narasi Pembuka -->
-            <p class="text-gray-800 text-lg mb-12 text-center max-w-4xl mx-auto">
-                kaelyshp adalah kurator terpercaya yang menjamin produk terbaik, menghilangkan keraguan Anda. Kami berkomitmen hanya menyajikan item yang telah teruji kualitasnya secara cermat.
-            </p>
-
             <!-- Slider Poin Utama -->
             <div class="relative about-slider-wrapper">
                 <div id="about-slider-track" class="about-slider">
                     
-                    <!-- Poin 1: Kualitas Ultra Ketat -->
+                    <!-- Poin 1 -->
                     <div class="about-slide-item" data-id="1">
-                        <div class="about-feature-item text-center space-y-3">
-                            <i class="fas fa-microscope text-5xl text-pink-600"></i>
-                            <h3 class="text-xl font-bold text-gray-800">Kualitas Ultra Ketat</h3>
-                            <p class="text-gray-600 text-base leading-relaxed">
+                        <div class="about-feature-item text-center space-y-4 hover:border-pink-300 border border-transparent transition-all">
+                            <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto">
+                                <i class="fas fa-microscope text-4xl text-pink-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Kurasi Ultra Ketat</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
                                 Kami menganalisis rating, membaca ribuan ulasan, dan memastikan efikasi terbukti. Kami adalah filter Anda di tengah banyaknya pilihan.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Poin 2: Jaminan Otentikasi Penuh -->
+                    <!-- Poin 2 -->
                     <div class="about-slide-item" data-id="2">
-                        <div class="about-feature-item text-center space-y-3">
-                            <i class="fas fa-lock text-5xl text-pink-600"></i>
-                            <h3 class="text-xl font-bold text-gray-800">Jaminan Otentikasi Penuh</h3>
-                            <p class="text-gray-600 text-base leading-relaxed">
+                        <div class="about-feature-item text-center space-y-4 hover:border-pink-300 border border-transparent transition-all">
+                             <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto">
+                                <i class="fas fa-certificate text-4xl text-pink-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Jaminan Otentik</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
                                 Semua produk dijamin 100% Original dan bersertifikasi resmi BPOM. Kami hanya bekerja sama dengan distributor terverifikasi.
                             </p>
                         </div>
                     </div>
 
-                    <!-- Poin 3: Harga Optimal & Transaksi Aman -->
+                    <!-- Poin 3 -->
                     <div class="about-slide-item" data-id="3">
-                        <div class="about-feature-item text-center space-y-3">
-                            <i class="fas fa-tags text-5xl text-pink-600"></i>
-                            <h3 class="text-xl font-bold text-gray-800">Harga Optimal & Aman</h3>
-                            <p class="text-gray-600 text-base leading-relaxed">
+                        <div class="about-feature-item text-center space-y-4 hover:border-pink-300 border border-transparent transition-all">
+                             <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto">
+                                <i class="fas fa-hand-holding-dollar text-4xl text-pink-600"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-gray-800">Harga Terbaik</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed">
                                 Kami memastikan harga kompetitif. Transaksi aman dan transparan melalui platform Shopee, menjamin perlindungan konsumen.
                             </p>
                         </div>
@@ -547,126 +552,134 @@
     <!-- ===== BAGIAN CTA (NEWSLETTER) ===== -->
     <section id="cta" class="bg-pink-100 py-16 animated-section" data-animate>
         <div class="container mx-auto px-6 text-center max-w-2xl">
-            <h2 class="text-3xl font-bold text-gray-800 mb-4">Jadi yang Pertama Tahu!</h2>
+            <h2 class="text-3xl font-bold text-gray-800 mb-4">Jangan Lewatkan Promo!</h2>
             <p class="text-gray-600 leading-relaxed mb-8">
-                Dapatkan info produk terbaru dan promo spesial langsung ke inbox Anda.
+                Dapatkan info produk terbaru dan diskon spesial langsung ke inbox Anda.
             </p>
             
             <div id="newsletter-wrapper" class="max-w-lg mx-auto">
                 <form id="newsletter-form" class="flex flex-col sm:flex-row gap-4">
-                    <input type="email" placeholder="Masukkan email Anda..." class="flex-grow p-3 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400" required aria-label="Email for Newsletter">
-                    <button type="submit" class="bg-pink-600 text-white py-3 px-6 rounded-full font-semibold transition-colors hover:bg-pink-700 hover:shadow-lg">
-                        Daftar Sekarang
+                    <input type="email" placeholder="Masukkan email Anda..." class="flex-grow p-4 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400" required aria-label="Email for Newsletter">
+                    <button type="submit" class="bg-pink-600 text-white py-3 px-8 rounded-full font-bold transition-all hover:bg-pink-700 hover:shadow-lg hover:scale-105">
+                        Daftar ✔️
                     </button>
                 </form>
-                <div id="newsletter-success" class="hidden text-center text-lg font-semibold text-pink-800 bg-pink-200 p-4 rounded-full">
+                <div id="newsletter-success" class="hidden text-center text-lg font-semibold text-pink-800 bg-pink-200 p-4 rounded-full animate-pulse">
                     ✔️ Terima kasih telah mendaftar!
                 </div>
             </div>
-            <p class="text-xs text-gray-500 mt-4">Kami tidak akan mengirim spam. Hanya info promo terbaik!</p>
+            <p class="text-xs text-gray-500 mt-4">Kami menjaga privasi Anda. Bebas spam.</p>
 
         </div>
     </section>
 
     <!-- ===== FOOTER ===== -->
-    <footer class="bg-gray-800 text-white pt-16 pb-8">
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
         <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12">
             <!-- Kolom 1: Tentang -->
             <div>
-                <h4 class="text-2xl font-bold text-white mb-4">kaelyshp</h4>
-                <p class="text-gray-400 leading-relaxed">
+                <h4 class="text-3xl font-bold text-white mb-6 tracking-tight">kaelyshp</h4>
+                <p class="text-gray-400 leading-relaxed text-sm">
                     Kurator terdepan yang berfokus pada kualitas. Kami menyajikan produk kecantikan dan fashion pilihan dengan jaminan 100% Original, BPOM, dan standar mutu tinggi.
                 </p>
+                <div class="mt-6 flex space-x-4">
+                    <!-- Social Icons Placeholder -->
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-pink-600 transition-colors"><i class="fab fa-tiktok"></i></a>
+                </div>
             </div>
             
             <!-- Kolom 2: Navigasi Cepat -->
             <div>
-                <h5 class="text-lg font-semibold text-white mb-4">Navigasi</h5>
-                <ul class="space-y-2">
-                    <li><a href="#produk" class="text-gray-400 hover:text-white">Produk</a></li>
-                    <li><a href="#jaminan" class="text-gray-400 hover:text-white">Keunggulan</a></li>
-                    <li><a href="#testimoni" class="text-gray-400 hover:text-white">Testimoni</a>
-                    <li><a href="#faq" class="text-gray-400 hover:text-white">FAQ</a></li>
-                    <li><a href="#tentang" class="text-gray-400 hover:text-white">Tentang Kami</a>
+                <h5 class="text-lg font-bold text-white mb-6 border-b border-gray-700 pb-2 inline-block">Menu Cepat</h5>
+                <ul class="space-y-3 text-gray-400 text-sm">
+                    <li><a href="#produk" class="hover:text-pink-400 transition-colors">Belanja Produk</a></li>
+                    <li><a href="#jaminan" class="hover:text-pink-400 transition-colors">Keunggulan Kami</a></li>
+                    <li><a href="#testimoni" class="hover:text-pink-400 transition-colors">Ulasan Pelanggan</a></li>
+                    <li><a href="#faq" class="hover:text-pink-400 transition-colors">Bantuan / FAQ</a></li>
                 </ul>
             </div>
 
-            <!-- Kolom 3: Toko Resmi (Hanya Shopee) -->
+            <!-- Kolom 3: Toko Resmi -->
             <div>
-                <h5 class="text-lg font-semibold text-white mb-4">Kunjungi Kami</h5>
-                <div class="flex space-x-4">
-                    <a href="https://s.shopee.co.id/5VNa85hUGp" target="_blank" rel="noopener noreferrer" aria-label="Shopee Link" class="text-gray-400 hover:text-white transform hover:scale-110 transition duration-300">
-                        <i class="fas fa-store w-6 h-6 text-xl"></i>
-                    </a>
-                </div>
+                <h5 class="text-lg font-bold text-white mb-6 border-b border-gray-700 pb-2 inline-block">Official Store</h5>
+                <p class="text-gray-400 text-sm mb-4">Temukan kami di marketplace kesayangan Anda:</p>
+                <a href="https://s.shopee.co.id/5VNa85hUGp" target="_blank" rel="noopener noreferrer" class="group flex items-center bg-orange-600 hover:bg-orange-700 text-white py-3 px-5 rounded-lg transition-all w-fit">
+                    <i class="fas fa-store text-xl mr-3 group-hover:scale-110 transition-transform"></i>
+                    <div class="text-left">
+                        <div class="text-xs opacity-90">Belanja Aman di</div>
+                        <div class="font-bold">Shopee</div>
+                    </div>
+                </a>
             </div>
         </div>
 
         <!-- Copyright -->
-        <div class="mt-12 pt-8 border-t border-gray-700 text-center">
-            <p class="text-gray-400 text-sm">
+        <div class="mt-12 pt-8 border-t border-gray-800 text-center">
+            <p class="text-gray-500 text-sm">
                 &copy; 2025 kaelyshp. Seluruh Hak Cipta Dilindungi.
             </p>
         </div>
     </footer>
 
     <!-- ===== MODAL PRODUK ===== -->
-    <div id="product-modal" class="fixed inset-0 bg-black bg-opacity-70 z-[60] flex items-center justify-center p-4 hidden">
+    <div id="product-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-[60] flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
         <!-- Konten Modal -->
-        <div class="bg-white w-full max-w-3xl rounded-lg shadow-2xl max-h-[90vh] overflow-y-auto relative">
-            <!-- Tombol Tutup (dipindah ke dalam modal-content) -->
-            <button id="modal-close-btn" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 z-10" aria-label="Close Product Details Modal">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        <div class="bg-white w-full max-w-4xl rounded-2xl shadow-2xl max-h-[90vh] overflow-y-auto relative transform scale-95 transition-transform duration-300" id="modal-content-container">
+            <!-- Tombol Tutup -->
+            <button id="modal-close-btn" class="absolute top-4 right-4 bg-gray-100 hover:bg-gray-200 text-gray-600 w-10 h-10 rounded-full flex items-center justify-center z-10 transition-colors" aria-label="Close Product Details Modal">
+                <i class="fas fa-times text-lg"></i>
             </button>
             
-            <div class="p-6 md:p-8">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <!-- Kolom Gambar -->
-                    <div>
-                        <!-- Menambahkan width/height dan loading="lazy" -->
-                        <img id="modal-img" src="https://placehold.co/600x600" alt="Detail Produk" class="w-full h-full object-cover rounded-lg" loading="lazy" width="600" height="600">
+            <div class="p-0 md:p-0 flex flex-col md:flex-row h-full">
+                <!-- Kolom Gambar (Sticky di Desktop) -->
+                <div class="w-full md:w-5/12 bg-gray-50 flex items-center justify-center p-6 md:p-8">
+                    <img id="modal-img" src="" alt="Detail Produk" class="w-full h-auto object-contain rounded-lg shadow-md max-h-[400px]" loading="lazy">
+                </div>
+                
+                <!-- Kolom Info (Scrollable) -->
+                <div class="w-full md:w-7/12 p-6 md:p-8 overflow-y-auto">
+                    <span id="modal-category" class="text-xs font-bold text-pink-600 bg-pink-100 px-2 py-1 rounded uppercase tracking-wide mb-2 inline-block">Kategori</span>
+                    <h2 id="modal-title" class="text-2xl md:text-3xl font-bold text-gray-900 mb-2 leading-tight">Nama Produk</h2>
+                    
+                    <!-- Rating & Harga -->
+                    <div class="flex flex-wrap items-center justify-between mb-6 border-b border-gray-100 pb-4">
+                        <div class="flex items-center space-x-2">
+                            <div id="modal-stars" class="flex text-yellow-400 text-sm"></div>
+                            <span id="modal-rating-text" class="text-sm text-gray-500 font-medium"></span>
+                        </div>
+                        <p id="modal-price" class="text-3xl font-extrabold text-pink-600">Rp 0</p>
                     </div>
                     
-                    <!-- Kolom Info -->
-                    <div class="flex flex-col">
-                        <h2 id="modal-title" class="text-2xl font-bold text-gray-800 mb-2">Nama Produk</h2>
-                        
-                        <!-- Rating & Ulasan Utama -->
-                        <div class="flex items-center space-x-2 mb-3">
-                            <div id="modal-stars" class="flex text-yellow-400">
-                                <!-- Bintang diisi oleh JS -->
-                            </div>
-                            <span id="modal-rating-text" class="text-sm text-gray-600">4.9 (720 ulasan)</span>
-                        </div>
-                        
-                        <p id="modal-price" class="text-3xl font-bold text-pink-600 mb-4">Rp 125.000</p>
-                        
-                        <!-- Deskripsi -->
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-800 mb-1">Deskripsi Produk</h4>
-                            <p id="modal-desc" class="text-gray-600 text-sm whitespace-pre-line"></p>
-                        </div>
+                    <!-- Deskripsi -->
+                    <div class="mb-6">
+                        <h4 class="font-bold text-gray-900 mb-2 flex items-center"><i class="fas fa-info-circle mr-2 text-pink-500"></i> Deskripsi</h4>
+                        <p id="modal-desc" class="text-gray-600 text-sm leading-relaxed whitespace-pre-line bg-gray-50 p-4 rounded-lg border border-gray-100"></p>
+                    </div>
 
-                        <!-- Spesifikasi -->
-                        <div class="mb-4">
-                            <h4 class="font-semibold text-gray-800 mb-1">Spesifikasi Detail</h4>
-                            <ul id="modal-specs" class="text-gray-600 text-sm spec-list"></ul>
+                    <!-- Spesifikasi -->
+                    <div class="mb-8">
+                        <h4 class="font-bold text-gray-900 mb-2 flex items-center"><i class="fas fa-list-ul mr-2 text-pink-500"></i> Spesifikasi</h4>
+                        <ul id="modal-specs" class="text-gray-600 text-sm spec-list pl-2"></ul>
+                    </div>
+                    
+                    <!-- Ulasan Unggulan (DESIGN BARU) -->
+                    <div class="mb-8">
+                        <h4 class="font-bold text-gray-900 mb-4 flex items-center justify-between">
+                            <span><i class="fas fa-comment-dots mr-2 text-pink-500"></i> Ulasan Pilihan</span>
+                            <span class="text-xs font-normal text-gray-500 bg-gray-100 px-2 py-1 rounded">Terverifikasi ✔️</span>
+                        </h4>
+                        <div id="modal-reviews-list" class="space-y-3">
+                            <!-- Ulasan akan diisi oleh JS dengan desain baru -->
                         </div>
-                        
-                        <!-- Ulasan Unggulan (3 Ulasan) -->
-                        <div class="mb-6 bg-pink-50 p-4 rounded-lg border border-pink-100">
-                            <h4 class="font-semibold text-gray-800 mb-2">Ulasan Pilihan Pelanggan <i class="fas fa-comment-dots text-pink-600 ml-1"></i></h4>
-                            <div id="modal-reviews-list">
-                                <!-- Ulasan akan diisi oleh JS -->
-                            </div>
-                        </div>
-                        
-                        <!-- Tombol Aksi -->
-                        <div class="mt-auto">
-                            <a id="modal-shopee-link" href="#" target="_blank" rel="noopener noreferrer" class="w-full bg-pink-600 text-white py-3 px-6 rounded-lg font-semibold text-center transition-colors hover:bg-pink-700 hover:shadow-lg flex items-center justify-center">
-                                <i class="fas fa-shopping-cart w-5 h-5 mr-2"></i> Beli Aman di Shopee
-                            </a>
-                        </div>
+                    </div>
+                    
+                    <!-- Tombol Aksi Sticky Bottom on Mobile -->
+                    <div class="sticky bottom-0 bg-white pt-4 pb-2 border-t border-gray-100 md:static md:border-0 md:pt-0">
+                        <a id="modal-shopee-link" href="#" target="_blank" rel="noopener noreferrer" class="w-full bg-pink-600 text-white py-4 px-6 rounded-xl font-bold text-center transition-all hover:bg-pink-700 hover:shadow-lg hover:shadow-pink-200 flex items-center justify-center group">
+                            <i class="fas fa-shopping-bag w-5 h-5 mr-2 group-hover:animate-bounce"></i> Beli Aman di Shopee ✔️
+                        </a>
+                         <p class="text-xs text-center text-gray-400 mt-2">Dijamin 100% Original & Transaksi Aman</p>
                     </div>
                 </div>
             </div>
@@ -674,26 +687,17 @@
     </div>
 
 
-    <!-- 
-        ===== SCRIPT JAVASCRIPT (Dipindahkan ke akhir body dan di-defer) =====
-        Ini mengurangi Total Blocking Time (TBT) dan memastikan JS tidak memblokir
-        proses rendering visual (FCP/LCP).
-    -->
+    <!-- SCRIPT JAVASCRIPT -->
     <script defer>
         document.addEventListener('DOMContentLoaded', () => {
             
-            // <!-- =================================================================== -->
-            // <!-- = DATA PRODUK (OPTIMASI SEO)                 = -->
-            // <!-- =================================================================== -->
-            
+            // <!-- = DATA PRODUK = -->
             const masterProductList = [
-                // ===== PRODUK 1 - PHERINI (BODY CARE) =====
                 {
                     id: 1,
                     category: "bodylotion", 
                     name: "PHERINI | Armpit Brightening Cream | Serum Pemutih Ketiak Permanen BPOM",
                     price: "Rp 78.800",
-                    // Mengganti imageUrl dengan format yang lebih diutamakan (webp) jika memungkinkan
                     imageUrl: "pherini.webp", 
                     shopeeUrl: "https://s.shopee.co.id/6VG8EKd6uO",
                     description: "Krim spesialis viral untuk mencerahkan area lipatan kulit yang gelap seperti ketiak, siku, selangkangan, dan lutut. Diformulasikan khusus dengan Niacinamide, Centella, dan Olive Oil untuk kulit sensitif. Efektif membuat kulit menjadi putih merata, halus, serta mengurangi bau tak sedap dan peradangan. Jaminan hasil optimal dan permanen dengan pemakaian rutin dan konsisten.",
@@ -702,7 +706,6 @@
                     rating: 4.8,
                     reviewCount: 36400 
                 },
-                // ===== PRODUK 2 - HIZA (BAJU) =====
                 {
                     id: 2,
                     category: "baju",
@@ -716,7 +719,6 @@
                     rating: 4.8,
                     reviewCount: 1800 
                 },
-                // ===== PRODUK 3 - Floral Id (BAJU) =====
                 {
                     id: 3,
                     category: "baju", 
@@ -730,7 +732,6 @@
                     rating: 4.8,
                     reviewCount: 1800 
                 },
-                // ===== PRODUK 4 - Lavojoy (BODY CARE) =====
                 {
                     id: 4,
                     category: "bodylotion", 
@@ -744,7 +745,6 @@
                     rating: 4.8,
                     reviewCount: 72500 
                 },
-                // ===== PRODUK 5 - Purbasari White Glow (BODY CARE) =====
                 {
                     id: 5,
                     category: "bodylotion",
@@ -758,7 +758,6 @@
                     rating: 4.8,
                     reviewCount: 15400 
                 },
-                // ===== PRODUK 7 - MOOI (BODY CARE) =====
                 {
                     id: 7,
                     category: "bodylotion",
@@ -772,7 +771,6 @@
                     rating: 4.8,
                     reviewCount: 27800 
                 },
-                // ===== PRODUK 8 - LADYCOLLECTION (BAJU) =====
                 {
                     id: 8,
                     category: "baju",
@@ -786,7 +784,6 @@
                     rating: 4.8,
                     reviewCount: 500
                 },
-                // ===== PRODUK 9 - Grace and Glow (BODY CARE) =====
                 {
                     id: 9,
                     category: "bodylotion",
@@ -800,7 +797,6 @@
                     rating: 4.9,
                     reviewCount: 215900 
                 },
-                // ===== PRODUK 10 - NIVEA (BODY CARE) =====
                 {
                     id: 10,
                     category: "bodylotion",
@@ -814,7 +810,6 @@
                     rating: 4.9,
                     reviewCount: 10000
                 },
-                // ===== PRODUK 11 - Purbasari Bundle (BODY CARE) =====
                 {
                     id: 11,
                     category: "bodylotion",
@@ -828,7 +823,6 @@
                     rating: 4.9,
                     reviewCount: 2500 
                 },
-                // ===== PRODUK 12 - Lavojoy Share (BODY CARE) =====
                 {
                     id: 12,
                     category: "bodylotion",
@@ -842,7 +836,6 @@
                     rating: 4.0,
                     reviewCount: 2000 
                 },
-                // ===== PRODUK 13 - Kaos Crop (FASHION) =====
                 {
                     id: 13,
                     category: "baju",
@@ -856,7 +849,6 @@
                     rating: 4.7,
                     reviewCount: 8300 
                 },
-                // ===== PRODUK 14 - Arika Blouse (FASHION) =====
                 {
                     id: 14,
                     category: "baju",
@@ -870,7 +862,6 @@
                     rating: 4.8,
                     reviewCount: 5000 
                 },
-                // ===== PRODUK 15 - MARINA UV White (BODY CARE) =====
                 {
                     id: 15,
                     category: "bodylotion",
@@ -884,7 +875,6 @@
                     rating: 4.9, 
                     reviewCount: 10000 
                 },
-                // ===== PRODUK 16 - CILILY Blouse (FASHION) =====
                 {
                     id: 16,
                     category: "baju",
@@ -898,7 +888,6 @@
                     rating: 4.8, 
                     reviewCount: 702 
                 },
-                // ===== PRODUK 17 - Purbasari Habbatussauda (BODY CARE) =====
                 {
                     id: 17,
                     category: "bodylotion",
@@ -913,21 +902,21 @@
                     reviewCount: 0 
                 },
             ];
-            // <!-- =================================================================== -->
-            
+
             const productGrid = document.getElementById('product-grid');
             const modal = document.getElementById('product-modal');
             const modalCloseBtn = document.getElementById('modal-close-btn');
+            const modalContent = document.getElementById('modal-content-container');
             const categoryTabs = document.querySelectorAll('.category-btn');
             
             const newsletterForm = document.getElementById('newsletter-form');
-            const newsletterSuccess = document.getElementById('newsletter-success'); // Pastikan ini ada
+            const newsletterSuccess = document.getElementById('newsletter-success');
             const customerCounterTarget = document.getElementById('customer-counter-target');
             const testimoniSliderTrack = document.getElementById('testimoni-slider-track');
             const testimoniDotsContainer = document.getElementById('testimoni-dots');
             const reviewCounterTarget = document.getElementById('review-counter-target'); 
 
-            // Array nama-nama Indonesia untuk ulasan (DIPERLUAS UNTUK AUTHENTICITY)
+            // Array nama-nama Indonesia untuk ulasan
             const indonesianNames = [
                 "Rina Amelia", "Sari Murni", "Dinda Putri", "M. Siska", "Mega Wati", 
                 "Fitri N.", "Putri Kirana", "Bunga Citra", "Vina Larasati", "Ibu Wati",
@@ -951,7 +940,7 @@
                 "Pilihan blouse fashion-nya unik dan elegan. Bahannya premium semua. Kualitas di atas ekspektasi harga."
             ];
             
-            // Intersection Observer Setup for smooth scroll-in animation
+            // Intersection Observer Setup
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
@@ -962,12 +951,9 @@
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
-                        // Trigger counter animation for customer count
                         if (entry.target.id === 'customer-counter-section' && customerCounterTarget) {
                             animateCounter(5482, customerCounterTarget); 
                         }
-                        // Tidak meng-unobserve agar animasi tetap ada saat scrolling naik turun
-                        // observer.unobserve(entry.target);
                     }
                 });
             }, observerOptions);
@@ -976,9 +962,8 @@
                 observer.observe(section);
             });
 
-            // Fungsi Counter Animation
             function animateCounter(targetValue, element) {
-                const duration = 1500; // 1.5 seconds
+                const duration = 1500;
                 const start = 0;
                 let startTime = null;
 
@@ -988,7 +973,6 @@
                     const percentage = Math.min(progress / duration, 1);
                     const currentValue = Math.floor(percentage * targetValue);
 
-                    // Determine formatting based on the element
                     if (element.id === 'customer-counter-target') {
                         element.textContent = currentValue.toLocaleString('id-ID') + '+';
                     }
@@ -996,13 +980,11 @@
                     if (percentage < 1) {
                         window.requestAnimationFrame(step);
                     } else {
-                        // Final value formatting
                         if (element.id === 'customer-counter-target') {
                             element.textContent = targetValue.toLocaleString('id-ID') + '+';
                         }
                     }
                 };
-                // Ensure animation only runs once
                 if (!element.dataset.animated) {
                     window.requestAnimationFrame(step);
                     element.dataset.animated = 'true';
@@ -1010,15 +992,14 @@
             }
             
             // ===================================================================
-            // = TESTIMONIAL SLIDER LOGIC (Fully Responsive)
+            // = TESTIMONIAL SLIDER LOGIC (Responsive)
             // ===================================================================
             let currentTestiSlide = 0;
-            // Calculate slides per view dynamically
             function getSlidesPerView() {
                 const width = window.innerWidth;
-                if (width < 640) return 1; // Mobile: 1 item
-                if (width < 1024) return 2; // Tablet: 2 items
-                return 3; // Desktop: 3 items
+                if (width < 640) return 1; 
+                if (width < 1024) return 2; 
+                return 3; 
             }
             let slidesPerView = getSlidesPerView();
             const totalTestiSlides = storeTestimonials.length;
@@ -1026,20 +1007,13 @@
             function moveToTestiSlide(index) {
                 const slidesToShow = getSlidesPerView();
                 const totalViews = Math.ceil(totalTestiSlides / slidesToShow);
-                
-                // Calculate the slide index based on the number of slides per view
                 const slideIndexInView = Math.floor(index / slidesToShow);
-                
-                // Calculate the offset
-                const offset = slideIndexInView * 100; // 100% per view transition
+                const offset = slideIndexInView * 100; 
                 
                 testimoniSliderTrack.style.transform = `translateX(-${offset / totalViews}%)`;
 
-                // Update dots
                 const dots = Array.from(testimoniDotsContainer.children);
                 dots.forEach(dot => dot.classList.remove('bg-pink-600'));
-                
-                // Active dot index
                 const activeDotIndex = Math.floor(index / slidesToShow);
                 if (dots[activeDotIndex]) {
                     dots[activeDotIndex].classList.add('bg-pink-600');
@@ -1049,13 +1023,11 @@
             function initializeTestiDots() {
                 testimoniDotsContainer.innerHTML = '';
                 const slidesToShow = getSlidesPerView();
-                // Calculate dots needed (one dot for each view/set of slides)
                 const dotCount = Math.ceil(totalTestiSlides / slidesToShow);
 
                 for (let i = 0; i < dotCount; i++) {
                     const dot = document.createElement('button');
                     dot.classList.add('testi-dot', 'w-3', 'h-3', 'bg-pink-300', 'rounded-full', 'mx-1', 'transition-all', 'duration-300', 'hover:bg-pink-500');
-                    // Store the starting index for that view
                     dot.setAttribute('data-index', i * slidesToShow);
                     dot.setAttribute('aria-label', `Testimonial View ${i + 1}`);
                     
@@ -1077,14 +1049,12 @@
                 testiInterval = setInterval(() => {
                     const slidesToShow = getSlidesPerView();
                     let nextSlide = currentTestiSlide + slidesToShow;
-                    
-                    // Check if looping is needed (loop back to 0 if we hit the end)
                     if (nextSlide >= totalTestiSlides) {
                         nextSlide = 0; 
                     }
                     currentTestiSlide = nextSlide;
                     moveToTestiSlide(currentTestiSlide);
-                }, 4000); // Change slide every 4 seconds
+                }, 5000); 
             }
 
             function resetTestiInterval() {
@@ -1093,47 +1063,45 @@
             }
 
             function renderTestimonials() {
-                testimoniSliderTrack.innerHTML = ''; // Clear previous content
-                slidesPerView = getSlidesPerView(); // Re-calculate on render
-
-                // Calculate the track width needed to contain all slides relative to the view
+                testimoniSliderTrack.innerHTML = ''; 
+                slidesPerView = getSlidesPerView(); 
                 const totalViews = Math.ceil(totalTestiSlides / slidesPerView);
                 testimoniSliderTrack.style.width = `${100 * totalViews}%`; 
-
-                // Individual slide item width
-                const slideItemWidthPercentage = 100 / (totalTestiSlides * (100 / (100 * totalViews / totalTestiSlides))); // Complex calculation to ensure equal width distribution
                 const correctedSlideItemWidthPercentage = 100 / totalTestiSlides;
 
-
-                // Use random names and ensure unique index cycle
                 for (let i = 0; i < totalTestiSlides; i++) {
                     const nameIndex = i % indonesianNames.length;
                     const reviewerName = indonesianNames[nameIndex]; 
-                    // Remove all '*' characters from testimonials for cleanliness
                     const review = storeTestimonials[i].replace(/\*/g, ''); 
 
                     const slideItem = document.createElement('div');
                     slideItem.classList.add('testimonial-slide-item', 'animated-section');
-                    // Set item width relative to the calculated track width
                     slideItem.style.width = `${correctedSlideItemWidthPercentage}%`;
-
 
                     slideItem.innerHTML = `
                         <div class="testimonial-item" data-animate data-delay="${100 + i * 50}">
-                            <div class="flex text-yellow-500 mb-2">${renderStars(5)}</div>
-                            <p class="text-gray-700 italic leading-relaxed text-base">"${review}"</p>
-                            <div class="mt-auto pt-3">
-                                <p class="text-sm font-semibold text-pink-700">- ${reviewerName}</p>
+                            <div class="flex items-center mb-4">
+                                <div class="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 font-bold mr-3">
+                                    ${reviewerName.charAt(0)}
+                                </div>
+                                <div>
+                                    <p class="text-sm font-bold text-gray-800">${reviewerName}</p>
+                                    <div class="flex text-yellow-400 text-xs">${renderStars(5)}</div>
+                                </div>
+                            </div>
+                            <p class="text-gray-600 italic leading-relaxed text-sm">"${review}"</p>
+                            <div class="mt-auto pt-3 border-t border-gray-50">
+                                <span class="text-xs text-green-500 font-medium flex items-center"><i class="fas fa-check-circle mr-1"></i> Pembeli Terverifikasi</span>
                             </div>
                         </div>
                     `;
                     testimoniSliderTrack.appendChild(slideItem);
-                    observer.observe(slideItem); // Re-observe new elements
+                    observer.observe(slideItem);
                 }
 
                 initializeTestiDots();
                 startTestiInterval();
-                moveToTestiSlide(currentTestiSlide); // Initialize position
+                moveToTestiSlide(currentTestiSlide); 
             }
             
             // ===================================================================
@@ -1161,7 +1129,6 @@
                 
                 aboutSliderTrack.style.transform = `translateX(-${offset}%)`;
 
-                // Update dots
                 const dots = Array.from(aboutDotsContainer.children);
                 dots.forEach(dot => dot.classList.remove('bg-pink-600'));
                 if (dots[index]) {
@@ -1197,7 +1164,6 @@
                 const totalViews = Math.ceil(totalAboutSlides / aboutSlidesPerView);
                 aboutSliderTrack.style.width = `${100 * totalViews}%`;
                 
-                // Calculate width for individual slides to fit the responsive view
                 const slideItemWidthPercentage = 100 / totalAboutSlides;
                 aboutSlides.forEach(slide => {
                     slide.style.width = `${slideItemWidthPercentage}%`;
@@ -1210,22 +1176,17 @@
             let currentAboutSlide = 0; 
             resizeAboutSlider(); 
 
-
             window.addEventListener('resize', () => {
-                // Resize Testimonial Slider
                 const newSlidesPerViewTesti = getSlidesPerView();
                 if (newSlidesPerViewTesti !== slidesPerView) {
                     slidesPerView = newSlidesPerViewTesti;
                     currentTestiSlide = 0; 
                     renderTestimonials(); 
                 }
-                // Resize About Slider
                 resizeAboutSlider();
             });
 
-
-            
-            // Fungsi untuk membuat HTML bintang 
+            // Fungsi HTML Bintang 
             function renderStars(rating) {
                 let starsHTML = '';
                 const fullStars = Math.floor(rating);
@@ -1233,18 +1194,15 @@
                 const totalStars = 5;
                 let currentStars = 0;
                 
-                // SVG untuk bintang full, half, dan empty (disederhanakan untuk performa)
                 const starSvgFull = '<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 7.02l6.572-.955L10 0l2.939 6.065 6.572.955-4.756 4.525 1.123 6.545z"></path></svg>';
                 const starSvgEmpty = '<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.96 6.012h6.324c.969 0 1.371 1.243.588 1.81L17.2 15.655l1.96 6.012c.3.921-.755 1.688-1.54 1.173L12 19.387l-5.62 3.453c-.785.515-1.84-.252-1.54-1.173l1.96-6.012L2.176 10.75c-.783-.567-.38-1.81.588-1.81h6.324l1.96-6.012z"/></svg>'; 
-                const starSvgHalf = starSvgEmpty; // Karena SVG Half memerlukan defs/linearGradient, kita hindari untuk menjaga kesederhanaan dan kecepatan load.
-
+                
                 for (let i = 0; i < fullStars; i++) { 
                     starsHTML += starSvgFull;
                     currentStars++;
                 }
 
                 if (hasHalfStar && currentStars < totalStars) {
-                    // Hanya menggunakan full star SVG untuk visual half-star
                     starsHTML += starSvgFull; 
                     currentStars++;
                 }
@@ -1257,45 +1215,51 @@
                 return starsHTML;
             }
 
-            // Fungsi untuk membuat HTML ulasan (dengan nama Indonesia)
+            // --- FUNGSI RENDER REVIEWS YANG SUDAH DI-UPGRADE ---
             function renderReviews(reviewsArray) {
                 let reviewsHTML = '';
                 const reviewsToDisplay = reviewsArray.slice(0, 3); 
                 
                 reviewsToDisplay.forEach((review, index) => {
-                    // Gunakan nama acak dari array yang sudah diperluas
                     const randomIndex = Math.floor(Math.random() * indonesianNames.length);
                     const reviewerName = indonesianNames[randomIndex]; 
                     
+                    // Layout Modern: Avatar + Konten
                     reviewsHTML += `
-                        <div class="review-card">
-                            <p class="text-xs italic text-gray-700 leading-snug">"${review.replace(/\*/g, '')}"</p>
-                            <p class="text-xs font-semibold text-pink-700 mt-1">- ${reviewerName}</p>
+                        <div class="modern-review-card flex items-start gap-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center text-pink-600 font-bold border border-pink-200">
+                                ${reviewerName.charAt(0)}
+                            </div>
+                            <div class="flex-grow">
+                                <div class="flex items-center justify-between mb-1">
+                                    <span class="font-bold text-gray-800 text-sm">${reviewerName}</span>
+                                    <span class="text-xs text-gray-400">2 hari lalu</span>
+                                </div>
+                                <div class="flex text-yellow-400 mb-2">
+                                    ${renderStars(5)} <!-- Selalu tampilkan 5 bintang untuk review terpilih -->
+                                </div>
+                                <p class="text-sm text-gray-600 leading-relaxed">"${review.replace(/\*/g, '')}"</p>
+                            </div>
                         </div>
                     `;
                 });
                 return reviewsHTML;
             }
 
-            // Fungsi untuk mengonversi spesifikasi menjadi format bullet list
+            // Fungsi render spesifikasi
             function renderSpecs(specsString) {
-                // Menghapus semua tanda bintang (*) dan tanda hubung (-) dari string
                 const cleanedString = specsString.replace(/\*/g, '').replace(/-/g, '');
-                
-                // Memecah baris dan memformat menjadi bullet list dengan dot tebal
                 const specsArray = cleanedString.split('\n');
                 let specsHTML = '';
                 
                 specsArray.forEach(line => {
                     if (line.trim() !== '') {
-                         // Mencari baris yang mengandung tanda kolon, dan membuat teks sebelum kolon tebal
                         const parts = line.split(':');
                         if (parts.length > 1) {
                             const label = parts[0].trim();
-                            const value = parts.slice(1).join(':').trim(); // Menggabungkan kembali jika ada kolon di value
+                            const value = parts.slice(1).join(':').trim(); 
                             specsHTML += `<li><span class="font-semibold text-gray-800">${label}</span>: ${value}</li>`;
                         } else {
-                            // Jika tidak ada kolon, tampilkan baris apa adanya
                             specsHTML += `<li>${line.trim()}</li>`;
                         }
                     }
@@ -1303,18 +1267,17 @@
                 return specsHTML;
             }
 
-
-            // 1. Fungsi untuk me-render produk berdasarkan kategori
+            // 1. Fungsi render produk
             function renderProducts(category) {
                 productGrid.innerHTML = '';
                 
                 const productsToRender = category === 'all' 
-                    ? masterProductList.filter(p => p.category !== 'hijab' && p.category !== 'sepatu') // Filter produk
+                    ? masterProductList.filter(p => p.category !== 'hijab' && p.category !== 'sepatu') 
                     : masterProductList.filter(p => p.category === category);
 
-                // Mengganti nama file gambar untuk produk yang baru diupload
+                // Update gambar dummy (fallback logic jika needed)
                 productsToRender.forEach(p => {
-                    if (p.id === 7) p.imageUrl = 'moik.webp'; // Update MOOI
+                    if (p.id === 7) p.imageUrl = 'moik.webp';
                     if (p.id === 15) p.imageUrl = 'dropku2.webp';
                     if (p.id === 16) p.imageUrl = 'cicilly.webp';
                     if (p.id === 17) p.imageUrl = 'dropku1.webp';
@@ -1330,37 +1293,40 @@
                     card.className = `group product-card overflow-hidden animated-section`;
                     
                     let categoryLabel = product.category.charAt(0).toUpperCase() + product.category.slice(1);
-                    if (product.category === 'bodylotion') {
-                        categoryLabel = 'Body Care';
-                    }
+                    if (product.category === 'bodylotion') categoryLabel = 'Body Care';
 
                     card.innerHTML = `
-                        <div class="w-full aspect-square overflow-hidden rounded-t-2xl">
-                            <!-- OPTIMASI: loading="lazy" untuk gambar di bawah lipatan -->
+                        <div class="w-full aspect-[4/5] overflow-hidden rounded-t-2xl relative">
+                            <span class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm text-pink-600 text-xs font-bold px-2 py-1 rounded shadow-sm z-10">Original ✔️</span>
                             <img src="${product.imageUrl}" alt="Foto produk ${product.name}" 
                                  onerror="this.onerror=null;this.src='https://placehold.co/600x600/eeeeee/999999?text=Gagal+Muat';"
                                  class="w-full h-full object-cover product-card-image-wrapper" 
-                                 loading="lazy"
-                                 width="400" 
-                                 height="400"> 
+                                 loading="lazy"> 
                         </div>
                         <div class="p-5">
-                            <span class="text-xs font-medium text-pink-600 bg-pink-100 px-2 py-1 rounded-full">${categoryLabel}</span>
-                            <h3 class="text-lg font-semibold text-gray-800 truncate mt-2" title="${product.name}">${product.name.replace(/\*/g, '')}</h3>
-                            <div class="flex items-center mt-1">
-                                <div class="flex text-yellow-500 mr-1">${renderStars(product.rating)}</div>
-                                <span class="text-xs text-gray-500 ml-1">(${product.reviewCount.toLocaleString('id-ID')})</span>
+                            <span class="text-xs font-medium text-pink-600 bg-pink-50 px-2 py-1 rounded-full border border-pink-100">${categoryLabel}</span>
+                            <h3 class="text-base md:text-lg font-bold text-gray-800 mt-2 line-clamp-2 leading-snug" title="${product.name}">${product.name.replace(/\*/g, '')}</h3>
+                            
+                            <div class="flex items-center mt-2 mb-3">
+                                <div class="flex text-yellow-400 text-xs mr-1">${renderStars(product.rating)}</div>
+                                <span class="text-xs text-gray-400">(${product.reviewCount.toLocaleString('id-ID')})</span>
                             </div>
-                            <p class="text-xl text-pink-600 font-bold mt-2">${product.price}</p>
+                            
+                            <div class="flex items-center justify-between mt-auto">
+                                <p class="text-lg font-extrabold text-pink-600">${product.price}</p>
+                                <button class="w-8 h-8 rounded-full bg-pink-50 text-pink-600 flex items-center justify-center hover:bg-pink-600 hover:text-white transition-colors">
+                                    <i class="fas fa-arrow-right text-xs"></i>
+                                </button>
+                            </div>
                         </div>
                     `;
                     card.addEventListener('click', () => showProductModal(product));
                     productGrid.appendChild(card);
-                    observer.observe(card); // Observe the product card for lazy load animation
+                    observer.observe(card); 
                 });
             }
 
-            // 2. Fungsi untuk menampilkan modal
+            // 2. Fungsi Show Modal (Dengan Animasi)
             function showProductModal(product) {
                 document.getElementById('modal-img').src = product.imageUrl;
                 document.getElementById('modal-img').alt = `Foto detail produk ${product.name}`;
@@ -1368,61 +1334,67 @@
                 document.getElementById('modal-stars').innerHTML = renderStars(product.rating);
                 document.getElementById('modal-rating-text').textContent = `${product.rating} (${product.reviewCount.toLocaleString('id-ID')} ulasan)`;
                 document.getElementById('modal-price').textContent = product.price;
+                document.getElementById('modal-category').textContent = product.category === 'bodylotion' ? 'Body Care' : 'Fashion';
                 
-                // Menghilangkan tanda bintang dari deskripsi
                 document.getElementById('modal-desc').textContent = product.description.replace(/\*/g, '');
-                
-                // Render spesifikasi dengan format bullet tebal
                 document.getElementById('modal-specs').innerHTML = renderSpecs(product.specs);
                 
-                // Render 3 ulasan unggulan
+                // PANGGIL RENDER REVIEWS VERSI BARU
                 document.getElementById('modal-reviews-list').innerHTML = renderReviews(product.review);
                 
-                // Update Shopee link in modal
                 document.getElementById('modal-shopee-link').href = product.shopeeUrl;
                 document.getElementById('modal-shopee-link').setAttribute('aria-label', `Beli ${product.name} di Shopee`);
 
+                // Show & Animate
                 modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; 
+                // Sedikit delay agar transisi opacity bekerja
+                setTimeout(() => {
+                    modal.classList.remove('opacity-0');
+                    modalContent.classList.remove('scale-95');
+                    modalContent.classList.add('scale-100');
+                }, 10);
                 
-                // Perbaikan Aksesibilitas: Atur fokus ke modal
+                document.body.style.overflow = 'hidden'; 
                 modalCloseBtn.focus();
             }
 
-            // 3. Fungsi untuk menutup modal
+            // 3. Fungsi Close Modal
             function closeModal() {
-                modal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
+                modal.classList.add('opacity-0');
+                modalContent.classList.remove('scale-100');
+                modalContent.classList.add('scale-95');
+                
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    document.body.style.overflow = 'auto';
+                }, 300); // Sesuaikan dengan durasi transition CSS
             }
 
             modalCloseBtn.addEventListener('click', closeModal);
             modal.addEventListener('click', (e) => {
-                if (e.target === modal) {
-                    closeModal();
-                }
+                if (e.target === modal) closeModal();
             });
 
-            // Tambahan: Tutup modal dengan tombol ESC
             document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-                    closeModal();
-                }
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
             });
 
-            // 4. Event listener untuk Tab Kategori
+            // 4. Tab Kategori Logic
             categoryTabs.forEach(tab => {
                 tab.addEventListener('click', () => {
                     const category = tab.dataset.category;
                     
                     categoryTabs.forEach(t => {
-                        t.classList.remove('bg-pink-600', 'text-white');
-                        t.classList.add('bg-white', 'text-gray-600', 'hover:bg-pink-100');
+                        t.classList.remove('bg-pink-600', 'text-white', 'shadow-md', 'hover:-translate-y-1');
+                        t.classList.add('bg-white', 'text-gray-600', 'hover:bg-pink-50', 'border', 'border-gray-100');
                         if (t.textContent.includes('✔️')) {
                             t.textContent = t.textContent.replace('✔️ ', '');
                         }
                     });
-                    tab.classList.add('bg-pink-600', 'text-white');
-                    tab.classList.remove('bg-white', 'text-gray-600', 'hover:bg-pink-100');
+                    
+                    tab.classList.remove('bg-white', 'text-gray-600', 'hover:bg-pink-50', 'border', 'border-gray-100');
+                    tab.classList.add('bg-pink-600', 'text-white', 'shadow-md', 'hover:-translate-y-1');
+                    
                     if (!tab.textContent.includes('✔️')) {
                         tab.textContent = '✔️ ' + tab.textContent;
                     }
@@ -1431,12 +1403,10 @@
                 });
             });
 
-
-            // 5. Render produk "Semua" saat halaman pertama kali dimuat
+            // Init
             renderProducts('all');
-            renderTestimonials(); // Render testimonials on load
+            renderTestimonials(); 
 
-            // 6. Logika untuk Newsletter
             if(newsletterForm) { 
                 newsletterForm.addEventListener('submit', (e) => {
                     e.preventDefault(); 
@@ -1445,16 +1415,14 @@
                 });
             }
 
-            // ===== LOGIKA FAQ ACCORDION (Added hover effects) =====
+            // Accordion Logic
             document.querySelectorAll('.accordion-button').forEach(button => {
                 button.addEventListener('click', () => {
                     const content = button.nextElementSibling;
                     const isActive = button.classList.toggle('active');
-
-                    // Set aria attributes for accessibility
                     button.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-
-                    // Close all other open accordion contents
+                    
+                    // Close others
                     document.querySelectorAll('.accordion-button.active').forEach(otherButton => {
                         if (otherButton !== button) {
                             otherButton.classList.remove('active');
@@ -1463,7 +1431,6 @@
                         }
                     });
 
-                    // Toggle current content height
                     if (isActive) {
                         content.style.maxHeight = content.scrollHeight + 'px';
                     } else {
@@ -1472,7 +1439,7 @@
                 });
             });
 
-            // ===== LOGIKA MENU MOBILE =====
+            // Mobile Menu Logic
             const mobileMenuBtn = document.getElementById('mobile-menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             
@@ -1494,22 +1461,18 @@
                 });
             });
 
-            // ===== LOGIKA SLIDER JAMINAN (TRUST BADGES) =====
+            // Trust Slider Logic
             const trustSliderTrack = document.getElementById('trust-slider-track');
             if (trustSliderTrack) { 
                 const trustSlides = Array.from(trustSliderTrack.children);
                 const trustDotsContainer = document.getElementById('trust-slider-dots');
                 let currentTrustSlide = 0;
 
-                // Set initial width to 300% (3 slides * 100%)
                 trustSliderTrack.style.width = `${trustSlides.length * 100}%`;
-                // Set individual slide width to 1/3
                 trustSlides.forEach(slide => {
                     slide.style.width = `${100 / trustSlides.length}%`;
                 });
 
-
-                // 1. Buat Dots
                 trustSlides.forEach((slide, index) => {
                     const dot = document.createElement('button');
                     dot.classList.add('trust-dot', 'w-2', 'h-2', 'bg-pink-200', 'rounded-full', 'mx-1', 'transition-all', 'duration-300');
@@ -1523,15 +1486,12 @@
                 });
                 const trustDots = Array.from(trustDotsContainer.children);
 
-                // 2. Fungsi Pindah Slide
                 const moveToTrustSlide = (index) => {
-                    trustSliderTrack.style.transform = `translateX(-${index * (100 / trustSlides.length)}%)`; // Move by percentage of track width
-                    // Update dots
+                    trustSliderTrack.style.transform = `translateX(-${index * (100 / trustSlides.length)}%)`; 
                     trustDots.forEach(dot => dot.classList.remove('bg-pink-600'));
                     trustDots[index].classList.add('bg-pink-600');
                 };
 
-                // 3. Autoplay
                 let trustInterval = setInterval(() => {
                     currentTrustSlide++;
                     if (currentTrustSlide >= trustSlides.length) {
@@ -1540,7 +1500,6 @@
                     moveToTrustSlide(currentTrustSlide);
                 }, 3000); 
 
-                // 4. Fungsi Reset Autoplay
                 const resetTrustInterval = () => {
                       clearInterval(trustInterval);
                       trustInterval = setInterval(() => {
@@ -1552,7 +1511,6 @@
                     }, 3000);
                 };
                 
-                // Inisialisasi
                 moveToTrustSlide(0);
             }
             
