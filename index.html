@@ -181,7 +181,7 @@
         .testimonial-item:hover { transform: scale(1.01); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
         
         /* About Slider */
-        .about-slide-item { flex-shrink: 0; padding: 0 0.75rem; box-sizing: border-box; }
+        .about-slide-item { flex-shrink-0; padding: 0 0.75rem; box-sizing: border-box; }
         .about-feature-item {
             background-color: white;
             border-radius: 1rem;
@@ -410,6 +410,7 @@
                         <!-- Bintang Rata-Rata Dimuat dari Firestore -->
                     </div>
                     <p class="text-sm text-gray-500" id="total-votes">Total: 0 Penilaian</p>
+                    <p id="firebase-status" class="text-xs text-red-500 mt-2 font-medium">Mengecek koneksi Firebase...</p> <!-- Status Koneksi -->
                     <p class="text-xs text-gray-400 mt-2 flex items-center gap-1">
                         <i class="fas fa-check-double text-pink-500"></i> Verified by System
                     </p>
@@ -528,7 +529,7 @@
                     </div>
                     <div class="about-slide-item" data-id="2">
                         <div class="about-feature-item text-center space-y-4 hover:border-pink-300 border border-transparent transition-all">
-                             <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto">
+                             <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center">
                                 <i class="fas fa-certificate text-4xl text-pink-600"></i>
                             </div>
                             <h3 class="text-xl font-bold text-gray-800">Jaminan Otentik</h3>
@@ -539,7 +540,7 @@
                     </div>
                     <div class="about-slide-item" data-id="3">
                         <div class="about-feature-item text-center space-y-4 hover:border-pink-300 border border-transparent transition-all">
-                             <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center mx-auto">
+                             <div class="w-20 h-20 bg-pink-100 rounded-full flex items-center justify-center">
                                 <i class="fas fa-hand-holding-dollar text-4xl text-pink-600"></i>
                             </div>
                             <h3 class="text-xl font-bold text-gray-800">Harga Terbaik</h3>
@@ -691,14 +692,13 @@
         const USER_RATINGS_COLLECTION = `artifacts/${appId}/public/data/user_ratings`;
 
         // Mock data for initial seeding (43,872 votes total, heavily skewed towards 5 and 4 stars)
-        // DITINGKATKAN: Bintang 5 (70%), Bintang 4 (25%), Bintang 3 (3%), Bintang 2 (1%), Bintang 1 (1%)
         const MOCK_TOTAL_VOTES = 43872;
         const MOCK_DISTRIBUTION = {
-            5: Math.floor(MOCK_TOTAL_VOTES * 0.70), // 30710
-            4: Math.floor(MOCK_TOTAL_VOTES * 0.25), // 10968
-            3: Math.floor(MOCK_TOTAL_VOTES * 0.03), // 1316
-            2: Math.floor(MOCK_TOTAL_VOTES * 0.01), // 438
-            1: MOCK_TOTAL_VOTES - (Math.floor(MOCK_TOTAL_VOTES * 0.70) + Math.floor(MOCK_TOTAL_VOTES * 0.25) + Math.floor(MOCK_TOTAL_VOTES * 0.03) + Math.floor(MOCK_TOTAL_VOTES * 0.01)), // 440 (Sisa)
+            5: Math.floor(MOCK_TOTAL_VOTES * 0.70), 
+            4: Math.floor(MOCK_TOTAL_VOTES * 0.25), 
+            3: Math.floor(MOCK_TOTAL_VOTES * 0.03), 
+            2: Math.floor(MOCK_TOTAL_VOTES * 0.01), 
+            1: MOCK_TOTAL_VOTES - (Math.floor(MOCK_TOTAL_VOTES * 0.70) + Math.floor(MOCK_TOTAL_VOTES * 0.25) + Math.floor(MOCK_TOTAL_VOTES * 0.03) + Math.floor(MOCK_TOTAL_VOTES * 0.01)), 
         };
         
         // ------------------------------------
@@ -716,12 +716,15 @@
         const ratingDistributionContainer = document.getElementById('rating-distribution');
         const postSubmitCta = document.getElementById('post-submit-cta');
         const ratingFeedbackEmoji = document.getElementById('rating-feedback-emoji');
+        const firebaseStatusElement = document.getElementById('firebase-status'); // New Status Element
 
 
         async function initFirebase() {
             // 1. Initialization
+            if (firebaseStatusElement) firebaseStatusElement.textContent = 'Mengecek koneksi Firebase...';
             try {
                 if (!firebaseConfig) {
+                    if (firebaseStatusElement) firebaseStatusElement.textContent = '❌ ERROR: Konfigurasi Firebase tidak tersedia.';
                     throw new Error("Firebase config not available.");
                 }
                 app = initializeApp(firebaseConfig);
@@ -736,22 +739,24 @@
                     await signInAnonymously(auth);
                 }
 
+                if (firebaseStatusElement) firebaseStatusElement.textContent = '✔️ Terhubung. Autentikasi berhasil.';
+                
                 onAuthStateChanged(auth, (user) => {
                     if (user) {
                         userId = user.uid;
-                        // PENTING: Periksa dan masukkan data awal jika koleksi kosong
                         seedInitialRatings();
                         listenToStoreRatings();
                         checkUserRatingStatus(); 
                     } else {
                         console.error("Authentication failed or user logged out.");
+                        if (firebaseStatusElement) firebaseStatusElement.textContent = '❌ Autentikasi Gagal.';
                         userId = null;
                     }
                 });
 
             } catch (error) {
                 console.error("Error initializing Firebase or signing in:", error);
-                // Fallback UI
+                if (firebaseStatusElement) firebaseStatusElement.textContent = `❌ Koneksi Gagal. Cek Konsol/Security Rules.`;
                 if (averageScoreElement) averageScoreElement.textContent = '❌';
                 if (totalVotesElement) totalVotesElement.textContent = 'Gagal memuat rating.';
                 if (ratingMessage) ratingMessage.textContent = 'Fitur rating tidak tersedia saat ini.';
@@ -766,14 +771,13 @@
             const ratingsCollectionRef = collection(db, USER_RATINGS_COLLECTION);
             
             try {
-                // Periksa apakah dokumen mock sudah ada untuk menghindari seeding berulang
                 const mockDataId = 'initial_mock_data'; 
                 const mockDocRef = doc(db, USER_RATINGS_COLLECTION, mockDataId);
-                const mockDocSnap = await getDocs(query(ratingsCollectionRef));
                 
-                const mockDocExists = mockDocSnap.docs.some(doc => doc.id === mockDataId);
+                // Menggunakan getDocs pada query untuk memeriksa keberadaan
+                const snapshot = await getDocs(query(ratingsCollectionRef));
+                const mockDocExists = snapshot.docs.some(doc => doc.id === mockDataId);
 
-                // HANYA jika koleksi kosong dan belum ada mock data, kita masukkan data dummy
                 if (!mockDocExists) {
                     let totalScore = 0;
                     for (const rating in MOCK_DISTRIBUTION) {
@@ -804,11 +808,9 @@
             if (!userId || !db) return;
 
             try {
-                // Periksa apakah dokumen dengan UID pengguna saat ini ada (mengindikasikan pengguna telah menilai)
                 const ratingsCollectionRef = collection(db, USER_RATINGS_COLLECTION);
                 const userRatingSnap = await getDocs(query(ratingsCollectionRef));
                 
-                // Cari rating pengguna di antara semua dokumen (kecuali mock)
                 userHasRated = userRatingSnap.docs.some(doc => doc.id === userId && !doc.data().isMock);
 
                 if (userHasRated) {
@@ -865,10 +867,15 @@
                 const averageRating = totalCount > 0 ? (totalScore / totalCount) : 0;
                 renderRatingDisplay(averageRating, totalCount);
                 renderDistributionBar(totalCount);
+                
+                // Update status setelah data berhasil dimuat (konfirmasi koneksi real-time berhasil)
+                if (firebaseStatusElement) firebaseStatusElement.textContent = '✔️ Terhubung Real-time.';
+
 
             }, (error) => {
                 console.error("Error fetching real-time ratings:", error);
                 if (averageScoreElement) averageScoreElement.textContent = 'ERR';
+                if (firebaseStatusElement) firebaseStatusElement.textContent = '❌ Gagal Memuat Data. Cek Security Rules.';
             });
         }
 
